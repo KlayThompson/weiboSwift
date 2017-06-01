@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F51EDFE4B600C06E89 /* AppDelegate.swift */; };
-		488699F81EDFE4B600C06E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F71EDFE4B600C06E89 /* ViewController.swift */; };
-		488699FB1EDFE4B600C06E89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488699F91EDFE4B600C06E89 /* Main.storyboard */; };
 		488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488699FC1EDFE4B600C06E89 /* Assets.xcassets */; };
-		48869A001EDFE4B600C06E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488699FE1EDFE4B600C06E89 /* LaunchScreen.storyboard */; };
 		48869A0B1EDFE4B600C06E89 /* TranbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A0A1EDFE4B600C06E89 /* TranbTests.swift */; };
 		48869A161EDFE4B600C06E89 /* TranbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A151EDFE4B600C06E89 /* TranbUITests.swift */; };
 /* End PBXBuildFile section */
@@ -36,10 +33,7 @@
 /* Begin PBXFileReference section */
 		488699F21EDFE4B600C06E89 /* Tranb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488699F51EDFE4B600C06E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		488699F71EDFE4B600C06E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		488699FA1EDFE4B600C06E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		488699FC1EDFE4B600C06E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		488699FF1EDFE4B600C06E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48869A011EDFE4B600C06E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48869A061EDFE4B600C06E89 /* TranbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48869A0A1EDFE4B600C06E89 /* TranbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranbTests.swift; sourceTree = "<group>"; };
@@ -98,10 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				488699F51EDFE4B600C06E89 /* AppDelegate.swift */,
-				488699F71EDFE4B600C06E89 /* ViewController.swift */,
-				488699F91EDFE4B600C06E89 /* Main.storyboard */,
 				488699FC1EDFE4B600C06E89 /* Assets.xcassets */,
-				488699FE1EDFE4B600C06E89 /* LaunchScreen.storyboard */,
 				48869A011EDFE4B600C06E89 /* Info.plist */,
 			);
 			path = Tranb;
@@ -233,9 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48869A001EDFE4B600C06E89 /* LaunchScreen.storyboard in Resources */,
 				488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */,
-				488699FB1EDFE4B600C06E89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488699F81EDFE4B600C06E89 /* ViewController.swift in Sources */,
 				488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,25 +283,6 @@
 			targetProxy = 48869A121EDFE4B600C06E89 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		488699F91EDFE4B600C06E89 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				488699FA1EDFE4B600C06E89 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		488699FE1EDFE4B600C06E89 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				488699FF1EDFE4B600C06E89 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48869A181EDFE4B600C06E89 /* Debug */ = {
@@ -415,12 +384,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;
 				INFOPLIST_FILE = Tranb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KlayThompson.Tranb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -428,12 +400,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 3BB36MF7NL;
 				INFOPLIST_FILE = Tranb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KlayThompson.Tranb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -510,6 +485,7 @@
 				48869A1C1EDFE4B600C06E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48869A1D1EDFE4B600C06E89 /* Build configuration list for PBXNativeTarget "TranbTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +494,7 @@
 				48869A1F1EDFE4B600C06E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48869A201EDFE4B600C06E89 /* Build configuration list for PBXNativeTarget "TranbUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +503,7 @@
 				48869A221EDFE4B600C06E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
