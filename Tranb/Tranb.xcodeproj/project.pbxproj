@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
+		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
+		3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */; };
+		3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D11EE00D6B003F4966 /* HomeViewController.swift */; };
+		3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D31EE00D78003F4966 /* MessageViewController.swift */; };
+		3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D51EE00D86003F4966 /* DiscoveryViewController.swift */; };
+		3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */; };
+		3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D91EE00DA2003F4966 /* ViewModel.swift */; };
+		3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10DB1EE00DAD003F4966 /* Model.swift */; };
+		3B9B10DE1EE00DB6003F4966 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10DD1EE00DB6003F4966 /* Tools.swift */; };
 		488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F51EDFE4B600C06E89 /* AppDelegate.swift */; };
 		488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488699FC1EDFE4B600C06E89 /* Assets.xcassets */; };
 		48869A0B1EDFE4B600C06E89 /* TranbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A0A1EDFE4B600C06E89 /* TranbTests.swift */; };
@@ -31,6 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3B9B10D11EE00D6B003F4966 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3B9B10D31EE00D78003F4966 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		3B9B10D51EE00D86003F4966 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3B9B10D91EE00DA2003F4966 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3B9B10DB1EE00DAD003F4966 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3B9B10DD1EE00DB6003F4966 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		488699F21EDFE4B600C06E89 /* Tranb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488699F51EDFE4B600C06E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488699FC1EDFE4B600C06E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +88,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B9B10C11EE00C44003F4966 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10C41EE00C44003F4966 /* View */,
+				3B9B10C91EE00C44003F4966 /* ViewModel */,
+				3B9B10C21EE00C44003F4966 /* Model */,
+				3B9B10C31EE00C44003F4966 /* Tools */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		3B9B10C21EE00C44003F4966 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10DB1EE00DAD003F4966 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B9B10C31EE00C44003F4966 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10DD1EE00DB6003F4966 /* Tools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3B9B10C41EE00C44003F4966 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10CA1EE00CD4003F4966 /* Main */,
+				3B9B10C61EE00C44003F4966 /* Home */,
+				3B9B10C71EE00C44003F4966 /* Message */,
+				3B9B10C51EE00C44003F4966 /* Discovery */,
+				3B9B10C81EE00C44003F4966 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B9B10C51EE00C44003F4966 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10D51EE00D86003F4966 /* DiscoveryViewController.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		3B9B10C61EE00C44003F4966 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10D11EE00D6B003F4966 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3B9B10C71EE00C44003F4966 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10D31EE00D78003F4966 /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		3B9B10C81EE00C44003F4966 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3B9B10C91EE00C44003F4966 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10D91EE00DA2003F4966 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B9B10CA1EE00CD4003F4966 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */,
+				3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */,
+				3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		488699E91EDFE4B600C06E89 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +200,7 @@
 		488699F41EDFE4B600C06E89 /* Tranb */ = {
 			isa = PBXGroup;
 			children = (
+				3B9B10C11EE00C44003F4966 /* Class */,
 				488699F51EDFE4B600C06E89 /* AppDelegate.swift */,
 				488699FC1EDFE4B600C06E89 /* Assets.xcassets */,
 				48869A011EDFE4B600C06E89 /* Info.plist */,
@@ -249,6 +359,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
+				3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */,
+				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
+				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
+				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
+				3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */,
+				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
+				3B9B10DE1EE00DB6003F4966 /* Tools.swift in Sources */,
+				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
+				3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */,
 				488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
