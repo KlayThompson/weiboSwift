@@ -33,6 +33,7 @@
 		488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488699FC1EDFE4B600C06E89 /* Assets.xcassets */; };
 		48869A0B1EDFE4B600C06E89 /* TranbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A0A1EDFE4B600C06E89 /* TranbTests.swift */; };
 		48869A161EDFE4B600C06E89 /* TranbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A151EDFE4B600C06E89 /* TranbUITests.swift */; };
+		48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A241EE0515000C06E89 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		48869A111EDFE4B600C06E89 /* TranbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48869A151EDFE4B600C06E89 /* TranbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranbUITests.swift; sourceTree = "<group>"; };
 		48869A171EDFE4B600C06E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48869A241EE0515000C06E89 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				48869A231EE0514000C06E89 /* Extensions */,
 				3B9B10DF1EE0122F003F4966 /* Additions */,
 				3B9B10DD1EE00DB6003F4966 /* Tools.swift */,
 			);
@@ -298,6 +301,14 @@
 			path = TranbUITests;
 			sourceTree = "<group>";
 		};
+		48869A231EE0514000C06E89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48869A241EE0515000C06E89 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +457,7 @@
 				3B9B10DE1EE00DB6003F4966 /* Tools.swift in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
+				48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,
 				3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */,
