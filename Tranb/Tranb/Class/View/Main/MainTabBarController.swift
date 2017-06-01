@@ -10,13 +10,25 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
+    lazy var composeButton:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cz_random()
         // Do any additional setup after loading the view.
         setupChildViewController()
+        setupComposeButton()
     }
 
+    
+    
+    
+    func composeButtonPress() {
+        print("发微博")
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -25,7 +37,18 @@ class MainTabBarController: UITabBarController {
     
 }
 
+
+// MARK: - 设置界面
 extension MainTabBarController {
+    
+    //设置发布按钮
+    func setupComposeButton() {
+        tabBar.addSubview(composeButton)
+        //计算tabbar宽度
+        let tabBarWidth = tabBar.bounds.width / CGFloat(childViewControllers.count) - 1
+        composeButton.frame = tabBar.bounds.insetBy(dx: tabBarWidth * 2, dy: 0)
+        composeButton.addTarget(self, action: #selector(MainTabBarController.composeButtonPress), for: .touchUpInside)
+    }
     
     ///设置子控制器
     func setupChildViewController() {
@@ -34,6 +57,7 @@ extension MainTabBarController {
         let dicArray = [
             ["className" : "HomeViewController", "title" : "首页", "imageName" : "tabbar_home"],
             ["className" : "MessageViewController", "title" : "消息", "imageName" : "tabbar_message_center"],
+            ["className" : "UIViewController"],
             ["className" : "DiscoveryViewController", "title" : "发现", "imageName" : "tabbar_discover"],
             ["className" : "ProfileViewController", "title" : "我", "imageName" : "tabbar_profile"],
         ]
