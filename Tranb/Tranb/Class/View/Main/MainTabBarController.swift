@@ -32,10 +32,10 @@ extension MainTabBarController {
         
         //创建一个存放字典的数组
         let dicArray = [
-            ["className" : "HomeViewController", "title" : "首页", "imageName" : ""],
-            ["className" : "MessageViewController", "title" : "消息", "imageName" : ""],
-            ["className" : "DiscoveryViewController", "title" : "发现", "imageName" : ""],
-            ["className" : "ProfileViewController", "title" : "我", "imageName" : ""],
+            ["className" : "HomeViewController", "title" : "首页", "imageName" : "tabbar_home"],
+            ["className" : "MessageViewController", "title" : "消息", "imageName" : "tabbar_message_center"],
+            ["className" : "DiscoveryViewController", "title" : "发现", "imageName" : "tabbar_discover"],
+            ["className" : "ProfileViewController", "title" : "我", "imageName" : "tabbar_profile"],
         ]
         
         //创建一个存放viewcontroller的数组
@@ -67,7 +67,17 @@ extension MainTabBarController {
         }
         
         let viewConttroller = clas.init()
+        
+        //设置标题
         viewConttroller.title = title
+        viewConttroller.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
+        viewConttroller.tabBarItem.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12)], for: .normal)
+        
+        //设置tabbar image
+        viewConttroller.tabBarItem.image = UIImage(named: imageName)
+        viewConttroller.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        
+        
         
         let navi = MainNavigationController(rootViewController: viewConttroller)
         
