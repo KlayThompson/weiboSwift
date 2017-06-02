@@ -11,6 +11,9 @@ import UIKit
 class BaseViewController: UIViewController {
 
     
+    /// 用户登录状态
+    lazy var userLogin = false
+    
     /// navigationBar
     lazy var navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
@@ -38,6 +41,8 @@ class BaseViewController: UIViewController {
     /// 加载数据
     func loadData() {
         
+        //如果子类不实现则关闭刷新动画
+        refreshControl?.endRefreshing()
     }
     
     /// 重写title 的 didSet 方法
@@ -56,12 +61,21 @@ extension BaseViewController {
     
     func setupUI() {
         view.backgroundColor = UIColor.cz_random()
+        
         setupNavigationBar()
-        setupTableView()
+        
+        userLogin ? setupTableView() : setupVisitorView()
         
         automaticallyAdjustsScrollViewInsets = false
     }
     
+    
+    func setupVisitorView() {
+        
+        let visitorView = VisitorView(frame: view.bounds)
+        
+        view.insertSubview(visitorView, belowSubview: navigation)
+    }
     
     /// 设置tableView
     func setupTableView() {
