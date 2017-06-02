@@ -44,6 +44,12 @@ class MainTabBarController: UITabBarController {
             return
         }
     }
+    
+    
+    /// 控制设备横竖屏
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 
 
