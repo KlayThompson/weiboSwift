@@ -10,13 +10,20 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    
+    /// navigationBar
     lazy var navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     
+    /// NavigationItem
     lazy var naviItem = UINavigationItem()
     
+    /// TableView
     var tableView:UITableView?
     
+    /// 刷新控件
     var refreshControl: UIRefreshControl?
+    
+    lazy var isPullUp = false
     
     
     override func viewDidLoad() {
@@ -95,6 +102,35 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        //当显示最后一行的时候，开始上拉刷新
+        //要获取最底下的数据行数
+        
+        let section = tableView.numberOfSections - 1
+        let row = indexPath.row
+        
+        
+        if section < 0 || row < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section) - 1
+        
+        if row == count && !isPullUp {
+            print("上拉加载")
+            
+            //更改上啦刷新状态
+            isPullUp = true
+            
+            //获取网络
+            loadData()
+        }
+        
+        
+        
     }
     
 }

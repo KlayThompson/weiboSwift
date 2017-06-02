@@ -27,12 +27,24 @@ class HomeViewController: BaseViewController {
         //延迟两秒
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 
             print("加载完成")
-            self.refreshControl?.endRefreshing()
             for index in 0..<20 {
-                self.dataList.insert(index.description, at: 0)
+                
+                if self.isPullUp {
+                    self.dataList.append("💪💪💪💪" + index.description)
+                } else {
+                    self.dataList.insert(index.description, at: 0)
+                }
                 
             }
+            
+            //结束菊花动画
+            self.refreshControl?.endRefreshing()
+            
+            //刷新数据
             self.tableView?.reloadData()
+            
+            //更改刷新状态
+            self.isPullUp = false
         }
         
     }
