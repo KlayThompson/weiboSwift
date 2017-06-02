@@ -12,8 +12,13 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+view.backgroundColor = UIColor.cz_random()
         // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
+    }
+    
+    func test() {
+        
     }
 
     override func didReceiveMemoryWarning() {

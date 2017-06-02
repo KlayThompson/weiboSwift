@@ -14,10 +14,11 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cz_random()
+        
         // Do any additional setup after loading the view.
         setupChildViewController()
         setupComposeButton()
+        
     }
 
     
@@ -35,6 +36,14 @@ class MainTabBarController: UITabBarController {
     }
     
     
+// MARK: - TabbarDelegate
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        guard let _ = item.title else {
+            
+            composeButtonPress()
+            return
+        }
+    }
 }
 
 
@@ -45,7 +54,7 @@ extension MainTabBarController {
     func setupComposeButton() {
         tabBar.addSubview(composeButton)
         //计算tabbar宽度
-        let tabBarWidth = tabBar.bounds.width / CGFloat(childViewControllers.count) - 1
+        let tabBarWidth = tabBar.bounds.width / CGFloat(childViewControllers.count)
         composeButton.frame = tabBar.bounds.insetBy(dx: tabBarWidth * 2, dy: 0)
         composeButton.addTarget(self, action: #selector(MainTabBarController.composeButtonPress), for: .touchUpInside)
     }

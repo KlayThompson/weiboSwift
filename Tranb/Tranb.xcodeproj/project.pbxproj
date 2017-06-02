@@ -29,6 +29,7 @@
 		3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10F41EE0122F003F4966 /* UIScreen+CZAddition.m */; };
 		3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10F61EE0122F003F4966 /* UIView+CZAddition.m */; };
 		3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10F81EE0122F003F4966 /* UIViewController+CZAddition.m */; };
+		3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */; };
 		488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F51EDFE4B600C06E89 /* AppDelegate.swift */; };
 		488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488699FC1EDFE4B600C06E89 /* Assets.xcassets */; };
 		48869A0B1EDFE4B600C06E89 /* TranbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A0A1EDFE4B600C06E89 /* TranbTests.swift */; };
@@ -90,6 +91,7 @@
 		3B9B10F71EE0122F003F4966 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		3B9B10F81EE0122F003F4966 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		3B9B11091EE012E5003F4966 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		488699F21EDFE4B600C06E89 /* Tranb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488699F51EDFE4B600C06E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488699FC1EDFE4B600C06E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				48869A241EE0515000C06E89 /* Bundle+Extensions.swift */,
+				3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				3B9B10FF1EE0122F003F4966 /* UIButton+CZAddition.m in Sources */,
 				3B9B11001EE0122F003F4966 /* UIColor+CZAddition.m in Sources */,
 				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
+				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,

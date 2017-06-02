@@ -10,26 +10,33 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    lazy var navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
+    
+    lazy var naviItem = UINavigationItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override var title: String? {
+        
+        didSet {
+            naviItem.title = title
+        }
     }
+
+}
+
+
+// MARK: - 设置界面
+extension BaseViewController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        
+        view.addSubview(navigation)
+        navigation.items = [naviItem]
     }
-    */
 
 }
