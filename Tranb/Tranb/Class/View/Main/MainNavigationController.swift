@@ -35,7 +35,7 @@ class MainNavigationController: UINavigationController {
                     title = childViewControllers.first?.title ?? "返回"
                 }
                 
-                vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(MainNavigationController.goBack))
+                vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(MainNavigationController.goBack), isBack:true)
             }
             
           
