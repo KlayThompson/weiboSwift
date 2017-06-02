@@ -20,6 +20,8 @@ class BaseViewController: UIViewController {
         setupUI()
     }
 
+    
+    /// 重写title 的 didSet 方法
     override var title: String? {
         
         didSet {
@@ -34,9 +36,11 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     
     func setupUI() {
-        
+        view.backgroundColor = UIColor.cz_random()
         view.addSubview(navigation)
         navigation.items = [naviItem]
+        //调整渲染颜色
+        navigation.barTintColor = UIColor.cz_color(withHex: 0xf6f6f6)
     }
 
 }

@@ -1,31 +1,28 @@
 //
-//  HomeViewController.swift
+//  NewViewController.swift
 //  Tranb
 //
-//  Created by Kim on 2017/6/1.
+//  Created by Kim on 2017/6/2.
 //  Copyright © 2017年 KlayThompson. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class NewViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-view.backgroundColor = UIColor.cz_random()
+        naviItem.rightBarButtonItem = UIBarButtonItem(title: "Next", target: self, action: #selector(NewViewController.nextView))
         // Do any additional setup after loading the view.
-        naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
-    }
-    
-    func test() {
-        navigationController?.pushViewController(NewViewController(), animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func nextView() {
+        navigationController?.pushViewController(NewViewController(), animated: true)
+    }
 
     /*
     // MARK: - Navigation

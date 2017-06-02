@@ -23,9 +23,31 @@ class MainNavigationController: UINavigationController {
         if childViewControllers.count > 0 {
             
             viewController.hidesBottomBarWhenPushed = true
+            
+            //增加返回按钮---如果是childViewControllers中只有一个就显示标题，其他的都显示返回
+            var title = "返回"
+            //首先取出控制器
+            if let vc = viewController as? BaseViewController {
+                
+                //判断是否是第一个
+                if childViewControllers.count == 1 {
+                    
+                    title = childViewControllers.first?.title ?? "返回"
+                }
+                
+                vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(MainNavigationController.goBack))
+            }
+            
+          
+            
         }
         super.pushViewController(viewController, animated: animated)
         
+    }
+    
+    @objc private func goBack() {
+        
+        popViewController(animated: true)
     }
 
 }

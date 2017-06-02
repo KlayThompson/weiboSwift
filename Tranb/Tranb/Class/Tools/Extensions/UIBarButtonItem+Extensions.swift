@@ -10,7 +10,7 @@ import Foundation
 
 extension UIBarButtonItem {
 
-    convenience init(title: String, fontSize: CGFloat = 14, target: Any?, action: Selector) {
+    convenience init(title: String, fontSize: CGFloat = 16, target: Any?, action: Selector) {
         
         
         //创建一个button
