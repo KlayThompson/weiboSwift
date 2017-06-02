@@ -16,13 +16,22 @@ class BaseViewController: UIViewController {
     
     var tableView:UITableView?
     
+    var refreshControl: UIRefreshControl?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        
+        loadData()
     }
 
+    
+    /// 加载数据
+    func loadData() {
+        
+    }
     
     /// 重写title 的 didSet 方法
     override var title: String? {
@@ -42,6 +51,8 @@ extension BaseViewController {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
         setupTableView()
+        
+        automaticallyAdjustsScrollViewInsets = false
     }
     
     
@@ -49,8 +60,17 @@ extension BaseViewController {
     func setupTableView() {
         
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: UIScreen.cz_screenHeight()), style: .plain)
-        
+        tableView?.delegate = self
+        tableView?.dataSource = self
         view.insertSubview(tableView!, belowSubview: navigation)
+        tableView?.contentInset = UIEdgeInsets(top: navigation.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        
+        //初始化refreshControl
+        refreshControl = UIRefreshControl()
+        
+        tableView?.addSubview(refreshControl!)
+        
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     
@@ -63,4 +83,18 @@ extension BaseViewController {
         //        设置标题颜色
         navigation.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
     }
+}
+
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }
