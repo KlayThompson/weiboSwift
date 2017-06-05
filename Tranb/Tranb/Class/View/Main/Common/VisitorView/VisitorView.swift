@@ -10,6 +10,26 @@ import UIKit
 
 class VisitorView: UIView {
 
+    /// 主页imageName = ""
+    /// - Parameter param: 存放imageName 和 tipMessage
+    var visitorInfo: [String: String]? {
+        //didSet重写
+        didSet {
+            guard let imageName = visitorInfo?["imageName"],
+                let tipMessage = visitorInfo?["tipMessage"] else {
+                    return
+            }
+            //提示信息
+            tipLabel.text = tipMessage
+            
+            //icon
+            if imageName == "" {
+                return
+            }
+            iconImageView.image = UIImage(named: imageName)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -23,6 +43,9 @@ class VisitorView: UIView {
     //创建界面元素
     //icon 转圈的
     lazy var iconImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    
+    //maskView遮盖视图
+    lazy var iconMaskView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     
     //大的houseIcon
     lazy var hosueIcon = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
@@ -43,9 +66,10 @@ extension VisitorView {
 
     func setupUI() {
         
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xededed)
         
         addSubview(iconImageView)
+        addSubview(iconMaskView)
         addSubview(hosueIcon)
         addSubview(tipLabel)
         addSubview(loginButton)
@@ -60,6 +84,13 @@ extension VisitorView {
         //icon
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
+        
+        //iconMaskView 使用VFL设置约束
+        //views 定义VFL 中的控件和实际名称映射关系["iconMaskView":iconMaskView]
+        let dic = ["iconMaskView":iconMaskView , "loginButton":loginButton] as [String : Any]
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[iconMaskView]-0-|", options: [], metrics: nil, views: dic))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[iconMaskView]-0-[loginButton]", options: [], metrics: nil, views: dic))
         
         //house
         addConstraint(NSLayoutConstraint(item: hosueIcon, attribute: .centerX, relatedBy: .equal, toItem: iconImageView, attribute: .centerX, multiplier: 1.0, constant: 0))

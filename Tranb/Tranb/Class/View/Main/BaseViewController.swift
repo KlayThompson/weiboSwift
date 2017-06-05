@@ -26,6 +26,10 @@ class BaseViewController: UIViewController {
     /// 刷新控件
     var refreshControl: UIRefreshControl?
     
+    /// 访客字典
+    var visitorInfo: [String: String]?
+    
+    
     lazy var isPullUp = false
     
     
@@ -73,7 +77,7 @@ extension BaseViewController {
     func setupVisitorView() {
         
         let visitorView = VisitorView(frame: view.bounds)
-        
+        visitorView.visitorInfo = visitorInfo
         view.insertSubview(visitorView, belowSubview: navigation)
     }
     

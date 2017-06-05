@@ -69,13 +69,24 @@ extension MainTabBarController {
     func setupChildViewController() {
         
         //创建一个存放字典的数组
-        let dicArray = [
-            ["className" : "HomeViewController", "title" : "首页", "imageName" : "tabbar_home"],
-            ["className" : "MessageViewController", "title" : "消息", "imageName" : "tabbar_message_center"],
-            ["className" : "UIViewController"],
-            ["className" : "DiscoveryViewController", "title" : "发现", "imageName" : "tabbar_discover"],
-            ["className" : "ProfileViewController", "title" : "我", "imageName" : "tabbar_profile"],
+        let dicArray:[[String: AnyObject]] = [
+            ["className" : "HomeViewController" as AnyObject , "title" : "首页" as AnyObject, "imageName" : "tabbar_home" as AnyObject,
+             "visitorInfo" : ["imageName" : "", "tipMessage" : "关注一些人，回这里看看有什么惊喜"] as AnyObject
+             ],
+            ["className" : "MessageViewController" as AnyObject, "title" : "消息" as AnyObject, "imageName" : "tabbar_message_center" as AnyObject,
+             "visitorInfo" : ["imageName" : "visitordiscover_image_message", "tipMessage" : "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"] as AnyObject
+            ],
+            ["className" : "UIViewController" as AnyObject],
+            ["className" : "DiscoveryViewController" as AnyObject, "title" : "发现" as AnyObject, "imageName" : "tabbar_discover" as AnyObject,
+             "visitorInfo" : ["imageName" : "visitordiscover_image_message", "tipMessage" : "登录后，最新、最热微博尽在掌握，不会再与时事潮流擦肩而过"] as AnyObject
+            ],
+            ["className" : "ProfileViewController" as AnyObject, "title" : "我" as AnyObject, "imageName" : "tabbar_profile" as AnyObject,
+             "visitorInfo" : ["imageName" : "visitordiscover_image_profile", "tipMessage" : "登录后，你的微博、相册、个人资料会在这里显示，展示给别人"] as AnyObject
+            ],
         ]
+        
+        //测试数据格式是否正确
+//        (dicArray as NSArray).write(toFile: "/Users/klaythompson/Desktop/demo.plist", atomically: true)
         
         //创建一个存放viewcontroller的数组
         var vcArray = [UIViewController]()
@@ -93,19 +104,23 @@ extension MainTabBarController {
     ///
     /// - Parameter dictionary: 关于viewcontroller等相关参数 name、imageName、className
     /// - Returns: UIviewcontroller
-    func viewController(dictionary: [String: String]) -> UIViewController {
+    func viewController(dictionary: [String: AnyObject]) -> UIViewController {
         
         
-        guard let className = dictionary["className"],
-            let imageName = dictionary["imageName"],
-            let title = dictionary["title"],
-        let clas = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type
+        guard let className = dictionary["className"] as? String,
+            let imageName = dictionary["imageName"] as? String,
+            let title = dictionary["title"] as? String,
+            let clas = NSClassFromString(Bundle.main.namespace + "." + className) as? BaseViewController.Type,
+            let visitorInfo = dictionary["visitorInfo"]
+        
             else {
         
                 return UIViewController()
         }
         
         let viewConttroller = clas.init()
+        
+        viewConttroller.visitorInfo = visitorInfo as? [String : String]
         
         //设置标题
         viewConttroller.title = title
