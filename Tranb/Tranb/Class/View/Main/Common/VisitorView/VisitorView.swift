@@ -24,8 +24,13 @@ class VisitorView: UIView {
             
             //icon
             if imageName == "" {
+                hosueIcon.isHidden = false
+                hosueIcon.isHidden = false
+                startanimation()
                 return
             }
+            hosueIcon.isHidden = true
+            iconMaskView.isHidden = true
             iconImageView.image = UIImage(named: imageName)
         }
     }
@@ -38,6 +43,18 @@ class VisitorView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func startanimation() {
+    
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = 2 * Double.pi
+        animation.duration = 15
+        animation.repeatCount = MAXFLOAT
+        
+        //完成之后不删除
+        animation.isRemovedOnCompletion = false
+        iconImageView.layer.add(animation, forKey: nil)
     }
     
     //创建界面元素
@@ -74,7 +91,7 @@ extension VisitorView {
         addSubview(tipLabel)
         addSubview(loginButton)
         addSubview(signInButton)
-        
+        tipLabel.textAlignment = .center
         //取消autoresizing
         for view in self.subviews {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +107,7 @@ extension VisitorView {
         let dic = ["iconMaskView":iconMaskView , "loginButton":loginButton] as [String : Any]
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[iconMaskView]-0-|", options: [], metrics: nil, views: dic))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[iconMaskView]-0-[loginButton]", options: [], metrics: nil, views: dic))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[iconMaskView]-(-20)-[loginButton]", options: [], metrics: nil, views: dic))
         
         //house
         addConstraint(NSLayoutConstraint(item: hosueIcon, attribute: .centerX, relatedBy: .equal, toItem: iconImageView, attribute: .centerX, multiplier: 1.0, constant: 0))
