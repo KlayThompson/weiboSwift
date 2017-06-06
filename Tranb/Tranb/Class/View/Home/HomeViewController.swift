@@ -23,6 +23,15 @@ class HomeViewController: BaseViewController {
     override func loadData() {
         
         print("开始加载数据")
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token" : "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"]
+        
+        
+        NetWorkManager.shareManager.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+            print(json ?? "")
+        }) { (_, error) in
+            print(error)
+        }
         
         //延迟两秒
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 

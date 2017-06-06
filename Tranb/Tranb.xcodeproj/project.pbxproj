@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29EFA8FCD794CBD83A7F3DB5 /* Pods_TranbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EC50A9C151839E4EE94BD4 /* Pods_TranbUITests.framework */; };
 		3B4338EA1EE6460900D7FA58 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B4338E91EE6460900D7FA58 /* main.json */; };
+		3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */; };
 		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
 		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
 		3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */; };
@@ -18,7 +19,6 @@
 		3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */; };
 		3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D91EE00DA2003F4966 /* ViewModel.swift */; };
 		3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10DB1EE00DAD003F4966 /* Model.swift */; };
-		3B9B10DE1EE00DB6003F4966 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10DD1EE00DB6003F4966 /* Tools.swift */; };
 		3B9B10F91EE0122F003F4966 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E21EE0122F003F4966 /* NSArray+Log.m */; };
 		3B9B10FA1EE0122F003F4966 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E41EE0122F003F4966 /* NSAttributedString+CZAdditon.m */; };
 		3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E61EE0122F003F4966 /* NSObject+CZRuntime.m */; };
@@ -63,6 +63,7 @@
 /* Begin PBXFileReference section */
 		17EC50A9C151839E4EE94BD4 /* Pods_TranbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4338E91EE6460900D7FA58 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3B9B10D91EE00DA2003F4966 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3B9B10DB1EE00DAD003F4966 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		3B9B10DD1EE00DB6003F4966 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		3B9B10E01EE0122F003F4966 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		3B9B10E11EE0122F003F4966 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		3B9B10E21EE0122F003F4966 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -164,6 +164,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3B4338EB1EE6943E00D7FA58 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		3B9B10C11EE00C44003F4966 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,9 +194,9 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3B4338EB1EE6943E00D7FA58 /* NetWork */,
 				48869A231EE0514000C06E89 /* Extensions */,
 				3B9B10DF1EE0122F003F4966 /* Additions */,
-				3B9B10DD1EE00DB6003F4966 /* Tools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -663,6 +671,7 @@
 				3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */,
 				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
+				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
 				3B9B10FF1EE0122F003F4966 /* UIButton+CZAddition.m in Sources */,
 				3B9B11111EE16545003F4966 /* VisitorView.swift in Sources */,
 				3B9B11001EE0122F003F4966 /* UIColor+CZAddition.m in Sources */,
@@ -673,7 +682,6 @@
 				3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
-				3B9B10DE1EE00DB6003F4966 /* Tools.swift in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
 				48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */,

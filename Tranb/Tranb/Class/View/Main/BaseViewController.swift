@@ -12,7 +12,7 @@ class BaseViewController: UIViewController {
 
     
     /// 用户登录状态
-    lazy var userLogin = false
+    lazy var userLogin = true
     
     /// navigationBar
     lazy var navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
