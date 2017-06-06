@@ -141,8 +141,6 @@ extension MainTabBarController {
         viewConttroller.tabBarItem.image = UIImage(named: imageName)
         viewConttroller.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
-        
-        
         let navi = MainNavigationController(rootViewController: viewConttroller)
         
         return navi

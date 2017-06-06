@@ -75,7 +75,7 @@ extension BaseViewController {
 // MARK: - 设置界面
 extension BaseViewController {
     
-    func setupUI() {
+     func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         
         setupNavigationBar()
@@ -93,6 +93,10 @@ extension BaseViewController {
         view.insertSubview(visitorView, belowSubview: navigation)
         visitorView.loginButton.addTarget(self, action: #selector(userLoginButtonPress), for: .touchUpInside)
         visitorView.signInButton.addTarget(self, action: #selector(userSignInButtonPress), for: .touchUpInside)
+        
+        //设置导航栏上面登录注册按钮
+        naviItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(userSignInButtonPress))
+        naviItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(userLoginButtonPress))
     }
     
     /// 设置tableView
@@ -121,6 +125,9 @@ extension BaseViewController {
         navigation.barTintColor = UIColor.cz_color(withHex: 0xf6f6f6)
         //        设置标题颜色
         navigation.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        
+        //设置系统导航栏按钮颜色
+        navigation.tintColor = UIColor.orange
     }
 }
 

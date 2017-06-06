@@ -82,11 +82,11 @@ extension HomeViewController {
 // MARK: - 设置界面
 extension HomeViewController {
 
-    override func setupUI() {
-        super.setupUI()
-        
+    override func setupTableView() {
+        super.setupTableView()
         view.backgroundColor = UIColor.cz_random()
         // Do any additional setup after loading the view.
+       
         naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
