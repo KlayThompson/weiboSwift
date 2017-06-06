@@ -1,0 +1,41 @@
+[
+  {
+    "visitorInfo" : {
+      "imageName" : "",
+      "tipMessage" : "关注一些人，回这里看看有什么惊喜"
+    },
+    "className" : "HomeViewController",
+    "title" : "首页",
+    "imageName" : "tabbar_home"
+  },
+  {
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "tipMessage" : "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"
+    },
+    "className" : "MessageViewController",
+    "title" : "消息",
+    "imageName" : "tabbar_message_center"
+  },
+  {
+    "className" : "UIViewController"
+  },
+  {
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "tipMessage" : "登录后，最新、最热微博尽在掌握，不会再与时事潮流擦肩而过"
+    },
+    "className" : "DiscoveryViewController",
+    "title" : "发现",
+    "imageName" : "tabbar_discover"
+  },
+  {
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_profile",
+      "tipMessage" : "登录后，你的微博、相册、个人资料会在这里显示，展示给别人"
+    },
+    "className" : "ProfileViewController",
+    "title" : "我",
+    "imageName" : "tabbar_profile"
+  }
+]

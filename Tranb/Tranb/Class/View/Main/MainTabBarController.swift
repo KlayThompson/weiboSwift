@@ -88,6 +88,11 @@ extension MainTabBarController {
         //测试数据格式是否正确
 //        (dicArray as NSArray).write(toFile: "/Users/klaythompson/Desktop/demo.plist", atomically: true)
         
+        //数组到json序列化
+//        let data = try! JSONSerialization.data(withJSONObject: dicArray, options: [.prettyPrinted])
+//        
+//        (data as NSData).write(toFile: "/Users/kim/Desktop/main.json", atomically: true)
+        
         //创建一个存放viewcontroller的数组
         var vcArray = [UIViewController]()
         
