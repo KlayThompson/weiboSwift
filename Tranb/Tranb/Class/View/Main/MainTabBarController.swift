@@ -68,22 +68,27 @@ extension MainTabBarController {
     ///设置子控制器
     func setupChildViewController() {
         
-        //创建一个存放字典的数组
-        let dicArray:[[String: AnyObject]] = [
-            ["className" : "HomeViewController" as AnyObject , "title" : "首页" as AnyObject, "imageName" : "tabbar_home" as AnyObject,
-             "visitorInfo" : ["imageName" : "", "tipMessage" : "关注一些人，回这里看看有什么惊喜"] as AnyObject
-             ],
-            ["className" : "MessageViewController" as AnyObject, "title" : "消息" as AnyObject, "imageName" : "tabbar_message_center" as AnyObject,
-             "visitorInfo" : ["imageName" : "visitordiscover_image_message", "tipMessage" : "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"] as AnyObject
-            ],
-            ["className" : "UIViewController" as AnyObject],
-            ["className" : "DiscoveryViewController" as AnyObject, "title" : "发现" as AnyObject, "imageName" : "tabbar_discover" as AnyObject,
-             "visitorInfo" : ["imageName" : "visitordiscover_image_message", "tipMessage" : "登录后，最新、最热微博尽在掌握，不会再与时事潮流擦肩而过"] as AnyObject
-            ],
-            ["className" : "ProfileViewController" as AnyObject, "title" : "我" as AnyObject, "imageName" : "tabbar_profile" as AnyObject,
-             "visitorInfo" : ["imageName" : "visitordiscover_image_profile", "tipMessage" : "登录后，你的微博、相册、个人资料会在这里显示，展示给别人"] as AnyObject
-            ],
-        ]
+        //1.获取沙河路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.adminApplicationDirectory, .localDomainMask, true)[0]
+        let jsonPath = (docDir as NSString).appendingPathExtension("main.json")
+        
+        //加载data
+        var data = NSData(contentsOfFile: jsonPath ?? "")
+        
+        //判断data是否存在，不存在则从本地文件获取
+        if data == nil {
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path ?? "")
+        }
+        
+        
+        
+        guard let dicArray = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]] else {
+            return
+        }
+        
+        
+
         
         //测试数据格式是否正确
 //        (dicArray as NSArray).write(toFile: "/Users/klaythompson/Desktop/demo.plist", atomically: true)
@@ -97,7 +102,7 @@ extension MainTabBarController {
         var vcArray = [UIViewController]()
         
         //遍历dicArray
-        for dic in dicArray {
+        for dic in dicArray! {
             vcArray.append(viewController(dictionary: dic))
         }
         

@@ -59,6 +59,18 @@ class BaseViewController: UIViewController {
 
 }
 
+// MARK: - 访客视图登录注册按钮方法
+extension BaseViewController {
+
+    func userLoginButtonPress() {
+        print("用户登录")
+    }
+    
+    func userSignInButtonPress() {
+        print("用户注册")
+    }
+    
+}
 
 // MARK: - 设置界面
 extension BaseViewController {
@@ -79,6 +91,8 @@ extension BaseViewController {
         let visitorView = VisitorView(frame: view.bounds)
         visitorView.visitorInfo = visitorInfo
         view.insertSubview(visitorView, belowSubview: navigation)
+        visitorView.loginButton.addTarget(self, action: #selector(userLoginButtonPress), for: .touchUpInside)
+        visitorView.signInButton.addTarget(self, action: #selector(userSignInButtonPress), for: .touchUpInside)
     }
     
     /// 设置tableView

@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = mainTabBar
         
         window?.makeKeyAndVisible()
+        
+        //加载app信息
+        loadAppInfoFromServer()
+        
+        
         return true
     }
 
@@ -51,5 +56,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+
+// MARK: - 从服务器加载应用配置信息
+extension AppDelegate {
+
+    func loadAppInfoFromServer() {
+        
+        //模拟
+        DispatchQueue.global().async {
+            
+            //1.url
+            let url = Bundle.main.url(forResource: "main.json", withExtension: nil)
+            
+            //2.转换为data
+            let data = NSData(contentsOf: url!)
+            
+            //3.写入磁盘
+            //先获取沙盒路径
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            //拼接路径
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            //写入沙盒
+            data?.write(toFile: jsonPath, atomically: true)
+            
+            print("写入沙盒成功 \(jsonPath)")
+        }
+        
+    }
 }
 
