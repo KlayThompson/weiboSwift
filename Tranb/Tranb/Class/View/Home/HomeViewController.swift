@@ -22,15 +22,10 @@ class HomeViewController: BaseViewController {
     
     override func loadData() {
         
-        print("开始加载数据")
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token" : "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"]
         
-           
-        NetWorkManager.shareManager.requestNetWork(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
-            if isSuccess {
-                print(json ?? "")
-            }
+        NetWorkManager.shareManager.requestTimeLineListData { (statuses, isSuccess) in
+            print(statuses ?? "")
+            //获取到数据，开始数据转模型
         }
         
         //延迟两秒
