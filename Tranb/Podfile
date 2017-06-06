@@ -1,0 +1,24 @@
+
+
+target 'Tranb' do
+
+  use_frameworks!
+
+	pod "AFNetworking"
+pod "SDWebImage"
+pod "YYModel"
+pod "FMDB"
+pod "SVProgressHUD"
+pod "pop"
+
+  target 'TranbTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TranbUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
