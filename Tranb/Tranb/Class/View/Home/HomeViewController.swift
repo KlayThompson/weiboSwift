@@ -26,11 +26,11 @@ class HomeViewController: BaseViewController {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         let params = ["access_token" : "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"]
         
-        
-        NetWorkManager.shareManager.get(urlString, parameters: params, progress: nil, success: { (_, json) in
-            print(json ?? "")
-        }) { (_, error) in
-            print(error)
+           
+        NetWorkManager.shareManager.requestNetWork(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
+            if isSuccess {
+                print(json ?? "")
+            }
         }
         
         //延迟两秒
