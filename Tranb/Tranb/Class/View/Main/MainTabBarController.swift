@@ -18,7 +18,9 @@ class MainTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         setupChildViewController()
         setupComposeButton()
-        
+        NetWorkManager.shareManager.requestUnreadTimeLineCount { (unreadCount) in
+            print(unreadCount)
+        }
     }
 
     

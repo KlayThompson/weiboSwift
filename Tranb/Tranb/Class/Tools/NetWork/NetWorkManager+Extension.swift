@@ -33,4 +33,26 @@ extension NetWorkManager {
             completion(statuses, isSuccess)
         }
     }
+    
+    /// 获取用户未读的微博数量
+    ///
+    /// - Parameter completion: 获取到的未读微博数量
+    func requestUnreadTimeLineCount(completion: @escaping (_ unreadCount: Int)->()) {
+        
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        
+        let params = ["uid" : userId]
+        
+        requestNetWorkWithToken(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
+            
+            print(json ?? "")
+            
+            let dic = json as? [String : AnyObject]
+            
+            let count = dic?["status"] as? Int
+            completion(count ?? 0)
+            
+        }
+        
+    }
 }
