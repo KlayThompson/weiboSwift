@@ -19,11 +19,9 @@ extension NetWorkManager {
     func requestTimeLineListData(completion: @escaping (_ : [[String : AnyObject]]?, _: Bool)->()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token" : "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"]
         
         
-        NetWorkManager.shareManager.requestNetWork(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
-            
+        NetWorkManager.shareManager.requestNetWorkWithToken(url: urlString, params: [:] as [String : AnyObject]) { (json, isSuccess) in
             
             /// 从json中获取statuses数组
             let statuses = json?["statuses"] as? [[String : AnyObject]]

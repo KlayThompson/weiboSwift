@@ -11,6 +11,8 @@
 		3B4338EA1EE6460900D7FA58 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B4338E91EE6460900D7FA58 /* main.json */; };
 		3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */; };
 		3B4338EF1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */; };
+		3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338F41EE7B10200D7FA58 /* TimeLineModel.swift */; };
+		3B4338F71EE7C9BF00D7FA58 /* TimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338F61EE7C9BF00D7FA58 /* TimeLineViewModel.swift */; };
 		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
 		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
 		3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */; };
@@ -18,8 +20,6 @@
 		3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D31EE00D78003F4966 /* MessageViewController.swift */; };
 		3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D51EE00D86003F4966 /* DiscoveryViewController.swift */; };
 		3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */; };
-		3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10D91EE00DA2003F4966 /* ViewModel.swift */; };
-		3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10DB1EE00DAD003F4966 /* Model.swift */; };
 		3B9B10F91EE0122F003F4966 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E21EE0122F003F4966 /* NSArray+Log.m */; };
 		3B9B10FA1EE0122F003F4966 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E41EE0122F003F4966 /* NSAttributedString+CZAdditon.m */; };
 		3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10E61EE0122F003F4966 /* NSObject+CZRuntime.m */; };
@@ -66,6 +66,8 @@
 		3B4338E91EE6460900D7FA58 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetWorkManager+Extension.swift"; sourceTree = "<group>"; };
+		3B4338F41EE7B10200D7FA58 /* TimeLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineModel.swift; sourceTree = "<group>"; };
+		3B4338F61EE7C9BF00D7FA58 /* TimeLineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewModel.swift; sourceTree = "<group>"; };
 		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		3B9B10CF1EE00D53003F4966 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -73,8 +75,6 @@
 		3B9B10D31EE00D78003F4966 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		3B9B10D51EE00D86003F4966 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		3B9B10D91EE00DA2003F4966 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		3B9B10DB1EE00DAD003F4966 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3B9B10E01EE0122F003F4966 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		3B9B10E11EE0122F003F4966 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		3B9B10E21EE0122F003F4966 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		3B9B10C21EE00C44003F4966 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B9B10DB1EE00DAD003F4966 /* Model.swift */,
+				3B4338F41EE7B10200D7FA58 /* TimeLineModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 		3B9B10C91EE00C44003F4966 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3B9B10D91EE00DA2003F4966 /* ViewModel.swift */,
+				3B4338F61EE7C9BF00D7FA58 /* TimeLineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -671,7 +671,6 @@
 			files = (
 				3B9B10FD1EE0122F003F4966 /* NSString+CZHash.m in Sources */,
 				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
-				3B9B10DA1EE00DA2003F4966 /* ViewModel.swift in Sources */,
 				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
 				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
@@ -679,14 +678,15 @@
 				3B9B11111EE16545003F4966 /* VisitorView.swift in Sources */,
 				3B9B11001EE0122F003F4966 /* UIColor+CZAddition.m in Sources */,
 				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
+				3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */,
 				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
-				3B9B10DC1EE00DAD003F4966 /* Model.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
+				3B4338F71EE7C9BF00D7FA58 /* TimeLineViewModel.swift in Sources */,
 				48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,

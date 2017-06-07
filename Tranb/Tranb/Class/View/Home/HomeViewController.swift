@@ -13,7 +13,8 @@ private let cellID = "CellID"
 
 class HomeViewController: BaseViewController {
 
-    lazy var dataList = [String]()
+    /// 动态首页数据视图模型
+    lazy var timeLineViewModel = TimeLineViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +23,7 @@ class HomeViewController: BaseViewController {
     
     override func loadData() {
         
-        
-        NetWorkManager.shareManager.requestTimeLineListData { (statuses, isSuccess) in
-            print(statuses ?? "")
-            //获取到数据，开始数据转模型
-        }
-        
-        //延迟两秒
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 
-            print("加载完成")
-            for index in 0..<20 {
-                
-                if self.isPullUp {
-                    self.dataList.append("💪💪💪💪" + index.description)
-                } else {
-                    self.dataList.insert(index.description, at: 0)
-                }
-                
-            }
+        timeLineViewModel.requestTimeLineData { (isSuccess) in
             
             //结束菊花动画
             self.refreshControl?.endRefreshing()
@@ -50,7 +34,6 @@ class HomeViewController: BaseViewController {
             //更改刷新状态
             self.isPullUp = false
         }
-        
     }
     
     func test() {
@@ -69,14 +52,14 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataList.count
+        return timeLineViewModel.dataList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
-        cell.textLabel?.text = dataList[indexPath.row]
+        cell.textLabel?.text = timeLineViewModel.dataList[indexPath.row].text
         
         return cell
     }

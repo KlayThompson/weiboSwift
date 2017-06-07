@@ -54,6 +54,7 @@ class VisitorView: UIView {
         
         //完成之后不删除
         animation.isRemovedOnCompletion = false
+        animation.isRemovedOnCompletion = false
         iconImageView.layer.add(animation, forKey: nil)
     }
     
