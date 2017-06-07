@@ -23,7 +23,8 @@ class HomeViewController: BaseViewController {
     
     override func loadData() {
         
-        timeLineViewModel.requestTimeLineData { (isSuccess) in
+        //加载动态数据
+        timeLineViewModel.requestTimeLineData(isPullUp: isPullUp) { (isSuccess) in
             
             //结束菊花动画
             self.refreshControl?.endRefreshing()

@@ -20,9 +20,21 @@ class TimeLineViewModel {
     /// 存放动态数据数组
     lazy var dataList = [TimeLineModel]()
     
-    func requestTimeLineData(completion: @escaping (_ isSuccess: Bool) -> ()) {
+    
+    /// 请求Timeline数据，由ViewController调用
+    ///
+    /// - Parameters:
+    ///   - isPullUp: 是否是上拉刷新
+    ///   - completion: 完成后回调
+    func requestTimeLineData(isPullUp: Bool ,completion: @escaping (_ isSuccess: Bool) -> ()) {
         
-        NetWorkManager.shareManager.requestTimeLineListData { (json, isSuccess) in
+        //获取第一个微博since_id
+        let since_id = isPullUp ? 0 : (dataList.first?.id ?? 0)
+        //获取最后一个微博的maxID
+        let max_id = isPullUp ? (dataList.last?.id ?? 0) : 0
+        
+        
+        NetWorkManager.shareManager.requestTimeLineListData(since_id: since_id, max_id: max_id) { (json, isSuccess) in
             
             //字典转模型
             guard let array = NSArray.yy_modelArray(with: TimeLineModel.self, json: json ?? []) as? [TimeLineModel] else {
@@ -31,7 +43,14 @@ class TimeLineViewModel {
                 return
             }
             
-            self.dataList += array
+            print(array.count)
+            if isPullUp {
+                //在数组后面拼接
+                self.dataList += array
+            } else {
+                //重头开始增加数据
+                self.dataList = array + self.dataList
+            }
             
             completion(isSuccess)
         }
