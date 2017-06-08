@@ -24,6 +24,9 @@ class MainTabBarController: UITabBarController {
         setupComposeButton()
         setupTimer()
         delegate = self
+        
+        //接受通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userShouldLogin), name: NSNotification.Name(rawValue: USER_SHOULD_LOGIN), object: nil)
     }
 
     
@@ -34,6 +37,14 @@ class MainTabBarController: UITabBarController {
     
     func composeButtonPress() {
         print("发微博")
+    }
+    
+    func userShouldLogin(notify: Notification) {
+        print("点击了登录按钮 \(notify)")
+        
+        let vc = UINavigationController(rootViewController: UserLoginViewController())
+
+        present(vc, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

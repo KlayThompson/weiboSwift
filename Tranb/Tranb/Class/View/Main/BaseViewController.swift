@@ -60,7 +60,7 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
 
     func userLoginButtonPress() {
-        print("用户登录")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_SHOULD_LOGIN), object: nil)
     }
     
     func userSignInButtonPress() {
