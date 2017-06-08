@@ -44,6 +44,7 @@
 		48869A291EE99F6100C06E89 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A281EE99F6100C06E89 /* VisitorView.swift */; };
 		48869A2D1EE99F6F00C06E89 /* APPInfoDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A2B1EE99F6F00C06E89 /* APPInfoDefine.swift */; };
 		48869A2E1EE99F6F00C06E89 /* NotificationDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A2C1EE99F6F00C06E89 /* NotificationDefine.swift */; };
+		48869A311EE9A13200C06E89 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A301EE9A13200C06E89 /* UserInfoModel.swift */; };
 		A9A8D37FF335FEDEEB329337 /* Pods_Tranb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924D9865C737E206D4161B5A /* Pods_Tranb.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		48869A281EE99F6100C06E89 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		48869A2B1EE99F6F00C06E89 /* APPInfoDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPInfoDefine.swift; sourceTree = "<group>"; };
 		48869A2C1EE99F6F00C06E89 /* NotificationDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDefine.swift; sourceTree = "<group>"; };
+		48869A301EE9A13200C06E89 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		5F600D7EB8CA77DC2F97250E /* Pods-Tranb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tranb.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tranb/Pods-Tranb.release.xcconfig"; sourceTree = "<group>"; };
 		832F89B64A8A1F5D8AA3DE4F /* Pods-TranbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.release.xcconfig"; sourceTree = "<group>"; };
 		8936576E647762D82D905F72 /* Pods-Tranb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tranb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tranb/Pods-Tranb.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		3B4338EB1EE6943E00D7FA58 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				48869A2F1EE9A11200C06E89 /* Model */,
 				3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */,
 				3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */,
 			);
@@ -401,6 +404,14 @@
 				48869A2C1EE99F6F00C06E89 /* NotificationDefine.swift */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		48869A2F1EE9A11200C06E89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48869A301EE9A13200C06E89 /* UserInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		591D402A41878380EC54741C /* Frameworks */ = {
@@ -704,6 +715,7 @@
 				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
 				3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */,
 				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
+				48869A311EE9A13200C06E89 /* UserInfoModel.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,

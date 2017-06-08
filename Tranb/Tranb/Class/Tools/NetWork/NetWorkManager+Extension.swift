@@ -41,7 +41,7 @@ extension NetWorkManager {
         
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
         
-        let params = ["uid" : userId]
+        let params = ["uid" : userInfo.uid]
         
         requestNetWorkWithToken(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
             
@@ -72,6 +72,9 @@ extension NetWorkManager {
         
         requestNetWork(requestMethod: .POST, url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
             print("获取AccessToken -----\(String(describing: json))")
+            
+            //利用YYModel字典转模型
+            self.userInfo.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
         }
     }
 }

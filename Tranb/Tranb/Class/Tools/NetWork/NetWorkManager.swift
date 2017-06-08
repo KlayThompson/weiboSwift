@@ -34,22 +34,19 @@ class NetWorkManager: AFHTTPSessionManager {
     }()
     
     
-    /// access_token 除登录外接口全部需要
-    var accessToken: String? //= "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"
-    
-    /// 用户id
-    var userId: String? = "2704931864"
+    /// 用户信息模型
+    lazy var userInfo = UserInfoModel()
     
     /// 用户登录状态
     var userLogin: Bool {
-        return accessToken != nil
+        return userInfo.access_token != nil
     }
     
     /// 包含token的网络请求直接调用此方法
     func requestNetWorkWithToken(requestMethod: RequestMethod = .GET, url: String, params: [String: AnyObject]?, completion: @escaping (_ resultJson: AnyObject?, _ isSuccess: Bool) -> ()) {
         
         //先判断token是否存在，不存在直接返回
-        if accessToken == nil {
+        if userInfo.access_token == nil {
             print("Token为空，请登录")
             // FIXME: 提示用户登录
             completion(nil, false)
@@ -62,7 +59,7 @@ class NetWorkManager: AFHTTPSessionManager {
         if params == nil {
             params = [String: AnyObject]()
         }
-        params?["access_token"] = accessToken as AnyObject
+        params?["access_token"] = userInfo.access_token as AnyObject
         
         //调用封装的AF方法
         requestNetWork(url: url, params: params, completion: completion)
