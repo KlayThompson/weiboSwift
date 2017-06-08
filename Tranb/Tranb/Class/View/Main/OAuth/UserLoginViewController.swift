@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 class UserLoginViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class UserLoginViewController: UIViewController {
         //        view.backgroundColor = UIColor.white
         title = "登录微博"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .plain, target: self, action: #selector(backButtonPress))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充", style: .plain, target: self, action: #selector(autoFillPWD))
     }
     
     override func viewDidLoad() {
@@ -41,9 +43,58 @@ class UserLoginViewController: UIViewController {
         
         //jiazai
         webView.load(request)
+        
+        webView.navigationDelegate = self
     }
 
     func backButtonPress() {
         dismiss(animated: true, completion: nil)
+        SVProgressHUD.dismiss()
+    }
+    
+    func autoFillPWD() {
+        
+        let js = "document.getElementById('userId').value = 'sunshinenate@sina.com'; " +
+        "document.getElementById('passwd').value = 'fl033690';"
+        
+        webView.evaluateJavaScript(js, completionHandler: nil)
+    }
+}
+
+// MARK: - WKNavigationDelegate
+extension UserLoginViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print(navigationAction.request.url?.absoluteString ?? "")
+        
+        
+        if navigationAction.request.url?.absoluteString.hasPrefix(Redirect_uri) == false {
+            decisionHandler(.allow)
+            return
+        }
+        
+        if navigationAction.request.url?.query?.hasPrefix("code=") == false {
+            print("取消授权")
+            backButtonPress()
+            decisionHandler(.cancel)
+            return
+        }
+        
+        //获取授权码
+        let code = navigationAction.request.url?.query?.substring(from: "code=".endIndex) ?? ""
+        print("获取授权码 ---\(code)")
+        
+        //获取AccessToken
+        NetWorkManager.shareManager.requestAccessToken(code: code)
+        
+        decisionHandler(.cancel)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        SVProgressHUD.show()
     }
 }

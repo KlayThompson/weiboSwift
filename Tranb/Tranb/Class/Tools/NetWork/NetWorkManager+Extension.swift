@@ -56,3 +56,22 @@ extension NetWorkManager {
         
     }
 }
+
+// MARK: - 获取用户AccessToken
+extension NetWorkManager {
+
+    func requestAccessToken(code: String) {
+        
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        let params = ["client_id" : AppKey,
+                      "client_secret" : AppSecret,
+                      "grant_type" : "authorization_code",
+                      "code" : code,
+                      "redirect_uri" : Redirect_uri]
+        
+        requestNetWork(requestMethod: .POST, url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
+            print("获取AccessToken -----\(String(describing: json))")
+        }
+    }
+}

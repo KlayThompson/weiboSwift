@@ -23,7 +23,15 @@ class NetWorkManager: AFHTTPSessionManager {
 
     
     //创建单利
-    static let shareManager = NetWorkManager()
+    static let shareManager:NetWorkManager = {
+    
+        let instance = NetWorkManager()
+        
+        //设置反序列化
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
     
     
     /// access_token 除登录外接口全部需要
