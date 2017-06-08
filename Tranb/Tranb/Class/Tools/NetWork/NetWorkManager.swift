@@ -27,11 +27,15 @@ class NetWorkManager: AFHTTPSessionManager {
     
     
     /// access_token 除登录外接口全部需要
-    var accessToken: String? = "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"
+    var accessToken: String? //= "2.00S2cDxCc2XFVCb8e23fc98e0hJlTN"
     
     /// 用户id
     var userId: String? = "2704931864"
     
+    /// 用户登录状态
+    var userLogin: Bool {
+        return accessToken != nil
+    }
     
     /// 包含token的网络请求直接调用此方法
     func requestNetWorkWithToken(requestMethod: RequestMethod = .GET, url: String, params: [String: AnyObject]?, completion: @escaping (_ resultJson: AnyObject?, _ isSuccess: Bool) -> ()) {

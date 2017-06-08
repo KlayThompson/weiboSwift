@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,8 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //加载app信息
         loadAppInfoFromServer()
         
-        
+        //注册通知
+        registeUserNotificationSetting(application)
         return true
+    }
+    
+    /// 注册用户通知
+    func registeUserNotificationSetting(_ application: UIApplication) {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.carPlay, .sound, .badge, .alert]) { (success, error) in
+                print("授权---"+(success ? "成功" : "\(String(describing: error))"))
+            }
+        } else {
+            // Fallback on earlier versions
+            let settings = UIUserNotificationSettings(types: [.sound, .badge, .alert], categories: nil)
+            
+            application.registerUserNotificationSettings(settings)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

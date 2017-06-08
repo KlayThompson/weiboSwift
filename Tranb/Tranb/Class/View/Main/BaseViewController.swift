@@ -9,10 +9,6 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    
-    /// 用户登录状态
-    lazy var userLogin = true
     
     /// navigationBar
     lazy var navigation = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
@@ -38,7 +34,8 @@ class BaseViewController: UIViewController {
 
         setupUI()
         
-        loadData()
+        //用户登录后再进行刷新TimeLine数据
+        NetWorkManager.shareManager.userLogin ? loadData() : ()
     }
 
     
@@ -80,7 +77,7 @@ extension BaseViewController {
         
         setupNavigationBar()
         
-        userLogin ? setupTableView() : setupVisitorView()
+        NetWorkManager.shareManager.userLogin ? setupTableView() : setupVisitorView()
         
         automaticallyAdjustsScrollViewInsets = false
     }
