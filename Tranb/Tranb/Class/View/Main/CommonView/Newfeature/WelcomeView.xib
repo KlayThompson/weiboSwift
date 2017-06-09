@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WelcomeView" customModule="Tranb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="Z7M-zg-cpk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Kf-6Nr">
+                    <rect key="frame" x="145" y="422" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="Aic-qq-YA8"/>
+                        <constraint firstAttribute="width" constant="85" id="PB7-cQ-K5Z"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVk-Kd-8r1">
+                    <rect key="frame" x="152.5" y="524" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IVk-Kd-8r1" firstAttribute="centerX" secondItem="XPM-Kf-6Nr" secondAttribute="centerX" id="Ee6-cC-soE"/>
+                <constraint firstAttribute="bottom" secondItem="Z7M-zg-cpk" secondAttribute="bottom" id="RYS-zs-1dd"/>
+                <constraint firstAttribute="bottom" secondItem="XPM-Kf-6Nr" secondAttribute="bottom" constant="160" id="TyP-9i-UJY"/>
+                <constraint firstItem="IVk-Kd-8r1" firstAttribute="top" secondItem="XPM-Kf-6Nr" secondAttribute="bottom" constant="17" id="V5Q-2d-Trg"/>
+                <constraint firstItem="Z7M-zg-cpk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WS0-z6-raZ"/>
+                <constraint firstAttribute="trailing" secondItem="Z7M-zg-cpk" secondAttribute="trailing" id="hTO-s4-1h9"/>
+                <constraint firstItem="XPM-Kf-6Nr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oor-z9-65F"/>
+                <constraint firstItem="Z7M-zg-cpk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zEd-MI-ios"/>
+            </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="TyP-9i-UJY" id="EYt-Ty-A95"/>
+                <outlet property="headImageView" destination="XPM-Kf-6Nr" id="Rfd-36-IGU"/>
+                <outlet property="tipLabel" destination="IVk-Kd-8r1" id="6HY-06-aBK"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>

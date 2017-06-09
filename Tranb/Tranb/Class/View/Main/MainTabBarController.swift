@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
         setupChildViewController()
         setupComposeButton()
         setupTimer()
+        setupNewFeatureView()
         delegate = self
         
         //接受通知
@@ -68,6 +69,42 @@ class MainTabBarController: UITabBarController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+}
+
+// MARK: - 设置升级欢迎界面
+extension MainTabBarController {
+
+    func setupNewFeatureView() {
+        
+        //判断是否登录
+        if !NetWorkManager.shareManager.userLogin {
+            return
+        }
+        
+        //判断是升级界面还是欢迎界面
+        
+        //显示视图
+        let newView = isNewFeature ? NewFeatureView() : WelcomeView.welcomeView()
+        
+        //添加视图
+        view.addSubview(newView)
+    }
+    
+    //定义一个计算型属性，不可以添加属性
+    var isNewFeature: Bool {
+    //去当前版本号
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        
+        //取沙盒版本号
+        let path: String = ("version" as NSString).cz_appendDocumentDir()
+        let sandBoxVersion = try? String(contentsOfFile: path)
+        
+        //将当前版本号保存到沙盒
+        _ = try? version.write(toFile: path, atomically: true, encoding: .utf8)
+        //进行对比
+        return version != sandBoxVersion
+    }
+    
 }
 
 // MARK: - UITabBarControllerDelegate
