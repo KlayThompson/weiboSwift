@@ -48,7 +48,7 @@ class NetWorkManager: AFHTTPSessionManager {
         //先判断token是否存在，不存在直接返回
         if userInfo.access_token == nil {
             print("Token为空，请登录")
-            // FIXME: 提示用户登录
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_SHOULD_LOGIN), object: nil)
             completion(nil, false)
             return
         }
@@ -86,8 +86,9 @@ class NetWorkManager: AFHTTPSessionManager {
             
             //如果token失效，403，则提示用户重新登录
             if (dataTask?.response as? HTTPURLResponse)?.statusCode == 403 {
-                // FIXME: 提示用户登录
+                
                 print("Token失效。提示用户重新登录")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_SHOULD_LOGIN), object: "BAD TOKEN")
             }
             
             print("网络请求错误-----\(error)")

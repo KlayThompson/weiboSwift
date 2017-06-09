@@ -41,7 +41,11 @@ extension NetWorkManager {
         
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
         
-        let params = ["uid" : userInfo.uid]
+        guard let uid = userInfo.uid else {
+            return
+        }
+        
+        let params = ["uid" : uid]
         
         requestNetWorkWithToken(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
             
@@ -52,6 +56,27 @@ extension NetWorkManager {
             let count = dic?["status"] as? Int
             completion(count ?? 0)
             
+        }
+        
+    }
+}
+
+// MARK: - 获取用户信息
+extension NetWorkManager {
+    
+    func requestUserInfo(completion: @escaping (_ dict: [String : AnyObject])->()) {
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        guard let uid = userInfo.uid else {
+            return
+        }
+        let params = ["uid" : uid]
+        
+        requestNetWorkWithToken(url: urlString, params: params as [String : AnyObject]) { (json, isSuccess) in
+            
+            print(json ?? "")
+            completion((json as? [String : AnyObject]) ?? [:])
         }
         
     }
@@ -76,9 +101,18 @@ extension NetWorkManager {
             //利用YYModel字典转模型
             self.userInfo.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
             print(self.userInfo)
-            self.userInfo.saveUserInfoToLocalFile()
             
-            completion(isSuccess)
+            //登录成功之后立即获取用户信息
+            self.requestUserInfo(completion: { (dic) in
+                
+                //更新用户模型信息
+                self.userInfo.yy_modelSet(with: dic)
+                
+                self.userInfo.saveUserInfoToLocalFile()
+                //等待所有用户信息成功获取后在进行回调
+                completion(isSuccess)
+            })
+            
         }
     }
 }

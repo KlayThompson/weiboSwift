@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MainTabBarController: UITabBarController {
 
@@ -42,9 +43,20 @@ class MainTabBarController: UITabBarController {
     func userShouldLogin(notify: Notification) {
         print("点击了登录按钮 \(notify)")
         
-        let vc = UINavigationController(rootViewController: UserLoginViewController())
-
-        present(vc, animated: true, completion: nil)
+        var then = DispatchTime.now()
+        
+        if (notify.object as? NSString)?.isEqual(to: "BAD TOKEN") == true {
+            
+            SVProgressHUD.showInfo(withStatus: "登录失效，请重新登录")
+            
+            then = DispatchTime.now() + 2
+        }
+        DispatchQueue.main.asyncAfter(deadline: then) { 
+            
+            let vc = UINavigationController(rootViewController: UserLoginViewController())
+            
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

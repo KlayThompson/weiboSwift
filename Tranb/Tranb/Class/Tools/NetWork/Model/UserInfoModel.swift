@@ -29,6 +29,12 @@ class UserInfoModel: NSObject {
     /// 将TimeInterval转换为Date
     var expiresDate: Date?
     
+    /// 用户高清头像
+    var avatar_hd: String?
+    
+    /// 用户名
+    var screen_name: String?
+    
     override init() {
         super.init()
         
@@ -40,7 +46,7 @@ class UserInfoModel: NSObject {
         }
        
         //将字典给模型赋值
-//        self.yy_modelSet(with: dic ?? [:])
+        self.yy_modelSet(with: dic ?? [:])
         
         //测试数据
         //expiresDate = Date(timeIntervalSinceNow: -3600 * 24)

@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationTitle()
     }
     
     override func loadData() {
@@ -44,6 +45,11 @@ class HomeViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func navigationTitlePress(button: UIButton) {
+        
+        button.isSelected = !button.isSelected
     }
 
 }
@@ -77,6 +83,17 @@ extension HomeViewController {
        
         naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+    }
+    
+    func setupNavigationTitle() {
+        
+        let button: UIButton = UIButton.cz_textButton("地瓜培养基", fontSize: 18, normalColor: UIColor.darkGray, highlightedColor: UIColor.gray)
+        
+        button.setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
+        button.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
+        button.addTarget(self, action: #selector(navigationTitlePress), for: .touchUpInside)
+        
+        naviItem.titleView = button
     }
 }
 

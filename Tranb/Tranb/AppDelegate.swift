@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import SVProgressHUD
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,24 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //加载app信息
         loadAppInfoFromServer()
         
-        //注册通知
-        registeUserNotificationSetting(application)
+        //设置一些额外信息
+        setupAdditions(application)
         return true
-    }
-    
-    /// 注册用户通知
-    func registeUserNotificationSetting(_ application: UIApplication) {
-        
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.carPlay, .sound, .badge, .alert]) { (success, error) in
-                print("授权---"+(success ? "成功" : "\(String(describing: error))"))
-            }
-        } else {
-            // Fallback on earlier versions
-            let settings = UIUserNotificationSettings(types: [.sound, .badge, .alert], categories: nil)
-            
-            application.registerUserNotificationSettings(settings)
-        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -75,6 +62,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+
+    func setupAdditions(_ application: UIApplication) {
+        
+        SVProgressHUD.setMinimumDismissTimeInterval(1.8)
+        
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        
+        registeUserNotificationSetting(application)
+    }
+    
+    /// 注册用户通知
+    func registeUserNotificationSetting(_ application: UIApplication) {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.carPlay, .sound, .badge, .alert]) { (success, error) in
+                print("授权---"+(success ? "成功" : "\(String(describing: error))"))
+            }
+        } else {
+            // Fallback on earlier versions
+            let settings = UIUserNotificationSettings(types: [.sound, .badge, .alert], categories: nil)
+            
+            application.registerUserNotificationSettings(settings)
+        }
+    }
+    
+}
 
 // MARK: - 从服务器加载应用配置信息
 extension AppDelegate {
