@@ -60,7 +60,7 @@ extension NetWorkManager {
 // MARK: - 获取用户AccessToken
 extension NetWorkManager {
 
-    func requestAccessToken(code: String) {
+    func requestAccessToken(code: String, completion: @escaping (_ isSucces: Bool)->()) {
         
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
@@ -75,6 +75,10 @@ extension NetWorkManager {
             
             //利用YYModel字典转模型
             self.userInfo.yy_modelSet(with: (json as? [String : AnyObject]) ?? [:])
+            print(self.userInfo)
+            self.userInfo.saveUserInfoToLocalFile()
+            
+            completion(isSuccess)
         }
     }
 }

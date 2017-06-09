@@ -85,7 +85,14 @@ extension UserLoginViewController: WKNavigationDelegate {
         print("获取授权码 ---\(code)")
         
         //获取AccessToken
-        NetWorkManager.shareManager.requestAccessToken(code: code)
+        NetWorkManager.shareManager.requestAccessToken(code: code) { (isSuccess) in
+            
+            if isSuccess {
+                SVProgressHUD.showInfo(withStatus: "登录成功")
+            } else {
+                SVProgressHUD.showInfo(withStatus: "网络错误")
+            }
+        }
         
         decisionHandler(.cancel)
     }
