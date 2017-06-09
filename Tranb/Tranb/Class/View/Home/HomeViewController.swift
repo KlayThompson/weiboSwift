@@ -87,12 +87,14 @@ extension HomeViewController {
     
     func setupNavigationTitle() {
         
-        let button: UIButton = UIButton.cz_textButton("地瓜培养基", fontSize: 18, normalColor: UIColor.darkGray, highlightedColor: UIColor.gray)
+        let userTitle = NetWorkManager.shareManager.userInfo.screen_name
         
-        button.setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
-        button.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
+        
+        let button = HomeTitleButton(title: userTitle)
+        
         button.addTarget(self, action: #selector(navigationTitlePress), for: .touchUpInside)
-        
+
+       
         naviItem.titleView = button
     }
 }
