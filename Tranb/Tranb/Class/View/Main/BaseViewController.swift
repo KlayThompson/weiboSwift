@@ -28,6 +28,13 @@ class BaseViewController: UIViewController {
     
     lazy var isPullUp = false
     
+    /// 重写title 的 didSet 方法
+    override var title: String? {
+        
+        didSet {
+            naviItem.title = title
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +43,9 @@ class BaseViewController: UIViewController {
         
         //用户登录后再进行刷新TimeLine数据
         NetWorkManager.shareManager.userLogin ? loadData() : ()
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: USER_LOGIN_SUCCESS), object: nil)
     }
 
     
@@ -46,14 +56,23 @@ class BaseViewController: UIViewController {
         refreshControl?.endRefreshing()
     }
     
-    /// 重写title 的 didSet 方法
-    override var title: String? {
+    func loginSuccess(notify: Notification) {
         
-        didSet {
-            naviItem.title = title
-        }
+        print("登录成功\(notify)")
+        //设置导航栏
+        naviItem.leftBarButtonItem = nil
+        naviItem.rightBarButtonItem = nil
+        
+        //利用生命周期
+        view = nil
+        
+        //因为调用viewDidLoad，会再次注册通知，需要移除
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: USER_LOGIN_SUCCESS), object: nil)
     }
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: - 访客视图登录注册按钮方法
@@ -104,6 +123,7 @@ extension BaseViewController {
         tableView?.dataSource = self
         view.insertSubview(tableView!, belowSubview: navigation)
         tableView?.contentInset = UIEdgeInsets(top: navigation.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
         
         //初始化refreshControl
         refreshControl = UIRefreshControl()

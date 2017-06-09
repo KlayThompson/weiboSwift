@@ -40,7 +40,7 @@ class UserInfoModel: NSObject {
         }
        
         //将字典给模型赋值
-        self.yy_modelSet(with: dic ?? [:])
+//        self.yy_modelSet(with: dic ?? [:])
         
         //测试数据
         //expiresDate = Date(timeIntervalSinceNow: -3600 * 24)

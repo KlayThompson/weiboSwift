@@ -88,6 +88,11 @@ extension UserLoginViewController: WKNavigationDelegate {
         NetWorkManager.shareManager.requestAccessToken(code: code) { (isSuccess) in
             
             if isSuccess {
+                //发送通知，登录成功
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_LOGIN_SUCCESS), object: nil)
+                
+                //关闭此界面
+                self.backButtonPress()
                 SVProgressHUD.showInfo(withStatus: "登录成功")
             } else {
                 SVProgressHUD.showInfo(withStatus: "网络错误")
