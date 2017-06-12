@@ -82,7 +82,8 @@ extension HomeViewController {
         // Do any additional setup after loading the view.
        
         naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        tableView?.register(UINib(nibName: "TimeLineNormalCell", bundle: nil), forCellReuseIdentifier: cellID)
     }
     
     func setupNavigationTitle() {
