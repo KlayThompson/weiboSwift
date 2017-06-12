@@ -64,9 +64,9 @@ extension HomeViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TimeLineCell
         
-        cell.textLabel?.text = timeLineViewModel.dataList[indexPath.row].text
+        cell.timeLineTextLabel.text = timeLineViewModel.dataList[indexPath.row].text
         
         return cell
     }
@@ -84,6 +84,11 @@ extension HomeViewController {
         naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
         
         tableView?.register(UINib(nibName: "TimeLineNormalCell", bundle: nil), forCellReuseIdentifier: cellID)
+        
+        //设置属性
+        tableView?.estimatedRowHeight = 300
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.separatorStyle = .none
     }
     
     func setupNavigationTitle() {
