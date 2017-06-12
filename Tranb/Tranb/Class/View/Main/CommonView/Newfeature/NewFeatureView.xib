@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewFeatureView" customModule="Tranb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTZ-B7-GuO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze3-W0-PyS">
+                    <rect key="frame" x="134.5" y="506" width="105" height="36"/>
+                    <state key="normal" title="进入微博" backgroundImage="new_feature_finish_button"/>
+                    <connections>
+                        <action selector="enterButttonPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="DyR-hq-HLG"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="ryp-47-Rsa">
+                    <rect key="frame" x="160" y="550" width="55" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UTZ-B7-GuO" secondAttribute="trailing" id="2mp-i7-ykq"/>
+                <constraint firstItem="UTZ-B7-GuO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GkQ-yK-NvK"/>
+                <constraint firstItem="ryp-47-Rsa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hwb-g5-dau"/>
+                <constraint firstAttribute="bottom" secondItem="UTZ-B7-GuO" secondAttribute="bottom" id="V90-HY-bmS"/>
+                <constraint firstAttribute="bottom" secondItem="Ze3-W0-PyS" secondAttribute="bottom" constant="125" id="bAR-sq-dVb"/>
+                <constraint firstItem="UTZ-B7-GuO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ebF-3A-NcC"/>
+                <constraint firstItem="ryp-47-Rsa" firstAttribute="top" secondItem="Ze3-W0-PyS" secondAttribute="bottom" constant="8" id="oMg-AK-hRj"/>
+                <constraint firstItem="Ze3-W0-PyS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rc1-qR-JCO"/>
+            </constraints>
+            <connections>
+                <outlet property="enterButton" destination="Ze3-W0-PyS" id="FAX-4a-1YO"/>
+                <outlet property="pageControl" destination="ryp-47-Rsa" id="m5Y-fH-vFm"/>
+                <outlet property="scrollView" destination="UTZ-B7-GuO" id="noU-f3-jSr"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_feature_finish_button" width="105" height="36"/>
+    </resources>
+</document>

@@ -61,8 +61,10 @@ class WelcomeView: UIView {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: { 
             self.layoutIfNeeded()
         }) { (_) in
-            UIView.animate(withDuration: 0.5, animations: { 
+            UIView.animate(withDuration: 1, animations: {
                 self.tipLabel.alpha = 1
+            }, completion: { (_) in
+                self.removeFromSuperview()
             })
         }
     }

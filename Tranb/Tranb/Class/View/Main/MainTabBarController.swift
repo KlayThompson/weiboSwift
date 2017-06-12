@@ -84,7 +84,7 @@ extension MainTabBarController {
         //判断是升级界面还是欢迎界面
         
         //显示视图
-        let newView = isNewFeature ? NewFeatureView() : WelcomeView.welcomeView()
+        let newView = isNewFeature ? NewFeatureView.newFeatureView() : WelcomeView.welcomeView()
         
         //添加视图
         view.addSubview(newView)
