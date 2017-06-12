@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 /// 欢迎界面
 class WelcomeView: UIView {
@@ -27,6 +27,23 @@ class WelcomeView: UIView {
         v.frame = UIScreen.main.bounds
         
         return v
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        //获取头像字符串，可选的需要守护
+        guard let urlString = NetWorkManager.shareManager.userInfo.avatar_hd,
+        let url = URL(string: urlString) else {
+        
+            return
+        }
+        
+        headImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "avatar_default_big"))
+        
+        
+        
+        
     }
     
     /// 视图添加到WIdow上面，表示视图已经显示
