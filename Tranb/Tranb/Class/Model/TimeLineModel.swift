@@ -18,6 +18,10 @@ class TimeLineModel: NSObject {
     /// 微博内容
     var text: String?
     
+    /// 用户信息模型
+    var user: UserInfoUnit?
+    
+    
     override var description: String {
         return yy_modelDescription()
     }

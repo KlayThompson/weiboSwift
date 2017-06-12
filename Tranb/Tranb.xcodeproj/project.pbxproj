@@ -43,6 +43,8 @@
 		3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */; };
 		3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110C1EE13447003F4966 /* NewViewController.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
+		48181E7D1EEEE0B000139EBE /* UserInfoUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48181E7C1EEEE0B000139EBE /* UserInfoUnit.swift */; };
+		48181E7F1EEEE5C700139EBE /* SingleTimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */; };
 		488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F51EDFE4B600C06E89 /* AppDelegate.swift */; };
 		488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488699FC1EDFE4B600C06E89 /* Assets.xcassets */; };
 		48869A0B1EDFE4B600C06E89 /* TranbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869A0A1EDFE4B600C06E89 /* TranbTests.swift */; };
@@ -123,6 +125,8 @@
 		3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		3B9B110C1EE13447003F4966 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		48181E7C1EEEE0B000139EBE /* UserInfoUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoUnit.swift; sourceTree = "<group>"; };
+		48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTimeLineViewModel.swift; sourceTree = "<group>"; };
 		488699F21EDFE4B600C06E89 /* Tranb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488699F51EDFE4B600C06E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488699FC1EDFE4B600C06E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4338F41EE7B10200D7FA58 /* TimeLineModel.swift */,
+				48181E7C1EEEE0B000139EBE /* UserInfoUnit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4338F61EE7C9BF00D7FA58 /* TimeLineViewModel.swift */,
+				48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B9B10FD1EE0122F003F4966 /* NSString+CZHash.m in Sources */,
+				48181E7D1EEEE0B000139EBE /* UserInfoUnit.swift in Sources */,
 				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
 				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
@@ -783,6 +790,7 @@
 				3B4338FF1EE9260500D7FA58 /* UserLoginViewController.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,
 				3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */,
+				48181E7F1EEEE5C700139EBE /* SingleTimeLineViewModel.swift in Sources */,
 				3B4338EF1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift in Sources */,
 				3B9B10F91EE0122F003F4966 /* NSArray+Log.m in Sources */,
 				3B9B10FA1EE0122F003F4966 /* NSAttributedString+CZAdditon.m in Sources */,
