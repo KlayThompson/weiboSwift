@@ -127,6 +127,10 @@ extension MainTabBarController: UITabBarControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                 vc.loadData()
             })
+            
+            //清除tabbaricon的气泡
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         
         //如果是UIviewcontroller则不切换，防止发微博按钮出问题
@@ -141,7 +145,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
 extension MainTabBarController {
 
     func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(loadUnreadTimeLineCountFromServer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 18.0, target: self, selector: #selector(loadUnreadTimeLineCountFromServer), userInfo: nil, repeats: true)
     }
     
     func loadUnreadTimeLineCountFromServer() {

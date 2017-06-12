@@ -96,6 +96,18 @@ class NetWorkManager: AFHTTPSessionManager {
 
         if requestMethod == .GET {
             get(url, parameters: params, progress: nil, success: success, failure: failure)
+            guard let params = params else {
+                print("接口URL ----:\(url)")
+                return
+            }
+            var paramsString = "?"
+            
+            for (key,value) in params {
+                paramsString = paramsString + "\(key)=\(value)&"
+            }
+            paramsString.remove(at: paramsString.index(before: paramsString.endIndex))
+            paramsString = url + paramsString
+            print("接口URL ----:\(paramsString)")
         } else {
             post(url, parameters: params, progress:nil, success: success, failure: failure)
         }
