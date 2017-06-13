@@ -32,6 +32,20 @@ class TimeLineCell: UITableViewCell {
     /// 微博正文
     @IBOutlet weak var timeLineTextLabel: UILabel!
     
+    var viewModel: SingleTimeLineViewModel? {
+        didSet {
+            //微博内容
+            timeLineTextLabel.text = viewModel?.timeLineModel.text
+            //用户名
+            nameLabel.text = viewModel?.timeLineModel.user?.screen_name
+            //会员标识
+            memberIconView.image = viewModel?.memberImage
+            //认证图标
+            avatarIdentifyImageView.image = viewModel?.avatarIdentifyImage
+            //用户头像
+            avatarImageView.setImage(urlString: viewModel?.timeLineModel.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"))
+        }
+    }
     
     
     

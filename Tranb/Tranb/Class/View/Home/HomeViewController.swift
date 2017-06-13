@@ -65,9 +65,8 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TimeLineCell
-        
-        cell.timeLineTextLabel.text = timeLineViewModel.dataList[indexPath.row].text
-        
+        let singleTimeLineViewModel = timeLineViewModel.dataList[indexPath.row]
+       cell.viewModel = singleTimeLineViewModel
         return cell
     }
 }

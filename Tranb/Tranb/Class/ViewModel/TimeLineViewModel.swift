@@ -20,7 +20,7 @@ private let pullupMaxCount = 3
 class TimeLineViewModel {
     
     /// 存放动态数据数组
-    lazy var dataList = [TimeLineModel]()
+    lazy var dataList = [SingleTimeLineViewModel]()
     
     /// 上啦刷新没有数据次数
     var pullupNoDataCount = 0
@@ -41,19 +41,46 @@ class TimeLineViewModel {
         
         
         //获取第一个微博since_id
-        let since_id = isPullUp ? 0 : (dataList.first?.id ?? 0)
+        let since_id = isPullUp ? 0 : (dataList.first?.timeLineModel.id ?? 0)
         //获取最后一个微博的maxID
-        let max_id = isPullUp ? (dataList.last?.id ?? 0) : 0
+        let max_id = isPullUp ? (dataList.last?.timeLineModel.id ?? 0) : 0
         
         
         NetWorkManager.shareManager.requestTimeLineListData(since_id: since_id, max_id: max_id) { (json, isSuccess) in
             
-            //字典转模型
-            guard let array = NSArray.yy_modelArray(with: TimeLineModel.self, json: json ?? []) as? [TimeLineModel] else {
-                
+            
+            if !isSuccess {
                 completion(isSuccess)
                 return
             }
+            
+            var array = [SingleTimeLineViewModel]()
+            
+            //遍历数组（数组中是字典）
+            for dic in json ?? [] {
+                
+                //创建微博模型
+                let model = TimeLineModel()
+                
+                //设置模型值
+                model.yy_modelSet(with: dic)
+                
+                //使用微博模型 创建微博视图模型
+                let viewModel = SingleTimeLineViewModel(model: model)
+                
+                //添加到数组
+                array.append(viewModel)
+                
+            }
+            
+            
+            
+//            //字典转模型
+//            guard let array = NSArray.yy_modelArray(with: TimeLineModel.self, json: json ?? []) as? [TimeLineModel] else {
+//                
+//                completion(isSuccess)
+//                return
+//            }
             print(json ?? "")
             print(array.count)
             if isPullUp {
