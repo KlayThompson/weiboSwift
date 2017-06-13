@@ -21,6 +21,15 @@ class TimeLineModel: NSObject {
     /// 用户信息模型
     var user: UserInfoUnit?
     
+    /// 转发数
+    var reposts_count: Int = 0
+    
+    /// 评论数
+    var comments_count: Int = 0
+    
+    /// 点赞数
+    var attitudes_count: Int = 0
+    
     
     override var description: String {
         return yy_modelDescription()

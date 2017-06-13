@@ -19,6 +19,17 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     //头像右下角标识icon  认证类型：-1 没有认证，0认证用户，2，3，5企业认证， 220达人
     var avatarIdentifyImage: UIImage?
     
+    /// 转发
+    var retweetStr: String?
+    
+    /// 评论
+    var commentStr: String?
+    
+    /// 点赞
+    var likeStr: String?
+    
+    
+    
     /// 返回单个微博的视图模型
     ///
     /// - Parameter model: TimeLineModel
@@ -46,6 +57,31 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         default:
             break
         }
+        
+        //底部toolbar
+        retweetStr = countString(count: model.reposts_count, defaultString: "转发")
+        commentStr = countString(count: model.comments_count, defaultString: "评论")
+        likeStr = countString(count: model.attitudes_count, defaultString: "赞")
+    }
+    
+    
+    /// 根据count数目返回toolbar底部显示数字或者文字
+    ///
+    /// - Parameters:
+    ///   - count: 数量
+    ///   - defaultString: 默认文字：转发、评论、赞
+    /// - Returns: 显示出的文字
+    func countString(count: Int, defaultString: String) -> String {
+        
+        if count == 0 {
+            return defaultString
+        }
+        
+        if count < 10000 {
+            return count.description
+        }
+        
+        return String(format: "%0.2f", Double(count)/10000)
     }
     
     var description: String {

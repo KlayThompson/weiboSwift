@@ -32,6 +32,10 @@ class TimeLineCell: UITableViewCell {
     /// 微博正文
     @IBOutlet weak var timeLineTextLabel: UILabel!
     
+    /// 底部工具栏
+    @IBOutlet weak var toolBar: TimeLineToolBarView!
+    
+    
     var viewModel: SingleTimeLineViewModel? {
         didSet {
             //微博内容
@@ -44,6 +48,8 @@ class TimeLineCell: UITableViewCell {
             avatarIdentifyImageView.image = viewModel?.avatarIdentifyImage
             //用户头像
             avatarImageView.setImage(urlString: viewModel?.timeLineModel.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
+            //底部工具栏
+            toolBar.viewModel = viewModel
         }
     }
     
