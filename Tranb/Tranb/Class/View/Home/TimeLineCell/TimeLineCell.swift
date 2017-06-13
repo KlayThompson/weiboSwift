@@ -53,7 +53,7 @@ class TimeLineCell: UITableViewCell {
             //底部工具栏
             toolBar.viewModel = viewModel
             //微博配图
-//            pictureView.heightCons.constant = 0
+            pictureView.heightCons.constant = viewModel?.pictureSize.height ?? 0
             
         }
     }

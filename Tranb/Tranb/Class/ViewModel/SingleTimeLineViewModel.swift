@@ -28,6 +28,9 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     /// 点赞
     var likeStr: String?
     
+    /// 微博配图尺寸
+    var pictureSize = CGSize()
+    
     
     
     /// 返回单个微博的视图模型
@@ -62,8 +65,20 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         retweetStr = countString(count: model.reposts_count, defaultString: "转发")
         commentStr = countString(count: model.comments_count, defaultString: "评论")
         likeStr = countString(count: model.attitudes_count, defaultString: "赞")
+        
+        //微博配图尺寸计算
+        pictureSize = calulatorPictureSize(imageCount: model.pic_urls?.count)
     }
     
+    /// 计算微博配图视图整体的尺寸
+    ///
+    /// - Parameter imageCount: 微博配图的数量
+    /// - Returns: return 微博配图视图整体的尺寸
+    func calulatorPictureSize(imageCount: Int?) -> CGSize {
+        
+        
+        return CGSize(width: 200, height: 304)
+    }
     
     /// 根据count数目返回toolbar底部显示数字或者文字
     ///

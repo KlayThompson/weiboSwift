@@ -30,8 +30,17 @@ class TimeLineModel: NSObject {
     /// 点赞数
     var attitudes_count: Int = 0
     
+    /// 微博配图模型
+    var pic_urls: [TimeLinePictureUnit]?
+    
     
     override var description: String {
         return yy_modelDescription()
+    }
+    
+    
+    class func modelContainerPropertyGenericClass() -> [String: AnyClass] {
+        
+        return ["pic_urls" : TimeLinePictureUnit.self]
     }
 }
