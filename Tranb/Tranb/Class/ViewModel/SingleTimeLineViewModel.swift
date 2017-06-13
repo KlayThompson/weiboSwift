@@ -81,7 +81,7 @@ class SingleTimeLineViewModel: CustomStringConvertible {
             return count.description
         }
         
-        return String(format: "%0.2f", Double(count)/10000)
+        return String(format: "%0.02f 万", Double(count)/10000)
     }
     
     var description: String {

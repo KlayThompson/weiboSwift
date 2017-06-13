@@ -35,6 +35,8 @@ class TimeLineCell: UITableViewCell {
     /// 底部工具栏
     @IBOutlet weak var toolBar: TimeLineToolBarView!
     
+    /// 微博配图
+    @IBOutlet weak var pictureView: TimeLinePictureView!
     
     var viewModel: SingleTimeLineViewModel? {
         didSet {
@@ -50,6 +52,9 @@ class TimeLineCell: UITableViewCell {
             avatarImageView.setImage(urlString: viewModel?.timeLineModel.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
             //底部工具栏
             toolBar.viewModel = viewModel
+            //微博配图
+//            pictureView.heightCons.constant = 0
+            
         }
     }
     
