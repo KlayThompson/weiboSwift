@@ -10,7 +10,13 @@ import SDWebImage
 
 extension UIImageView {
 
-    func setImage(urlString: String?, placeholderImage: UIImage?) {
+    /// 隔离设置加载网络图片
+    ///
+    /// - Parameters:
+    ///   - urlString: urlString
+    ///   - placeholderImage: placeholderImage
+    ///   - isAvatar: 是否是头像
+    func setImage(urlString: String?, placeholderImage: UIImage?, isAvatar: Bool = false) {
         
         //URL
         guard let urlString = urlString,
@@ -21,10 +27,11 @@ extension UIImageView {
                 return
         }
         
-        
-        
-        sd_setImage(with: url, placeholderImage: placeholderImage, options: []) { (image, _, _, _) in
-            
+        sd_setImage(with: url, placeholderImage: placeholderImage, options: []) { [weak self] (image, _, _, _) in
+            //如果是头像，进行剪裁呈圆形
+            if isAvatar {
+                self?.image = image?.cz_avatarImage(size: self?.bounds.size, backColor: UIColor.white, lineColor: UIColor.lightGray)
+            }
         }
     }
 }

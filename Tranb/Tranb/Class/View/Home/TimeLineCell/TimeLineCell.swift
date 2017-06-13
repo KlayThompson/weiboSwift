@@ -43,7 +43,7 @@ class TimeLineCell: UITableViewCell {
             //认证图标
             avatarIdentifyImageView.image = viewModel?.avatarIdentifyImage
             //用户头像
-            avatarImageView.setImage(urlString: viewModel?.timeLineModel.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"))
+            avatarImageView.setImage(urlString: viewModel?.timeLineModel.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
         }
     }
     
