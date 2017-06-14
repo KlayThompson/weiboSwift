@@ -14,6 +14,7 @@ class TimeLinePictureUnit: NSObject {
     /// 微博配图
     var thumbnail_pic: String?
     
+    
     override var description: String {
         return yy_modelDescription()
     }

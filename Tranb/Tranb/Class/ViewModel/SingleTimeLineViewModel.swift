@@ -68,6 +68,7 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         
         //微博配图尺寸计算
         pictureSize = calulatorPictureSize(imageCount: model.pic_urls?.count)
+        
     }
     
     /// 计算微博配图视图整体的尺寸
@@ -76,8 +77,19 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     /// - Returns: return 微博配图视图整体的尺寸
     func calulatorPictureSize(imageCount: Int?) -> CGSize {
         
+        //如果不存在count或者count为0则返回空
+        if imageCount == 0 || imageCount == nil {
+            return CGSize()
+        }
+    
+        //计算高度
+        //行数
+        let row = (imageCount! - 1)/3 + 1
         
-        return CGSize(width: 200, height: 304)
+        //根据行数计算高度
+        let height = OutMargin + CGFloat(row)*PicWidth + CGFloat(row - 1)*InMargin
+        
+        return CGSize(width: ViewWidth, height: height)
     }
     
     /// 根据count数目返回toolbar底部显示数字或者文字

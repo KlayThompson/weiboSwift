@@ -16,6 +16,7 @@
 		3B0BAC021EEFCA36001C566C /* TimeLineToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC011EEFCA36001C566C /* TimeLineToolBarView.swift */; };
 		3B0BAC041EEFDBE8001C566C /* TimeLinePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC031EEFDBE8001C566C /* TimeLinePictureView.swift */; };
 		3B0BAC061EEFDF70001C566C /* TimeLinePictureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC051EEFDF70001C566C /* TimeLinePictureUnit.swift */; };
+		3B0BAC081EF0D307001C566C /* SizeDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC071EF0D307001C566C /* SizeDefine.swift */; };
 		3B4338EA1EE6460900D7FA58 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B4338E91EE6460900D7FA58 /* main.json */; };
 		3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */; };
 		3B4338EF1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */; };
@@ -89,6 +90,7 @@
 		3B0BAC011EEFCA36001C566C /* TimeLineToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineToolBarView.swift; sourceTree = "<group>"; };
 		3B0BAC031EEFDBE8001C566C /* TimeLinePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLinePictureView.swift; sourceTree = "<group>"; };
 		3B0BAC051EEFDF70001C566C /* TimeLinePictureUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLinePictureUnit.swift; sourceTree = "<group>"; };
+		3B0BAC071EF0D307001C566C /* SizeDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeDefine.swift; sourceTree = "<group>"; };
 		3B4338E91EE6460900D7FA58 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetWorkManager+Extension.swift"; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 			children = (
 				48869A2B1EE99F6F00C06E89 /* APPInfoDefine.swift */,
 				48869A2C1EE99F6F00C06E89 /* NotificationDefine.swift */,
+				3B0BAC071EF0D307001C566C /* SizeDefine.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */,
 				3B0BAC061EEFDF70001C566C /* TimeLinePictureUnit.swift in Sources */,
 				3B0BABFA1EEE83B1001C566C /* TimeLineCell.swift in Sources */,
+				3B0BAC081EF0D307001C566C /* SizeDefine.swift in Sources */,
 				3B0BAC001EEFB62E001C566C /* UIImage+Extension.swift in Sources */,
 				3B4339041EEA856900D7FA58 /* HomeTitleButton.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
