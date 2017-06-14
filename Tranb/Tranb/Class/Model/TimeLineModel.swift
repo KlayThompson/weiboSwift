@@ -33,6 +33,9 @@ class TimeLineModel: NSObject {
     /// 微博配图模型
     var pic_urls: [TimeLinePictureUnit]?
     
+    /// 被转发的原微博信息字段，当该微博为转发微博时返回
+    var retweeted_status: TimeLineModel?
+    
     
     override var description: String {
         return yy_modelDescription()

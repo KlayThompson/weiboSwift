@@ -66,7 +66,7 @@ class TimeLineCell: UITableViewCell {
 //            } else {
 //                pictureView.urls = viewModel?.timeLineModel.pic_urls
 //            }
-            pictureView.urls = viewModel?.timeLineModel.pic_urls
+            pictureView.urls = viewModel?.picUrls
         }
     }
     

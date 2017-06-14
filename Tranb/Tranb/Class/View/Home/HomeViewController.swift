@@ -9,7 +9,7 @@
 import UIKit
 
 private let cellID = "CellID"
-
+private let reTweetCellID = "reTweetCellID"
 
 class HomeViewController: BaseViewController {
 
@@ -64,8 +64,12 @@ extension HomeViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TimeLineCell
         let singleTimeLineViewModel = timeLineViewModel.dataList[indexPath.row]
+        //判断有没有转发微博，来使用不同cell
+        let id = (singleTimeLineViewModel.timeLineModel.retweeted_status != nil) ? reTweetCellID : cellID
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! TimeLineCell
        cell.viewModel = singleTimeLineViewModel
         return cell
     }
@@ -83,6 +87,7 @@ extension HomeViewController {
         naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(HomeViewController.test))
         
         tableView?.register(UINib(nibName: "TimeLineNormalCell", bundle: nil), forCellReuseIdentifier: cellID)
+        tableView?.register(UINib(nibName: "TimeLineRetweetCell", bundle: nil), forCellReuseIdentifier: reTweetCellID)
         
         //设置属性
         tableView?.estimatedRowHeight = 300

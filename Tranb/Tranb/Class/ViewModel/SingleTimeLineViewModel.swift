@@ -31,6 +31,10 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     /// 微博配图尺寸
     var pictureSize = CGSize()
     
+    /// 若果转发微博有配图就返回转发微博配图，没有就返回原创
+    var picUrls: [TimeLinePictureUnit] {
+        return timeLineModel.retweeted_status?.pic_urls ?? (timeLineModel.pic_urls ?? [])
+    }
     
     
     /// 返回单个微博的视图模型
@@ -67,7 +71,7 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         likeStr = countString(count: model.attitudes_count, defaultString: "赞")
         
         //微博配图尺寸计算
-        pictureSize = calulatorPictureSize(imageCount: model.pic_urls?.count)
+        pictureSize = calulatorPictureSize(imageCount: picUrls.count)
         
     }
     
