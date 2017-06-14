@@ -26,14 +26,14 @@ class TimeLinePictureView: UIView {
             var index = 0
             //取出url
             for unit in urls ?? [] {
+                //取出图片
+                let imageView = subviews[index] as! UIImageView
                 
                 //如果是四张图片特殊处理
-                if index == 2 && urls?.count == 4 {
+                if index == 1 && urls?.count == 4 {
                     index += 1
                 }
                 
-                //取出图片
-                let imageView = subviews[index] as! UIImageView
                 
                 imageView.setImage(urlString: unit.thumbnail_pic, placeholderImage: nil)
                 

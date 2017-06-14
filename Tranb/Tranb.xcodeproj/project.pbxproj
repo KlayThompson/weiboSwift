@@ -17,6 +17,7 @@
 		3B0BAC041EEFDBE8001C566C /* TimeLinePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC031EEFDBE8001C566C /* TimeLinePictureView.swift */; };
 		3B0BAC061EEFDF70001C566C /* TimeLinePictureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC051EEFDF70001C566C /* TimeLinePictureUnit.swift */; };
 		3B0BAC081EF0D307001C566C /* SizeDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0BAC071EF0D307001C566C /* SizeDefine.swift */; };
+		3B0BAC0A1EF11645001C566C /* TimeLineRetweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0BAC091EF11645001C566C /* TimeLineRetweetCell.xib */; };
 		3B4338EA1EE6460900D7FA58 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B4338E91EE6460900D7FA58 /* main.json */; };
 		3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */; };
 		3B4338EF1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */; };
@@ -91,6 +92,7 @@
 		3B0BAC031EEFDBE8001C566C /* TimeLinePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLinePictureView.swift; sourceTree = "<group>"; };
 		3B0BAC051EEFDF70001C566C /* TimeLinePictureUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLinePictureUnit.swift; sourceTree = "<group>"; };
 		3B0BAC071EF0D307001C566C /* SizeDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeDefine.swift; sourceTree = "<group>"; };
+		3B0BAC091EF11645001C566C /* TimeLineRetweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineRetweetCell.xib; sourceTree = "<group>"; };
 		3B4338E91EE6460900D7FA58 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		3B4338EC1EE6947200D7FA58 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		3B4338EE1EE6A89A00D7FA58 /* NetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetWorkManager+Extension.swift"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				3B0BABFB1EEE83C5001C566C /* TimeLineNormalCell.xib */,
 				3B0BAC011EEFCA36001C566C /* TimeLineToolBarView.swift */,
 				3B0BAC031EEFDBE8001C566C /* TimeLinePictureView.swift */,
+				3B0BAC091EF11645001C566C /* TimeLineRetweetCell.xib */,
 			);
 			path = TimeLineCell;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
 				3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */,
 				488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */,
+				3B0BAC0A1EF11645001C566C /* TimeLineRetweetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
