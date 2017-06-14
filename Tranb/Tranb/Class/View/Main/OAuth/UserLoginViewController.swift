@@ -55,7 +55,7 @@ class UserLoginViewController: UIViewController {
     func autoFillPWD() {
         
         let js = "document.getElementById('userId').value = 'sunshinenate@sina.com'; " +
-        "document.getElementById('passwd').value = 'fl033690';"
+        "document.getElementById('passwd').value = '';"
         
         webView.evaluateJavaScript(js, completionHandler: nil)
     }
