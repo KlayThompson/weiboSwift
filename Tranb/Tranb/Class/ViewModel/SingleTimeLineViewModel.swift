@@ -36,6 +36,9 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         return timeLineModel.retweeted_status?.pic_urls ?? (timeLineModel.pic_urls ?? [])
     }
     
+    /// 被转发微博文字
+    var reTweetText: String?
+    
     
     /// 返回单个微博的视图模型
     ///
@@ -72,6 +75,9 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         
         //微博配图尺寸计算
         pictureSize = calulatorPictureSize(imageCount: picUrls.count)
+        
+        //被转发微博文字
+        reTweetText = "@" + (model.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
         
     }
     

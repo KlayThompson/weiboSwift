@@ -9,7 +9,7 @@
 import UIKit
 
 private let cellID = "CellID"
-private let reTweetCellID = "reTweetCellID"
+private let reTweetCellID = "retweetCellID"
 
 class HomeViewController: BaseViewController {
 

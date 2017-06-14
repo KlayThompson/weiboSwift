@@ -38,6 +38,10 @@ class TimeLineCell: UITableViewCell {
     /// 微博配图
     @IBOutlet weak var pictureView: TimeLinePictureView!
     
+    /// 转发微博文字，因为原创cell不存在，故此处用？可选的
+    @IBOutlet weak var retweetLabel: UILabel?
+    
+    
     var viewModel: SingleTimeLineViewModel? {
         didSet {
             //微博内容
@@ -67,6 +71,8 @@ class TimeLineCell: UITableViewCell {
 //                pictureView.urls = viewModel?.timeLineModel.pic_urls
 //            }
             pictureView.urls = viewModel?.picUrls
+            //转发微博文字
+            retweetLabel?.text = viewModel?.reTweetText
         }
     }
     

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reTweetCellID" rowHeight="439" id="Oyr-xx-czO" customClass="TimeLineCell" customModule="Tranb" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="retweetCellID" rowHeight="439" id="Oyr-xx-czO" customClass="TimeLineCell" customModule="Tranb" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oyr-xx-czO" id="JHw-5e-JLO">
@@ -187,6 +187,7 @@
                 <outlet property="memberIconView" destination="2bL-5G-7Zx" id="F2E-m9-j14"/>
                 <outlet property="nameLabel" destination="4Cd-Jh-kSA" id="dwt-PR-Sdz"/>
                 <outlet property="pictureView" destination="0oh-Iq-0BB" id="fzD-Gf-oOS"/>
+                <outlet property="retweetLabel" destination="dfc-zZ-dgZ" id="CKU-NJ-NAY"/>
                 <outlet property="sourceLabel" destination="fkU-tS-wTo" id="pep-aa-0OS"/>
                 <outlet property="timeLabel" destination="j3G-L1-ft1" id="i1F-dT-U0t"/>
                 <outlet property="timeLineTextLabel" destination="z4Z-Cl-PaN" id="nhh-CV-1bz"/>
