@@ -94,8 +94,32 @@ class TimeLineViewModel {
             //判断沙拉刷新是否没有数据
             if isPullUp && array.count == 0 {
                 self.pullupNoDataCount += 1
+                completion(isSuccess)
+            } else {
+                //缓存单张微博图片
+                self.cacheSingleImage(dataArray: array)
+                
+                completion(isSuccess)
             }
-            completion(isSuccess)
+            
+        }
+        
+    }
+    
+    /// 缓存微博单张图片
+    ///
+    /// - Parameter dataArray: 本次下载的模型数组
+    func cacheSingleImage(dataArray: [SingleTimeLineViewModel]) {
+        
+        //循环遍历数组，取出单张图片的URL
+        for viewModel in dataArray {
+            
+            //判断是一张图片才进行，否则跳过
+            if viewModel.picUrls.count != 1 {
+                continue
+            }
+            
+            
             
         }
         
