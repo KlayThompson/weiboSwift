@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SDWebImage
 /**
     父类的选择：
  -  如果类需要使用KVC或者字典转模型设置对象值，类就需要继承至NSObject
@@ -97,9 +97,7 @@ class TimeLineViewModel {
                 completion(isSuccess)
             } else {
                 //缓存单张微博图片
-                self.cacheSingleImage(dataArray: array)
-                
-                completion(isSuccess)
+                self.cacheSingleImage(dataArray: array, completion: completion)
             }
             
         }
@@ -109,7 +107,12 @@ class TimeLineViewModel {
     /// 缓存微博单张图片
     ///
     /// - Parameter dataArray: 本次下载的模型数组
-    func cacheSingleImage(dataArray: [SingleTimeLineViewModel]) {
+    func cacheSingleImage(dataArray: [SingleTimeLineViewModel],completion: @escaping (_ isSuccess: Bool) -> ()) {
+        
+        //GCD调度组
+        let group = DispatchGroup()
+        var lengh = 0
+        
         
         //循环遍历数组，取出单张图片的URL
         for viewModel in dataArray {
@@ -119,8 +122,43 @@ class TimeLineViewModel {
                 continue
             }
             
+            //获取URL
+            guard var urlString = viewModel.picUrls[0].thumbnail_pic else {
+                    continue
+            }
+            //转换为小图片，节省空间
+            if urlString.contains("large") {
+                urlString = urlString.replacingOccurrences(of: "large", with: "thumbnail")
+            }
+            let url = URL(string: urlString)
+//            print("这是个URL\(url!)")
             
-            
+            //入组
+            group.enter()
+            //使用SDWebImage下载图像
+            //downloadImage 是 SDWebImage 的核心用法
+            //图片下载完成会自动保存在沙盒中，文件路径是url的MD5
+            //如果沙盒中已经存在该图片，后续使用SD通过URL加载图片都会使用本地沙盒图片，不会发起网络请求，回调方法一样会调用
+            SDWebImageManager.shared().imageDownloader?.downloadImage(with: url, options: [], progress: nil, completed: { (image, data, _, _) in
+                print("这个是下载下来的图片\(String(describing: data))")
+                lengh += (data?.count)!
+                
+                if let image = image {
+                    
+                    //图像缓存成功，更新尺寸
+                    viewModel.updateSingleImageSize(image: image)
+                }
+                
+                //出组
+                group.leave()
+            })
+        }
+        
+        //监听
+        group.notify(queue: DispatchQueue.main) { 
+            print("图片缓存完成\(lengh/1024)K®")
+            //刷新表格
+            completion(true)
         }
         
     }

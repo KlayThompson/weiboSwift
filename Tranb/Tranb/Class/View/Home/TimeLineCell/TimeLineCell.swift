@@ -57,7 +57,7 @@ class TimeLineCell: UITableViewCell {
             //底部工具栏
             toolBar.viewModel = viewModel
             //微博配图
-            pictureView.heightCons.constant = viewModel?.pictureSize.height ?? 0
+            pictureView.viewModel = viewModel
             //微博配图传值
 //            //写测试代码,测试4张微博配图
 //            if (viewModel?.timeLineModel.pic_urls?.count)! > 4 {
@@ -70,7 +70,7 @@ class TimeLineCell: UITableViewCell {
 //            } else {
 //                pictureView.urls = viewModel?.timeLineModel.pic_urls
 //            }
-            pictureView.urls = viewModel?.picUrlsLarge
+            pictureView.urls = viewModel?.picUrls
             //转发微博文字
             retweetLabel?.text = viewModel?.reTweetText
         }

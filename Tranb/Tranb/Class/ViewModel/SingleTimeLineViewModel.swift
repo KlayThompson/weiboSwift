@@ -36,10 +36,6 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         return timeLineModel.retweeted_status?.pic_urls ?? (timeLineModel.pic_urls ?? [])
     }
     
-    /// 微博配图大图
-    var picUrlsLarge: [TimeLinePictureUnit]?
-    
-    
     /// 被转发微博文字
     var reTweetText: String?
     
@@ -83,7 +79,6 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         //被转发微博文字
         reTweetText = "@" + (model.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
         
-        var array = [TimeLinePictureUnit]()
         for unit in picUrls {
         
             guard var urlString = unit.thumbnail_pic else {
@@ -95,10 +90,20 @@ class SingleTimeLineViewModel: CustomStringConvertible {
                 urlString = urlString.replacingOccurrences(of: "thumbnail", with: "large")
             }
             unit.thumbnail_pic = urlString
-            array.append(unit)
         }
-        picUrlsLarge = array
         
+    }
+    
+    /// 更新单张图片显示尺寸
+    ///
+    /// - Parameter image: 下载的image
+    func updateSingleImageSize(image: UIImage) {
+        
+        var size = image.size
+        //需要加一开始顶部预留的12个间距
+        size.height += OutMargin
+        
+        pictureSize = size
     }
     
     /// 计算微博配图视图整体的尺寸

@@ -43,6 +43,31 @@ class TimeLinePictureView: UIView {
         }
     }
     
+    var viewModel: SingleTimeLineViewModel? {
+        didSet {
+            caculatePictureSize()
+        }
+    }
+    
+    /// 计算微博配图尺寸大小
+    func caculatePictureSize() {
+        
+        //要区分是否为一张图片
+        if viewModel?.picUrls.count == 1 {
+            
+            let v = subviews[0]
+            let size = viewModel?.pictureSize ?? CGSize()
+            
+            v.frame = CGRect(x: 0, y: OutMargin, width: size.width, height: size.height - OutMargin)
+            
+        } else {
+            let v = subviews[0]
+            
+            v.frame = CGRect(x: 0, y: OutMargin, width: PicWidth, height: PicWidth)
+        }
+        heightCons.constant = viewModel?.pictureSize.height ?? 0
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
