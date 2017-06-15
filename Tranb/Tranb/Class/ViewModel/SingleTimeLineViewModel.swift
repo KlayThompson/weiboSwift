@@ -39,6 +39,8 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     /// 被转发微博文字
     var reTweetText: String?
     
+    /// 计算的行高
+    var rowHeight: CGFloat = 0
     
     /// 返回单个微博的视图模型
     ///
@@ -92,6 +94,56 @@ class SingleTimeLineViewModel: CustomStringConvertible {
             unit.thumbnail_pic = urlString
         }
         
+        //计算行高
+        calculateRowHeight()
+    }
+    
+    //计算行高
+    func calculateRowHeight() {
+        //原创微博高度：顶部分割视图(12) + 间距12 + 头像的高度34 + 间距12 + 正文高度(计算) + 配图视图高度(计算) + 间距12 + 底部视图高度35
+        //转发微博高度：顶部分割视图(12) + 间距12 + 头像的高度34 + 间距12 + 正文高度(计算) + 间距12 + 间距12 + 转发文本高度(计算) + 配图视图高度(计算) + 间距12 + 底部视图高度35
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 35
+        
+        //定义高度
+        var height: CGFloat = 0
+        //顶部位置
+        height += 2 * margin + iconHeight + margin
+        
+        let textSize = CGSize(width: SCREEN_WIDTH - 2 * margin, height: CGFloat(MAXFLOAT))
+        let originalTextAttri = UIFont.systemFont(ofSize: 15)
+        let retweetTextAttri = UIFont.systemFont(ofSize: 14)
+        //正文高度
+        if let text = timeLineModel.text {
+            
+            height += (text as NSString).boundingRect(with: textSize,
+                                                      options: [.usesLineFragmentOrigin],
+                                                      attributes: [NSFontAttributeName : originalTextAttri],
+                                                      context: nil).height
+        }
+        
+        //是否有转发微博
+        if timeLineModel.retweeted_status != nil {
+            height += 2 * margin
+            
+            if let text = reTweetText {
+                height += (text as NSString).boundingRect(with: textSize,
+                                                          options: [.usesLineFragmentOrigin],
+                                                          attributes: [NSFontAttributeName : retweetTextAttri],
+                                                          context: nil).height
+            }
+        }
+        
+        //配图视图
+        height += pictureSize.height
+        
+        //间距和底部视图
+        height += margin
+        height += toolbarHeight
+        
+        //使用属性记录
+        rowHeight = height
     }
     
     /// 更新单张图片显示尺寸
