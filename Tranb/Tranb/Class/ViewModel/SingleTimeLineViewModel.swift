@@ -143,7 +143,7 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         height += toolbarHeight
         
         //使用属性记录
-        rowHeight = height
+        rowHeight = height - 1.5
     }
     
     /// 更新单张图片显示尺寸
@@ -152,10 +152,30 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     func updateSingleImageSize(image: UIImage) {
         
         var size = image.size
+        
+        //图像过大处理
+        let maxWidth: CGFloat = 300
+        if size.width > maxWidth {
+            size.width = maxWidth
+            //等比例调整高度
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        //过窄图像处理
+        let minWidth: CGFloat = 40
+        if size.width < minWidth {
+            size.width = minWidth
+            size.height = size.width * image.size.height / image.size.width / 4
+        }
+        
+        
         //需要加一开始顶部预留的12个间距
         size.height += OutMargin
         
+        //重新设置配图视图大小，需要重新计算行高
         pictureSize = size
+        //更新行高
+        calculateRowHeight()
     }
     
     /// 计算微博配图视图整体的尺寸

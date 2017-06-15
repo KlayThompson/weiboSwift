@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S3-hJ-Ztn" customClass="TimeLineToolBarView" customModule="Tranb" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="357" width="375" height="35"/>
+                        <rect key="frame" x="0.0" y="303" width="375" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTV-HN-n6w">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
@@ -145,7 +145,6 @@
                     <constraint firstItem="0oh-Iq-0BB" firstAttribute="leading" secondItem="z4Z-Cl-PaN" secondAttribute="leading" id="PaT-oP-jJf"/>
                     <constraint firstAttribute="trailing" secondItem="QOs-GR-8ug" secondAttribute="trailing" id="Saj-0N-ZJ5"/>
                     <constraint firstItem="4Cd-Jh-kSA" firstAttribute="top" secondItem="Pjb-Km-kJw" secondAttribute="top" constant="4" id="VYf-Gt-lap"/>
-                    <constraint firstAttribute="bottom" secondItem="7S3-hJ-Ztn" secondAttribute="bottom" constant="-1.5" id="Wb9-tL-Iyg"/>
                     <constraint firstItem="7S3-hJ-Ztn" firstAttribute="leading" secondItem="JHw-5e-JLO" secondAttribute="leading" id="Wu3-z7-AXK"/>
                     <constraint firstAttribute="trailing" secondItem="0oh-Iq-0BB" secondAttribute="trailing" constant="12" id="XcZ-D7-LuG"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fkU-tS-wTo" secondAttribute="trailing" constant="11" id="fIe-Jv-G7Y"/>
@@ -157,7 +156,7 @@
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2bL-5G-7Zx" secondAttribute="trailing" constant="11" id="k8x-IA-hIR"/>
                     <constraint firstItem="2bL-5G-7Zx" firstAttribute="centerY" secondItem="4Cd-Jh-kSA" secondAttribute="centerY" id="l6g-sE-doe"/>
                     <constraint firstItem="z4Z-Cl-PaN" firstAttribute="top" secondItem="Pjb-Km-kJw" secondAttribute="bottom" constant="12" id="vdD-xO-AQ7"/>
-                    <constraint firstItem="7S3-hJ-Ztn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0oh-Iq-0BB" secondAttribute="bottom" constant="12" id="wG3-z1-6GZ"/>
+                    <constraint firstItem="7S3-hJ-Ztn" firstAttribute="top" secondItem="0oh-Iq-0BB" secondAttribute="bottom" constant="12" id="wG3-z1-6GZ"/>
                     <constraint firstItem="4Cd-Jh-kSA" firstAttribute="leading" secondItem="Pjb-Km-kJw" secondAttribute="trailing" constant="11" id="xBq-IA-bE4"/>
                     <constraint firstItem="j3G-L1-ft1" firstAttribute="bottom" secondItem="Pjb-Km-kJw" secondAttribute="bottom" id="yjk-5U-GbN"/>
                 </constraints>

@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehl-3n-mJH">
-                        <rect key="frame" x="0.0" y="100" width="375" height="305"/>
+                        <rect key="frame" x="0.0" y="100" width="375" height="244"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfc-zZ-dgZ">
@@ -74,7 +74,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S3-hJ-Ztn" customClass="TimeLineToolBarView" customModule="Tranb" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="405" width="375" height="35"/>
+                        <rect key="frame" x="0.0" y="344" width="375" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTV-HN-n6w">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
@@ -161,7 +161,6 @@
                     <constraint firstAttribute="trailing" secondItem="QOs-GR-8ug" secondAttribute="trailing" id="Saj-0N-ZJ5"/>
                     <constraint firstAttribute="trailing" secondItem="Ehl-3n-mJH" secondAttribute="trailing" id="UFs-kJ-IFv"/>
                     <constraint firstItem="4Cd-Jh-kSA" firstAttribute="top" secondItem="Pjb-Km-kJw" secondAttribute="top" constant="4" id="VYf-Gt-lap"/>
-                    <constraint firstAttribute="bottom" secondItem="7S3-hJ-Ztn" secondAttribute="bottom" constant="-1.5" id="Wb9-tL-Iyg"/>
                     <constraint firstItem="7S3-hJ-Ztn" firstAttribute="leading" secondItem="JHw-5e-JLO" secondAttribute="leading" id="Wu3-z7-AXK"/>
                     <constraint firstAttribute="trailing" secondItem="0oh-Iq-0BB" secondAttribute="trailing" constant="12" id="XcZ-D7-LuG"/>
                     <constraint firstItem="Ehl-3n-mJH" firstAttribute="leading" secondItem="JHw-5e-JLO" secondAttribute="leading" id="czk-T9-EFh"/>
@@ -175,7 +174,7 @@
                     <constraint firstItem="2bL-5G-7Zx" firstAttribute="centerY" secondItem="4Cd-Jh-kSA" secondAttribute="centerY" id="l6g-sE-doe"/>
                     <constraint firstItem="0oh-Iq-0BB" firstAttribute="top" secondItem="dfc-zZ-dgZ" secondAttribute="bottom" id="mfg-Tp-W7D"/>
                     <constraint firstItem="z4Z-Cl-PaN" firstAttribute="top" secondItem="Pjb-Km-kJw" secondAttribute="bottom" constant="12" id="vdD-xO-AQ7"/>
-                    <constraint firstItem="7S3-hJ-Ztn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0oh-Iq-0BB" secondAttribute="bottom" constant="12" id="wG3-z1-6GZ"/>
+                    <constraint firstItem="7S3-hJ-Ztn" firstAttribute="top" secondItem="0oh-Iq-0BB" secondAttribute="bottom" constant="12" id="wG3-z1-6GZ"/>
                     <constraint firstItem="4Cd-Jh-kSA" firstAttribute="leading" secondItem="Pjb-Km-kJw" secondAttribute="trailing" constant="11" id="xBq-IA-bE4"/>
                     <constraint firstItem="j3G-L1-ft1" firstAttribute="bottom" secondItem="Pjb-Km-kJw" secondAttribute="bottom" id="yjk-5U-GbN"/>
                 </constraints>

@@ -160,6 +160,10 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         //当显示最后一行的时候，开始上拉刷新
@@ -184,9 +188,6 @@ extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
             //获取网络
             loadData()
         }
-        
-        
-        
     }
     
 }

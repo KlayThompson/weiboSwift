@@ -66,6 +66,13 @@ class TimeLineCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        //离屏渲染
+        self.layer.drawsAsynchronously = true
+        //栅格化
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

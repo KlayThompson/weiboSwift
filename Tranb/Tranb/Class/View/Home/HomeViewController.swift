@@ -73,6 +73,12 @@ extension HomeViewController {
        cell.viewModel = singleTimeLineViewModel
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let viewModel = timeLineViewModel.dataList[indexPath.row]
+        return viewModel.rowHeight
+    }
 }
 
 
@@ -91,7 +97,7 @@ extension HomeViewController {
         
         //设置属性
         tableView?.estimatedRowHeight = 300
-        tableView?.rowHeight = UITableViewAutomaticDimension
+//        tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.separatorStyle = .none
     }
     
