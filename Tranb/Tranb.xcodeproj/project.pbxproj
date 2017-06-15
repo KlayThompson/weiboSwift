@@ -51,6 +51,9 @@
 		3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */; };
 		3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110C1EE13447003F4966 /* NewViewController.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
+		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
+		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
+		4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CF1EF2EE97002DE0E2 /* TTCacheManager.swift */; };
 		48181E7D1EEEE0B000139EBE /* UserInfoUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48181E7C1EEEE0B000139EBE /* UserInfoUnit.swift */; };
 		48181E7F1EEEE5C700139EBE /* SingleTimeLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */; };
 		488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488699F51EDFE4B600C06E89 /* AppDelegate.swift */; };
@@ -141,6 +144,9 @@
 		3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		3B9B110C1EE13447003F4966 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
+		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
+		4805B1CF1EF2EE97002DE0E2 /* TTCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCacheManager.swift; sourceTree = "<group>"; };
 		48181E7C1EEEE0B000139EBE /* UserInfoUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoUnit.swift; sourceTree = "<group>"; };
 		48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTimeLineViewModel.swift; sourceTree = "<group>"; };
 		488699F21EDFE4B600C06E89 /* Tranb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +295,7 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				48E4343A1EF2E7B100865135 /* TTCacheManager */,
 				3B97A7151EF27F840019221B /* TTRefreshControl */,
 				3B4338EB1EE6943E00D7FA58 /* NetWork */,
 				48869A231EE0514000C06E89 /* Extensions */,
@@ -340,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				3B9B10D71EE00D8F003F4966 /* ProfileViewController.swift */,
+				4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */,
+				4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -497,6 +506,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		48E4343A1EF2E7B100865135 /* TTCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				4805B1CF1EF2EE97002DE0E2 /* TTCacheManager.swift */,
+			);
+			path = TTCacheManager;
+			sourceTree = "<group>";
+		};
 		591D402A41878380EC54741C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +647,7 @@
 				3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */,
 				488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */,
 				3B0BAC0A1EF11645001C566C /* TimeLineRetweetCell.xib in Resources */,
+				4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +815,7 @@
 				3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */,
 				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
 				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
+				4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
 				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
 				3B9B10FF1EE0122F003F4966 /* UIButton+CZAddition.m in Sources */,
@@ -809,6 +828,7 @@
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
+				4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */,
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B4339071EEA8FF000D7FA58 /* NewFeatureView.swift in Sources */,
