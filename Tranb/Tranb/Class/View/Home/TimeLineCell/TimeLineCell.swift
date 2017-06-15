@@ -70,7 +70,7 @@ class TimeLineCell: UITableViewCell {
 //            } else {
 //                pictureView.urls = viewModel?.timeLineModel.pic_urls
 //            }
-            pictureView.urls = viewModel?.picUrls
+            pictureView.urls = viewModel?.picUrlsLarge
             //转发微博文字
             retweetLabel?.text = viewModel?.reTweetText
         }

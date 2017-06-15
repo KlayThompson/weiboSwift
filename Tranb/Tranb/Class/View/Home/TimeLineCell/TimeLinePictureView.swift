@@ -34,17 +34,7 @@ class TimeLinePictureView: UIView {
                     index += 1
                 }
                 
-                guard var urlString = unit.thumbnail_pic else {
-                    imageView.image = UIImage(named: "")
-                    return
-                }
-                
-                //显示大图
-                if urlString.contains("thumbnail") {
-                    urlString = urlString.replacingOccurrences(of: "thumbnail", with: "large")
-                }
-                
-                imageView.setImage(urlString: urlString, placeholderImage: nil)
+                imageView.setImage(urlString:  unit.thumbnail_pic, placeholderImage: nil)
                 
                 imageView.isHidden = false
                 

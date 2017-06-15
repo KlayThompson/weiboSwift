@@ -36,6 +36,10 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         return timeLineModel.retweeted_status?.pic_urls ?? (timeLineModel.pic_urls ?? [])
     }
     
+    /// 微博配图大图
+    var picUrlsLarge: [TimeLinePictureUnit]?
+    
+    
     /// 被转发微博文字
     var reTweetText: String?
     
@@ -78,6 +82,22 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         
         //被转发微博文字
         reTweetText = "@" + (model.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
+        
+        var array = [TimeLinePictureUnit]()
+        for unit in picUrls {
+        
+            guard var urlString = unit.thumbnail_pic else {
+                return
+            }
+            
+            //显示大图
+            if urlString.contains("thumbnail") {
+                urlString = urlString.replacingOccurrences(of: "thumbnail", with: "large")
+            }
+            unit.thumbnail_pic = urlString
+            array.append(unit)
+        }
+        picUrlsLarge = array
         
     }
     
