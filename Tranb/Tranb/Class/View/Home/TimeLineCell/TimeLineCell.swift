@@ -58,27 +58,11 @@ class TimeLineCell: UITableViewCell {
             toolBar.viewModel = viewModel
             //微博配图
             pictureView.viewModel = viewModel
-            //微博配图传值
-//            //写测试代码,测试4张微博配图
-//            if (viewModel?.timeLineModel.pic_urls?.count)! > 4 {
-//                
-//                var array = viewModel?.timeLineModel.pic_urls
-//                
-//                array?.removeSubrange(((array?.startIndex)! + 4)..<(array?.endIndex)!)
-//                pictureView.urls = array
-//                
-//            } else {
-//                pictureView.urls = viewModel?.timeLineModel.pic_urls
-//            }
-            pictureView.urls = viewModel?.picUrls
             //转发微博文字
             retweetLabel?.text = viewModel?.reTweetText
         }
     }
-    
-    
-    
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

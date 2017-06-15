@@ -128,7 +128,7 @@ class TimeLineViewModel {
             }
             //转换为小图片，节省空间
             if urlString.contains("large") {
-                urlString = urlString.replacingOccurrences(of: "large", with: "thumbnail")
+                urlString = urlString.replacingOccurrences(of: "large", with: "middle")
             }
             let url = URL(string: urlString)
 //            print("这是个URL\(url!)")

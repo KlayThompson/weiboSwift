@@ -14,7 +14,7 @@ class TimeLinePictureView: UIView {
     /// view高度约束
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     
-    var urls: [TimeLinePictureUnit]? {
+    private var urls: [TimeLinePictureUnit]? {
     
         didSet {
             //先隐藏所有的image
@@ -46,6 +46,7 @@ class TimeLinePictureView: UIView {
     var viewModel: SingleTimeLineViewModel? {
         didSet {
             caculatePictureSize()
+            urls = viewModel?.picUrls
         }
     }
     
