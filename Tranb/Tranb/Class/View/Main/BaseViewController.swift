@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
     var tableView:UITableView?
     
     /// 刷新控件
-    var refreshControl: UIRefreshControl?
+    var refreshControl: TTRefreshControl?
     
     /// 访客字典
     var visitorInfo: [String: String]?
@@ -126,7 +126,7 @@ extension BaseViewController {
         tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
         
         //初始化refreshControl
-        refreshControl = UIRefreshControl()
+        refreshControl = TTRefreshControl()
         
         tableView?.addSubview(refreshControl!)
         
