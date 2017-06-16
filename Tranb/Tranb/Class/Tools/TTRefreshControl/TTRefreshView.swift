@@ -19,4 +19,16 @@ class TTRefreshView: UIView {
     /// 菊花
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
+    //刷新状态
+    var refreshState: TTRefreshState = .Normal
+    
+    
+    
+    class func refreshView() -> TTRefreshView {
+    
+        let nib = UINib(nibName: "TTRefreshView", bundle: nil)
+        
+        return nib.instantiate(withOwner: nil, options: nil)[0] as! TTRefreshView
+    }
+    
 }
