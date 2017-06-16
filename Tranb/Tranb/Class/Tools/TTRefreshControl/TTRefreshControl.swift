@@ -74,19 +74,20 @@ class TTRefreshControl: UIControl {
         //判断临界值
         if scrollView.isDragging {//在拖动情况下
             if height > TTRefreshOffset && refreshView.refreshState == .Normal {
-                print("开始刷新")
+                
                 //更改刷新状态
                 refreshView.refreshState = .Pulling
             } else if height < TTRefreshOffset && refreshView.refreshState == .Pulling {
-                print("继续努力")
+                
                 refreshView.refreshState = .Normal
             }
         } else {
             //表示手松开了  判断是否过临界点
             if refreshView.refreshState == .Pulling {
-                //更改状态
-                refreshView.refreshState = .WillRefresh
-                //刷新结束要改为Normal
+               beginRefreshing()
+                
+                //发送刷新数据事件
+                sendActions(for: .valueChanged)
             }
             
         }
@@ -103,11 +104,40 @@ class TTRefreshControl: UIControl {
     /// 开始刷新
     func beginRefreshing() {
         
+        guard let scrollView = scrollView else {
+            return
+        }
+        
+        //如果正在刷新则返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+        
+        //设置刷新状态
+        refreshView.refreshState = .WillRefresh
+        
+        //设置视图偏移
+        var inset = scrollView.contentInset
+        inset.top += TTRefreshOffset
+        scrollView.contentInset = inset
     }
     
     /// 结束刷新
     func endRefreshing() {
+        guard let scrollView = scrollView else {
+            return
+        }
         
+        //如果不是正在刷新则返回
+        if refreshView.refreshState != .WillRefresh {
+            return
+        }
+        
+        refreshView.refreshState = .Normal
+        //设置视图偏移
+        var inset = scrollView.contentInset
+        inset.top -= TTRefreshOffset
+        scrollView.contentInset = inset
     }
 }
 
@@ -115,8 +145,7 @@ class TTRefreshControl: UIControl {
 extension TTRefreshControl {
     
     func setupUI() {
-        backgroundColor = UIColor.cyan
-        clipsToBounds = true
+        backgroundColor = superview?.backgroundColor
         
         addSubview(refreshView)
         

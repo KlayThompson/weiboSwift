@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        
+        self.refreshControl?.beginRefreshing()
         //加载动态数据
         timeLineViewModel.requestTimeLineData(isPullUp: isPullUp) { (isSuccess) in
             
