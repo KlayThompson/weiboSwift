@@ -8,11 +8,14 @@
 
 import Foundation
 
+/// 计算清除缓存的类
 class TTCacheManager {
-    
     
     static let share = TTCacheManager()
     
+    /// 计算缓存大小
+    ///
+    /// - Returns: 返回缓存大小 Int类型
     func calculatorCacheSize() -> Int {
         //缓存
         guard let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first,
@@ -20,8 +23,6 @@ class TTCacheManager {
             let fileArray = FileManager.default.subpaths(atPath: cachePath) else {
                 return 0
         }
-        
-        
         
         var size = 0
         
@@ -34,7 +35,6 @@ class TTCacheManager {
             guard let floder = try? FileManager.default.attributesOfItem(atPath: path) else {
                 return 0
             }
-            
             
             //用元祖取出文件属性
             for (a,b) in floder {
@@ -49,11 +49,11 @@ class TTCacheManager {
         
         print(totalCache)
         
-        
         return totalCache
     }
     
-    func removeCacheFile() {
+    /// 清除缓存
+    func removeCacheFile(completion: (_ isSuccess: Bool)->()) {
         
         //缓存
         guard let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first,
@@ -72,11 +72,12 @@ class TTCacheManager {
                 do {
                     try FileManager.default.removeItem(atPath: path)
                 } catch {
-                    
+                    completion(false)
+                    return
                 }
             }
-            
         }
         
+        completion(true)
     }
 }

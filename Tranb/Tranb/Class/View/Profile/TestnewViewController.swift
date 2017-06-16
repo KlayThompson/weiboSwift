@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class TestnewViewController: UIViewController {
+import SVProgressHUD
+class TestnewViewController: BaseViewController {
 
     
     @IBOutlet weak var tipLabel: UILabel!
@@ -17,15 +17,20 @@ class TestnewViewController: UIViewController {
     @IBOutlet weak var removeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tipLabel.text = "缓存为：\(TTCacheManager.share.calculatorCacheSize())"
+        tableView?.isHidden = true
+        tipLabel.text = "缓存为：\(TTCacheManager.share.calculatorCacheSize())兆"
         
     }
 
     
     
     @IBAction func removeCachePress(_ sender: UIButton) {
-        TTCacheManager.share.removeCacheFile()
+        TTCacheManager.share.removeCacheFile { (isSuccess) in
+            if isSuccess {
+               SVProgressHUD.showInfo(withStatus: "缓存清除成功")
+                self.tipLabel.text = "缓存为0兆"
+            }
+        }
         
     }
 
