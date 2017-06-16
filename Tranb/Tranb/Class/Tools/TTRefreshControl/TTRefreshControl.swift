@@ -11,7 +11,7 @@ import UIKit
 class TTRefreshControl: UIControl {
 
     /// 承接父视图
-    var scrollView: UIScrollView?
+    weak var scrollView: UIScrollView?
     
     
     // MARK: 构造函数
@@ -55,6 +55,13 @@ class TTRefreshControl: UIControl {
         //设置frame
         self.frame = CGRect(x: 0, y: -height, width: scrollView.bounds.width, height: height)
         
+    }
+    
+    override func removeFromSuperview() {
+        
+        superview?.removeObserver(self, forKeyPath: "contentOffset")
+        //再次之前superview还是存在
+        super.removeFromSuperview()
     }
     
     /// 开始刷新
