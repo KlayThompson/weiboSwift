@@ -9,7 +9,7 @@
 import UIKit
 
 /// 可以刷新的临界值
-private let TTRefreshOffset: CGFloat = 60
+private let TTRefreshOffset: CGFloat = 133
 
 /// 刷新状态
 ///
@@ -71,6 +71,9 @@ class TTRefreshControl: UIControl {
         //设置frame
         self.frame = CGRect(x: 0, y: -height, width: scrollView.bounds.width, height: height)
         
+        //传递刷新视图高度给子视图
+        refreshView.parentViewHeight = height
+        
         //判断临界值
         if scrollView.isDragging {//在拖动情况下
             if height > TTRefreshOffset && refreshView.refreshState == .Normal {
@@ -120,6 +123,8 @@ class TTRefreshControl: UIControl {
         var inset = scrollView.contentInset
         inset.top += TTRefreshOffset
         scrollView.contentInset = inset
+        
+        refreshView.parentViewHeight = TTRefreshOffset
     }
     
     /// 结束刷新

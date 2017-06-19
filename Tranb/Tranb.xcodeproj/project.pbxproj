@@ -31,6 +31,8 @@
 		3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339081EEA900100D7FA58 /* WelcomeView.swift */; };
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
 		3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */; };
+		3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */; };
+		3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */; };
 		3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B97A7161EF27F930019221B /* TTRefreshControl.swift */; };
 		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
 		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
@@ -113,6 +115,8 @@
 		3B4339081EEA900100D7FA58 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTImageRefreshView.xib; sourceTree = "<group>"; };
+		3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMTRefreshView.xib; sourceTree = "<group>"; };
+		3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMTRefreshView.swift; sourceTree = "<group>"; };
 		3B97A7161EF27F930019221B /* TTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRefreshControl.swift; sourceTree = "<group>"; };
 		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				3B1F241B1EF37D1E0031DB0A /* TTRefreshView.swift */,
 				3B1F241D1EF37D280031DB0A /* TTRefreshView.xib */,
 				3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */,
+				3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */,
+				3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */,
 			);
 			path = TTRefreshControl;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				3B0BABFC1EEE83C5001C566C /* TimeLineNormalCell.xib in Resources */,
 				3B0BABF71EEE37AA001C566C /* NewFeatureView.xib in Resources */,
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
+				3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */,
 				3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */,
 				3B1F241E1EF37D280031DB0A /* TTRefreshView.xib in Resources */,
 				488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */,
@@ -859,6 +866,7 @@
 				3B4339041EEA856900D7FA58 /* HomeTitleButton.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
 				3B0BAC021EEFCA36001C566C /* TimeLineToolBarView.swift in Sources */,
+				3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */,
 				3B4338FF1EE9260500D7FA58 /* UserLoginViewController.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,
 				3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */,
