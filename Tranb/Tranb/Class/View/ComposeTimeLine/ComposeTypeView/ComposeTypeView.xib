@@ -34,17 +34,26 @@
                                             <action selector="closeButtonPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="9hU-OR-Hlg"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOo-e4-ILS">
+                                        <rect key="frame" x="175" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="backButtonPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="0ez-if-18I"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="cOo-e4-ILS" firstAttribute="centerX" secondItem="oMF-up-ndY" secondAttribute="centerX" id="5ii-g3-KGz"/>
                                     <constraint firstItem="bVp-RO-vpS" firstAttribute="centerX" secondItem="oMF-up-ndY" secondAttribute="centerX" id="AWw-XC-1O5"/>
                                     <constraint firstItem="bVp-RO-vpS" firstAttribute="centerY" secondItem="oMF-up-ndY" secondAttribute="centerY" id="Wog-aL-Umd"/>
                                     <constraint firstAttribute="height" constant="44" id="qF8-so-Hj3"/>
+                                    <constraint firstItem="cOo-e4-ILS" firstAttribute="centerY" secondItem="oMF-up-ndY" secondAttribute="centerY" id="x5X-3c-ujG"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-0P-KrG">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
-                                <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="okD-3e-Apv"/>
                                 </constraints>
@@ -72,7 +81,10 @@
                 <constraint firstAttribute="bottom" secondItem="zIf-53-ZR2" secondAttribute="bottom" id="kqr-Sh-YWz"/>
             </constraints>
             <connections>
+                <outlet property="backButtonCenterXCons" destination="5ii-g3-KGz" id="cBd-CK-PQa"/>
+                <outlet property="backButtton" destination="cOo-e4-ILS" id="jpT-EB-VjC"/>
                 <outlet property="closeButton" destination="bVp-RO-vpS" id="VCl-zt-yRY"/>
+                <outlet property="closeButtonCenterXCons" destination="AWw-XC-1O5" id="TIJ-27-qNg"/>
                 <outlet property="scrollView" destination="Jxr-0P-KrG" id="3rH-31-95l"/>
             </connections>
         </view>
@@ -80,5 +92,6 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>
