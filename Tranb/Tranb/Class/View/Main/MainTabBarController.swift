@@ -39,6 +39,14 @@ class MainTabBarController: UITabBarController {
     
     func composeButtonPress() {
         print("发微博")
+        
+        //判断用户是否登录
+        
+        //显示发微博界面
+        let vc = ComposeTypeView.composeTypeView()
+        
+        //显示
+        vc.show()        
     }
     
     func userShouldLogin(notify: Notification) {

@@ -33,6 +33,10 @@
 		3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */; };
 		3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */; };
 		3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */; };
+		3B8A16061EF775BA00A1A107 /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16051EF775BA00A1A107 /* ComposeTypeView.swift */; };
+		3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A16071EF7957700A1A107 /* ComposeTypeView.xib */; };
+		3B8A160A1EF79CE700A1A107 /* CompsoeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16091EF79CE700A1A107 /* CompsoeTypeButton.swift */; };
+		3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A160B1EF79D0C00A1A107 /* CompsoeTypeButton.xib */; };
 		3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B97A7161EF27F930019221B /* TTRefreshControl.swift */; };
 		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
 		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
@@ -117,6 +121,10 @@
 		3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTImageRefreshView.xib; sourceTree = "<group>"; };
 		3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMTRefreshView.xib; sourceTree = "<group>"; };
 		3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMTRefreshView.swift; sourceTree = "<group>"; };
+		3B8A16051EF775BA00A1A107 /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
+		3B8A16071EF7957700A1A107 /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
+		3B8A16091EF79CE700A1A107 /* CompsoeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompsoeTypeButton.swift; sourceTree = "<group>"; };
+		3B8A160B1EF79D0C00A1A107 /* CompsoeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompsoeTypeButton.xib; sourceTree = "<group>"; };
 		3B97A7161EF27F930019221B /* TTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRefreshControl.swift; sourceTree = "<group>"; };
 		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -273,6 +281,25 @@
 			path = Newfeature;
 			sourceTree = "<group>";
 		};
+		3B8A16031EF7757800A1A107 /* ComposeTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A16041EF775A200A1A107 /* ComposeTypeView */,
+			);
+			path = ComposeTimeLine;
+			sourceTree = "<group>";
+		};
+		3B8A16041EF775A200A1A107 /* ComposeTypeView */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A16051EF775BA00A1A107 /* ComposeTypeView.swift */,
+				3B8A16071EF7957700A1A107 /* ComposeTypeView.xib */,
+				3B8A16091EF79CE700A1A107 /* CompsoeTypeButton.swift */,
+				3B8A160B1EF79D0C00A1A107 /* CompsoeTypeButton.xib */,
+			);
+			path = ComposeTypeView;
+			sourceTree = "<group>";
+		};
 		3B97A7151EF27F840019221B /* TTRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +352,7 @@
 				3B9B10CA1EE00CD4003F4966 /* Main */,
 				3B9B10C61EE00C44003F4966 /* Home */,
 				3B9B10C71EE00C44003F4966 /* Message */,
+				3B8A16031EF7757800A1A107 /* ComposeTimeLine */,
 				3B9B10C51EE00C44003F4966 /* Discovery */,
 				3B9B10C81EE00C44003F4966 /* Profile */,
 			);
@@ -657,6 +685,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0BABFC1EEE83C5001C566C /* TimeLineNormalCell.xib in Resources */,
+				3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */,
+				3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */,
 				3B0BABF71EEE37AA001C566C /* NewFeatureView.xib in Resources */,
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
 				3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */,
@@ -843,6 +873,7 @@
 				3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */,
 				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
 				48869A311EE9A13200C06E89 /* UserInfoModel.swift in Sources */,
+				3B8A160A1EF79CE700A1A107 /* CompsoeTypeButton.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B1F241C1EF37D1E0031DB0A /* TTRefreshView.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
@@ -877,6 +908,7 @@
 				3B9B11011EE0122F003F4966 /* UILabel+CZAddition.m in Sources */,
 				3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */,
 				488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */,
+				3B8A16061EF775BA00A1A107 /* ComposeTypeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

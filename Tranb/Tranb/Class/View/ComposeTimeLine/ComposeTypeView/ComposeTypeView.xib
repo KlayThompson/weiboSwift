@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ComposeTypeView" customModule="Tranb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIf-53-ZR2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G8k-c2-3On">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="QxZ-rx-2LH">
+                                <rect key="frame" x="110.5" y="100" width="154" height="48"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-up-ndY">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVp-RO-vpS">
+                                        <rect key="frame" x="175" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bVp-RO-vpS" firstAttribute="centerX" secondItem="oMF-up-ndY" secondAttribute="centerX" id="AWw-XC-1O5"/>
+                                    <constraint firstItem="bVp-RO-vpS" firstAttribute="centerY" secondItem="oMF-up-ndY" secondAttribute="centerY" id="Wog-aL-Umd"/>
+                                    <constraint firstAttribute="height" constant="44" id="qF8-so-Hj3"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-0P-KrG">
+                                <rect key="frame" x="0.0" y="343" width="375" height="224"/>
+                                <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="okD-3e-Apv"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QxZ-rx-2LH" firstAttribute="top" secondItem="G8k-c2-3On" secondAttribute="top" constant="100" id="GD8-Zz-PgI"/>
+                            <constraint firstItem="QxZ-rx-2LH" firstAttribute="centerX" secondItem="G8k-c2-3On" secondAttribute="centerX" id="KVC-BY-xim"/>
+                            <constraint firstItem="oMF-up-ndY" firstAttribute="top" secondItem="Jxr-0P-KrG" secondAttribute="bottom" constant="56" id="OwJ-5k-nJx"/>
+                            <constraint firstItem="Jxr-0P-KrG" firstAttribute="leading" secondItem="G8k-c2-3On" secondAttribute="leading" id="QCM-q4-fl9"/>
+                            <constraint firstAttribute="bottom" secondItem="oMF-up-ndY" secondAttribute="bottom" id="REX-VT-SoH"/>
+                            <constraint firstAttribute="trailing" secondItem="oMF-up-ndY" secondAttribute="trailing" id="RMN-oB-Zrn"/>
+                            <constraint firstItem="oMF-up-ndY" firstAttribute="leading" secondItem="G8k-c2-3On" secondAttribute="leading" id="ir6-jG-xXK"/>
+                            <constraint firstAttribute="trailing" secondItem="Jxr-0P-KrG" secondAttribute="trailing" id="q3W-Z4-ZCA"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zIf-53-ZR2" secondAttribute="trailing" id="3vK-tJ-nOa"/>
+                <constraint firstItem="zIf-53-ZR2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Py-Fd-M7s"/>
+                <constraint firstItem="zIf-53-ZR2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MwX-Vd-pG3"/>
+                <constraint firstAttribute="bottom" secondItem="zIf-53-ZR2" secondAttribute="bottom" id="kqr-Sh-YWz"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+    </resources>
+</document>
