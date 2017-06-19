@@ -30,6 +30,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVp-RO-vpS">
                                         <rect key="frame" x="175" y="9.5" width="25" height="25"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                        <connections>
+                                            <action selector="closeButtonPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="9hU-OR-Hlg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="44" id="qF8-so-Hj3"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-0P-KrG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-0P-KrG">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
                                 <color key="backgroundColor" red="1" green="0.80456376149999997" blue="0.26760355559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -58,7 +61,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jxr-0P-KrG" secondAttribute="trailing" id="q3W-Z4-ZCA"/>
                         </constraints>
                     </view>
-                    <blurEffect style="extraLight"/>
+                    <blurEffect style="light"/>
                 </visualEffectView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -68,6 +71,10 @@
                 <constraint firstItem="zIf-53-ZR2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MwX-Vd-pG3"/>
                 <constraint firstAttribute="bottom" secondItem="zIf-53-ZR2" secondAttribute="bottom" id="kqr-Sh-YWz"/>
             </constraints>
+            <connections>
+                <outlet property="closeButton" destination="bVp-RO-vpS" id="VCl-zt-yRY"/>
+                <outlet property="scrollView" destination="Jxr-0P-KrG" id="3rH-31-95l"/>
+            </connections>
         </view>
     </objects>
     <resources>
