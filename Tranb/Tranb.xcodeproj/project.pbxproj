@@ -30,6 +30,7 @@
 		3B4339071EEA8FF000D7FA58 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339061EEA8FF000D7FA58 /* NewFeatureView.swift */; };
 		3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339081EEA900100D7FA58 /* WelcomeView.swift */; };
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
+		3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */; };
 		3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B97A7161EF27F930019221B /* TTRefreshControl.swift */; };
 		3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */; };
 		3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */; };
@@ -111,6 +112,7 @@
 		3B4339061EEA8FF000D7FA58 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
 		3B4339081EEA900100D7FA58 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTImageRefreshView.xib; sourceTree = "<group>"; };
 		3B97A7161EF27F930019221B /* TTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRefreshControl.swift; sourceTree = "<group>"; };
 		3B9B10CB1EE00CF5003F4966 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3B9B10CD1EE00D48003F4966 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				3B97A7161EF27F930019221B /* TTRefreshControl.swift */,
 				3B1F241B1EF37D1E0031DB0A /* TTRefreshView.swift */,
 				3B1F241D1EF37D280031DB0A /* TTRefreshView.xib */,
+				3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */,
 			);
 			path = TTRefreshControl;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				3B1F241E1EF37D280031DB0A /* TTRefreshView.xib in Resources */,
 				488699FD1EDFE4B600C06E89 /* Assets.xcassets in Resources */,
 				3B0BAC0A1EF11645001C566C /* TimeLineRetweetCell.xib in Resources */,
+				3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */,
 				4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

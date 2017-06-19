@@ -51,7 +51,7 @@ class TTRefreshView: UIView {
     
     class func refreshView() -> TTRefreshView {
     
-        let nib = UINib(nibName: "TTRefreshView", bundle: nil)
+        let nib = UINib(nibName: "TTImageRefreshView", bundle: nil)
         
         return nib.instantiate(withOwner: nil, options: nil)[0] as! TTRefreshView
     }
