@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 /// 发微博界面
 class ComposeTypeView: UIView {
@@ -21,6 +22,8 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var backButtonCenterXCons: NSLayoutConstraint!
     //关闭按钮竖直居中位置
     @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
+    //毛玻璃视图
+    @IBOutlet weak var effectView: UIVisualEffectView!
     /// 按钮数据数组
     let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字"],
                                ["imageName": "tabbar_compose_photo", "title": "照片/视频"],
@@ -41,10 +44,15 @@ class ComposeTypeView: UIView {
         let v = nib.instantiate(withOwner: nib, options: nil)[0] as! ComposeTypeView
         v.frame = UIScreen.main.bounds
         v.setupUI()
-        
         return v
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
 
     /// 显示此时图
     func show() {
@@ -54,6 +62,8 @@ class ComposeTypeView: UIView {
         }
         
         vc.view.addSubview(self)
+        
+        showCurrentView()
     }
     
     //MARK: - actions
@@ -104,6 +114,20 @@ class ComposeTypeView: UIView {
     }
     
     
+}
+
+// MARK: - 设置动画
+private extension ComposeTypeView {
+
+    func showCurrentView() {
+        
+        let animate: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        animate.fromValue = 0
+        animate.toValue = 1
+        animate.duration = 0.5
+        //添加到毛玻璃视图上面，如果直接添加到此view上会有莫名卡顿，应该是背景颜色是clear导致的
+        effectView.pop_add(animate, forKey: nil)
+    }
 }
 
 // MARK: - 设置界面

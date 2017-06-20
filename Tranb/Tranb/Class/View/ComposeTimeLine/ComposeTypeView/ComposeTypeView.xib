@@ -85,6 +85,7 @@
                 <outlet property="backButtton" destination="cOo-e4-ILS" id="jpT-EB-VjC"/>
                 <outlet property="closeButton" destination="bVp-RO-vpS" id="VCl-zt-yRY"/>
                 <outlet property="closeButtonCenterXCons" destination="AWw-XC-1O5" id="TIJ-27-qNg"/>
+                <outlet property="effectView" destination="zIf-53-ZR2" id="cCC-mz-zEg"/>
                 <outlet property="scrollView" destination="Jxr-0P-KrG" id="3rH-31-95l"/>
             </connections>
         </view>
