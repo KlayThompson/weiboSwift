@@ -25,7 +25,7 @@ class ComposeTypeView: UIView {
     //毛玻璃视图
     @IBOutlet weak var effectView: UIVisualEffectView!
     /// 按钮数据数组
-    let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字"],
+    let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字","className" : "ComposeTextViewController"],
                                ["imageName": "tabbar_compose_photo", "title": "照片/视频"],
                                ["imageName": "tabbar_compose_weibo", "title": "长微博"],
                                ["imageName": "tabbar_compose_lbs", "title": "签到"],
@@ -47,13 +47,6 @@ class ComposeTypeView: UIView {
         return v
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
-    
-
     /// 显示此时图
     func show() {
         //添加视图  添加到跟视图上面
@@ -67,14 +60,47 @@ class ComposeTypeView: UIView {
     }
     
     //MARK: - actions
-    func buttonsPress(button: UIButton) {
+    func buttonsPress(button: CompsoeTypeButton) {
+        
+        //设置按钮动画
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let baseView = scrollView.subviews[page]
+        
+        //遍历
+        for btn in baseView.subviews {
+            
+            //缩放动画
+            let scaleAnimation:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            //tovalue需要转换
+            let value = (btn == button) ? 2 : 0.3
+            
+            scaleAnimation.toValue = NSValue(cgPoint: CGPoint(x: value, y: value))
+            scaleAnimation.duration = 0.5
+            btn.pop_add(scaleAnimation, forKey: nil)
+            
+            //添加渐变动画
+            let alphaAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            alphaAnimation.toValue = 0.2
+            alphaAnimation.duration = 0.5
+            btn.pop_add(alphaAnimation, forKey: nil)
+            
+            //监听动画完成
+            alphaAnimation.completionBlock = {_,_ in
+                //donghua wancheng
+                UIView.animate(withDuration: 0.3, animations: { 
+                    self.alpha = 0
+                }, completion: { (_) in
+                    self.removeFromSuperview()
+                })
+            }
+        }
+        
         
     }
     
     //关闭按钮点击
     @IBAction func closeButtonPress(_ sender: Any) {
-        
-        removeFromSuperview()
+        hideButtonAnimation()
     }
     
     //点击更多按钮
@@ -142,7 +168,7 @@ private extension ComposeTypeView {
             
             //创建动画
             let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-            animation.fromValue = button.center.y + 300
+            animation.fromValue = button.center.y + 400
             animation.toValue = button.center.y
             
             //设置回弹系数 为0-20
@@ -152,6 +178,48 @@ private extension ComposeTypeView {
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval(index) * 0.025
             
             button.pop_add(animation, forKey: nil)
+        }
+    }
+    
+    // MARK: - 隐藏动画
+    /// 隐藏按钮动画
+    func hideButtonAnimation() {
+        
+        //先获取scrollView的页数来取得view
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let baseView = scrollView.subviews[page]
+        
+        //倒叙遍历视图获取button
+        for (index,button) in baseView.subviews.enumerated().reversed() {
+            
+            let animation:POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            animation.fromValue = button.center.y
+            animation.toValue = button.center.y + 400
+            
+            //设置时间
+            animation.beginTime = CACurrentMediaTime() + CFTimeInterval(baseView.subviews.count - index) * 0.025
+            
+            button.pop_add(animation, forKey: nil)
+            
+            //按钮隐藏完成回调
+            animation.completionBlock = { _,_ in
+                self.hideCurrentView()
+            }
+        }
+    }
+    
+    /// 隐藏当前视图
+    func hideCurrentView() {
+        
+        let animation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        animation.fromValue = 1
+        animation.toValue = 0
+        animation.duration = 0.2
+        
+        effectView.pop_add(animation, forKey: nil)
+        
+        animation.completionBlock = {_,_ in
+            self.removeFromSuperview()
         }
     }
 }
@@ -207,7 +275,12 @@ private extension ComposeTypeView {
             //添加点击事件
             if let actionName = dic["actionName"] {
                 button.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                button.addTarget(self, action: #selector(buttonsPress), for: .touchUpInside)
             }
+            
+            //赋值类名,因为属性是可选，故不需要守护
+            button.className = dic["className"]
             
             view.addSubview(button)
         }

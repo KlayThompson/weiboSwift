@@ -15,7 +15,10 @@ class CompsoeTypeButton: UIControl {
     
     /// 按钮文字
     @IBOutlet weak var titleLabel: UILabel!
-  
+    
+    //类名
+    var className: String?
+    
     class func compsoeTypeButton(imageName: String, titleName: String) -> CompsoeTypeButton {
     
         let nib = UINib(nibName: "CompsoeTypeButton", bundle: nil)
