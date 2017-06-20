@@ -127,6 +127,32 @@ private extension ComposeTypeView {
         animate.duration = 0.5
         //添加到毛玻璃视图上面，如果直接添加到此view上会有莫名卡顿，应该是背景颜色是clear导致的
         effectView.pop_add(animate, forKey: nil)
+        
+        showButtonAnimation()
+    }
+    
+    /// 设置按钮动画显示
+    func showButtonAnimation() {
+        
+        //先取出scrollview的第0个视图，存放6个按钮的父视图
+        let baseView = scrollView.subviews[0]
+        
+        //遍历此时图的所有子视图  为button
+        for (index,button) in baseView.subviews.enumerated() {
+            
+            //创建动画
+            let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            animation.fromValue = button.center.y + 300
+            animation.toValue = button.center.y
+            
+            //设置回弹系数 为0-20
+            animation.springBounciness = 8
+            
+            //设置动画启动时间
+            animation.beginTime = CACurrentMediaTime() + CFTimeInterval(index) * 0.025
+            
+            button.pop_add(animation, forKey: nil)
+        }
     }
 }
 
