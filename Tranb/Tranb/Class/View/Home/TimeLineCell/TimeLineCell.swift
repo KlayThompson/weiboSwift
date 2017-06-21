@@ -60,6 +60,9 @@ class TimeLineCell: UITableViewCell {
             pictureView.viewModel = viewModel
             //转发微博文字
             retweetLabel?.text = viewModel?.reTweetText
+            //微博来源
+            sourceLabel.text = viewModel?.timeLineModel.source
+            print(viewModel?.timeLineModel.source ?? "")
         }
     }
    

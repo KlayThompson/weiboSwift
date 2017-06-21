@@ -72,7 +72,9 @@ class TTRefreshControl: UIControl {
         self.frame = CGRect(x: 0, y: -height, width: scrollView.bounds.width, height: height)
         
         //传递刷新视图高度给子视图
-        refreshView.parentViewHeight = height
+        if refreshView.refreshState != .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
         
         //判断临界值
         if scrollView.isDragging {//在拖动情况下

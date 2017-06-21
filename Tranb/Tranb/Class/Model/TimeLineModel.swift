@@ -36,6 +36,11 @@ class TimeLineModel: NSObject {
     /// 被转发的原微博信息字段，当该微博为转发微博时返回
     var retweeted_status: TimeLineModel?
     
+    /// 微博创建时间
+    var created_at: String?
+    
+    /// 微博来源
+    var source: String?
     
     override var description: String {
         return yy_modelDescription()
