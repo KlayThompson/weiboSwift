@@ -24,6 +24,11 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
     //毛玻璃视图
     @IBOutlet weak var effectView: UIVisualEffectView!
+    
+    //纪录用于回调的闭包
+    var completionBlock: ((_ className: String?)->())?
+    
+    
     /// 按钮数据数组
     let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字","className" : "ComposeTextViewController"],
                                ["imageName": "tabbar_compose_photo", "title": "照片/视频"],
@@ -48,7 +53,10 @@ class ComposeTypeView: UIView {
     }
 
     /// 显示此时图
-    func show() {
+    func show(completion: @escaping (_ className: String?)->()) {
+        
+        //记录闭包
+        completionBlock = completion
         //添加视图  添加到跟视图上面
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -67,7 +75,7 @@ class ComposeTypeView: UIView {
         let baseView = scrollView.subviews[page]
         
         //遍历
-        for btn in baseView.subviews {
+        for (index, btn) in baseView.subviews.enumerated() {
             
             //缩放动画
             let scaleAnimation:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
@@ -85,13 +93,16 @@ class ComposeTypeView: UIView {
             btn.pop_add(alphaAnimation, forKey: nil)
             
             //监听动画完成
-            alphaAnimation.completionBlock = {_,_ in
-                //donghua wancheng
-                UIView.animate(withDuration: 0.3, animations: { 
-                    self.alpha = 0
-                }, completion: { (_) in
-                    self.removeFromSuperview()
-                })
+            if index == 0 {
+                alphaAnimation.completionBlock = {_,_ in
+                    //donghua wancheng
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.alpha = 0
+                    }, completion: { (_) in
+                        //动画完成执行回调
+                        self.completionBlock?(button.className)
+                    })
+                }
             }
         }
         

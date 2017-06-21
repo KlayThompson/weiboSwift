@@ -46,7 +46,23 @@ class MainTabBarController: UITabBarController {
         let vc = ComposeTypeView.composeTypeView()
         
         //显示
-        vc.show()        
+        vc.show {[weak vc] (className) in
+            
+            guard let className = className,
+            let clas = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else {
+                vc?.removeFromSuperview()
+                return
+            }
+            
+            let v = clas.init()
+            
+            let navi = UINavigationController(rootViewController: v)
+            
+            self.present(navi, animated: true, completion: { 
+                vc?.removeFromSuperview()
+            })
+            
+        }
     }
     
     func userShouldLogin(notify: Notification) {
