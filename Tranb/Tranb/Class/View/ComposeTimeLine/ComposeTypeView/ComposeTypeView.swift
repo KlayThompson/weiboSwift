@@ -201,16 +201,18 @@ private extension ComposeTypeView {
             
             button.pop_add(animation, forKey: nil)
             
-            //按钮隐藏完成回调
-            animation.completionBlock = { _,_ in
-                self.hideCurrentView()
-            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4, execute: {
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.hideCurrentView()
+                })
+            })
         }
     }
     
     /// 隐藏当前视图
     func hideCurrentView() {
-        
+
         let animation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         animation.fromValue = 1
         animation.toValue = 0
