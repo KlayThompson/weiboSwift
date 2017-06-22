@@ -42,6 +42,10 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     /// 计算的行高
     var rowHeight: CGFloat = 0
     
+    /// 微博来源
+    var sourceString: String?
+    
+    
     /// 返回单个微博的视图模型
     ///
     /// - Parameter model: TimeLineModel
@@ -96,6 +100,9 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         
         //计算行高
         calculateRowHeight()
+        
+        //微博来源
+        
     }
     
     //计算行高

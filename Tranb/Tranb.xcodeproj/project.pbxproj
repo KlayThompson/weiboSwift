@@ -30,6 +30,7 @@
 		3B4339071EEA8FF000D7FA58 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339061EEA8FF000D7FA58 /* NewFeatureView.swift */; };
 		3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339081EEA900100D7FA58 /* WelcomeView.swift */; };
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
+		3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */; };
 		3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */; };
 		3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */; };
 		3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */; };
@@ -119,6 +120,7 @@
 		3B4339061EEA8FF000D7FA58 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
 		3B4339081EEA900100D7FA58 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTImageRefreshView.xib; sourceTree = "<group>"; };
 		3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMTRefreshView.xib; sourceTree = "<group>"; };
 		3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMTRefreshView.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 		48869A231EE0514000C06E89 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */,
 				48869A241EE0515000C06E89 /* Bundle+Extensions.swift */,
 				3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */,
 				3B0BABFD1EEF8BCE001C566C /* UIImageView+WebImage.swift */,
@@ -888,6 +891,7 @@
 				3BB6FBE11EF9198E00836A26 /* ComposeTextViewController.swift in Sources */,
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
 				48869A2E1EE99F6F00C06E89 /* NotificationDefine.swift in Sources */,
+				3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */,
 				48869A291EE99F6100C06E89 /* VisitorView.swift in Sources */,
 				3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */,
 				3B0BABFE1EEF8BCE001C566C /* UIImageView+WebImage.swift in Sources */,
