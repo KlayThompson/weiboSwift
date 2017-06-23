@@ -102,7 +102,7 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         calculateRowHeight()
         
         //微博来源
-        
+        sourceString = model.source?.tt_href()?.text
     }
     
     //计算行高
