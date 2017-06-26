@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppInfoFromServer()
         
         //设置一些额外信息
-        setupAdditions(application)
+        setupAdditions(application)  
+        _ = TTEmojiManager.shared
         return true
     }
 

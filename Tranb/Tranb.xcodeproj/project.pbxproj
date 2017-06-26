@@ -31,6 +31,10 @@
 		3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339081EEA900100D7FA58 /* WelcomeView.swift */; };
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
 		3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */; };
+		3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */; };
+		3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */; };
+		3B66B14D1F0105040063C743 /* TTEmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14C1F0105040063C743 /* TTEmotionModel.swift */; };
+		3B66B14F1F0106F60063C743 /* TTEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14E1F0106F60063C743 /* TTEmotionPackage.swift */; };
 		3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */; };
 		3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */; };
 		3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */; };
@@ -121,6 +125,10 @@
 		3B4339081EEA900100D7FA58 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTEmoticon.bundle; sourceTree = "<group>"; };
+		3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmojiManager.swift; sourceTree = "<group>"; };
+		3B66B14C1F0105040063C743 /* TTEmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionModel.swift; sourceTree = "<group>"; };
+		3B66B14E1F0106F60063C743 /* TTEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionPackage.swift; sourceTree = "<group>"; };
 		3B8A15FD1EF75DF200A1A107 /* TTImageRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTImageRefreshView.xib; sourceTree = "<group>"; };
 		3B8A15FF1EF7647800A1A107 /* TTMTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMTRefreshView.xib; sourceTree = "<group>"; };
 		3B8A16011EF7649A00A1A107 /* TTMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMTRefreshView.swift; sourceTree = "<group>"; };
@@ -285,6 +293,17 @@
 			path = Newfeature;
 			sourceTree = "<group>";
 		};
+		3B66B1471F00F5010063C743 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */,
+				3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */,
+				3B66B14C1F0105040063C743 /* TTEmotionModel.swift */,
+				3B66B14E1F0106F60063C743 /* TTEmotionPackage.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
 		3B8A16031EF7757800A1A107 /* ComposeTimeLine */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +361,7 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3B66B1471F00F5010063C743 /* Emoji */,
 				48E4343A1EF2E7B100865135 /* TTCacheManager */,
 				3B97A7151EF27F840019221B /* TTRefreshControl */,
 				3B4338EB1EE6943E00D7FA58 /* NetWork */,
@@ -694,6 +714,7 @@
 				3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */,
 				3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */,
 				3B0BABF71EEE37AA001C566C /* NewFeatureView.xib in Resources */,
+				3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */,
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
 				3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */,
 				3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */,
@@ -872,6 +893,7 @@
 				4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
 				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
+				3B66B14F1F0106F60063C743 /* TTEmotionPackage.swift in Sources */,
 				3B9B10FF1EE0122F003F4966 /* UIButton+CZAddition.m in Sources */,
 				3B9B11001EE0122F003F4966 /* UIColor+CZAddition.m in Sources */,
 				3B0BAC041EEFDBE8001C566C /* TimeLinePictureView.swift in Sources */,
@@ -895,6 +917,7 @@
 				48869A291EE99F6100C06E89 /* VisitorView.swift in Sources */,
 				3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */,
 				3B0BABFE1EEF8BCE001C566C /* UIImageView+WebImage.swift in Sources */,
+				3B66B14D1F0105040063C743 /* TTEmotionModel.swift in Sources */,
 				3B4338F71EE7C9BF00D7FA58 /* TimeLineViewModel.swift in Sources */,
 				48869A2D1EE99F6F00C06E89 /* APPInfoDefine.swift in Sources */,
 				48869A251EE0515000C06E89 /* Bundle+Extensions.swift in Sources */,
@@ -906,6 +929,7 @@
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
 				3B0BAC021EEFCA36001C566C /* TimeLineToolBarView.swift in Sources */,
 				3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */,
+				3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */,
 				3B4338FF1EE9260500D7FA58 /* UserLoginViewController.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,
 				3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */,

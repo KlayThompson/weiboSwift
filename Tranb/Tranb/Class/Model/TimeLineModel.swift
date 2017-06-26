@@ -40,7 +40,11 @@ class TimeLineModel: NSObject {
     var created_at: String?
     
     /// 微博来源
-    var source: String?
+    var source: String? {
+        didSet {
+            source = "来自：" + (source?.tt_href()?.text ?? "")
+        }
+    }
     
     override var description: String {
         return yy_modelDescription()
