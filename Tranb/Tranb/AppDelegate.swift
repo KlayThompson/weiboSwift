@@ -34,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //设置一些额外信息
         setupAdditions(application)  
-        _ = TTEmojiManager.shared
+        let ss = TTEmojiManager.shared
+        _ = ss.packages.last?.emoticons.first?.image
         return true
     }
 

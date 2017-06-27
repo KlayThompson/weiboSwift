@@ -20,6 +20,40 @@ class TTEmotionModel: NSObject {
     /// emoji 的十六进制编码
     var code: String?
     
+    /// 表情模型所在目录
+    var directory: String?
+    
+    /// 图片表情对应的图像
+    var image: UIImage? {
+    
+        guard let path = Bundle.main.path(forResource: "TTEmoticon.bundle", ofType: nil),
+            let bundle = Bundle(path: path),
+            let png = png,
+            let directory = directory else {
+            return nil
+        }
+        
+        return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+    }
+    
+    
+    /// 将当前图像转换成图像的属性文本
+    func imageText(font: UIFont) -> NSAttributedString {
+        //确保图片存在
+        guard let image = image else {
+            return NSAttributedString(string: "")
+        }
+        
+        //创建文本附件
+        let att = NSTextAttachment()
+        att.image = image
+        let height = font.lineHeight
+        att.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        
+        
+        return NSAttributedString(attachment: att)
+    }
+    
     override var description: String {
         return yy_modelDescription()
     }

@@ -21,9 +21,33 @@ class TTEmojiManager {
     }
 }
 
+// MARK: - 筛选表情
+extension TTEmojiManager {
+
+    func findEmotions(string: String) -> TTEmotionModel? {
+        
+        //遍历表情包
+        for emotion in packages {
+            //在表情数组中过滤string
+            let array = emotion.emoticons.filter({ (model) -> Bool in
+                return model.chs == string
+            })
+            
+            //判断结果数组的数量
+            if array.count == 1 {
+                return array[0]
+            }
+        }
+        
+    
+        
+        return nil
+    }
+}
+
 // MARK: - 加载本地数据
 private extension TTEmojiManager {
-
+    
     func loadLocalEmojiData() {
         
         //从plist文件中读取数据
@@ -36,12 +60,10 @@ private extension TTEmojiManager {
             let emotionsArray = NSArray(contentsOfFile: emojipPlistPath) as? [[String : String]],
             //字典转模型
             let modelArray = NSArray.yy_modelArray(with: TTEmotionPackage.self, json: emotionsArray) as? [TTEmotionPackage] else {
-        
+                
             return
         }
-        
-        packages = modelArray
-        
-        
+        //使用+=不需要为package重新分配空间，直接追加数据
+        packages += modelArray
     }
 }
