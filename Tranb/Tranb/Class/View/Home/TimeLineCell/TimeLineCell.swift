@@ -45,7 +45,9 @@ class TimeLineCell: UITableViewCell {
     var viewModel: SingleTimeLineViewModel? {
         didSet {
             //微博内容
-            timeLineTextLabel.text = viewModel?.timeLineModel.text
+            timeLineTextLabel.attributedText = viewModel?.timeLineAttriText
+            //转发微博文字
+            retweetLabel?.attributedText = viewModel?.reTweetAttriText
             //用户名
             nameLabel.text = viewModel?.timeLineModel.user?.screen_name
             //会员标识
@@ -58,8 +60,6 @@ class TimeLineCell: UITableViewCell {
             toolBar.viewModel = viewModel
             //微博配图
             pictureView.viewModel = viewModel
-            //转发微博文字
-            retweetLabel?.text = viewModel?.reTweetText
             //微博来源
             sourceLabel.text = viewModel?.timeLineModel.source
             

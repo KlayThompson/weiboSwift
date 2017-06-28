@@ -23,6 +23,38 @@ class TTEmojiManager {
 
 // MARK: - 筛选表情
 extension TTEmojiManager {
+    
+    func emotionString(string: String, font: UIFont) -> NSAttributedString {
+        
+        //转换字符串NSMutableAttributedString
+        let attrString = NSMutableAttributedString(string: string)
+        //建立正则表达式，检索所有表情
+        let pattern = "\\[.*?\\]"
+        
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attrString
+        }
+        
+        //匹配所有项
+        let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: attrString.length))
+        
+        //遍历所有匹配结果 倒叙才能正确全部匹配
+        for chr in matches.reversed() {
+            let range = chr.range
+            
+            let subString = (attrString.string as NSString).substring(with: range)
+            //查找对应的表情符号
+            if let emotion = TTEmojiManager.shared.findEmotions(string: subString) {
+                //替换
+                attrString.replaceCharacters(in: range, with: emotion.imageText(font: font))
+            }
+        }
+        
+        //统一设置字体属性
+        attrString.addAttributes([NSFontAttributeName: font], range: NSRange.init(location: 0, length: attrString.length))
+        
+        return attrString
+    }
 
     func findEmotions(string: String) -> TTEmotionModel? {
         

@@ -37,7 +37,11 @@ class SingleTimeLineViewModel: CustomStringConvertible {
     }
     
     /// 被转发微博文字
-    var reTweetText: String?
+    var reTweetAttriText: NSAttributedString?
+    
+    /// 微博正文
+    var timeLineAttriText: NSAttributedString?
+    
     
     /// 计算的行高
     var rowHeight: CGFloat = 0
@@ -80,7 +84,13 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         pictureSize = calulatorPictureSize(imageCount: picUrls.count)
         
         //被转发微博文字
-        reTweetText = "@" + (model.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
+        let originalTextAttri = UIFont.systemFont(ofSize: 15)
+        let retweetTextAttri = UIFont.systemFont(ofSize: 14)
+        let reTweetString = "@" + (model.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
+        reTweetAttriText = TTEmojiManager.shared.emotionString(string: reTweetString, font: retweetTextAttri)
+        
+        //微博正文
+        timeLineAttriText = TTEmojiManager.shared.emotionString(string: model.text ?? "", font: originalTextAttri)
         
         for unit in picUrls {
         
@@ -114,26 +124,20 @@ class SingleTimeLineViewModel: CustomStringConvertible {
         height += 2 * margin + iconHeight + margin
         
         let textSize = CGSize(width: SCREEN_WIDTH - 2 * margin, height: CGFloat(MAXFLOAT))
-        let originalTextAttri = UIFont.systemFont(ofSize: 15)
-        let retweetTextAttri = UIFont.systemFont(ofSize: 14)
+
         //正文高度
-        if let text = timeLineModel.text {
+        if let text = timeLineAttriText {
             
-            height += (text as NSString).boundingRect(with: textSize,
-                                                      options: [.usesLineFragmentOrigin],
-                                                      attributes: [NSFontAttributeName : originalTextAttri],
-                                                      context: nil).height
+            height += text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height
+            
         }
         
         //是否有转发微博
         if timeLineModel.retweeted_status != nil {
             height += 2 * margin
             
-            if let text = reTweetText {
-                height += (text as NSString).boundingRect(with: textSize,
-                                                          options: [.usesLineFragmentOrigin],
-                                                          attributes: [NSFontAttributeName : retweetTextAttri],
-                                                          context: nil).height
+            if let text = reTweetAttriText {
+               height += text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height
             }
         }
         
