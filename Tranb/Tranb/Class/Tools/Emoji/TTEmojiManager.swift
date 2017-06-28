@@ -50,7 +50,7 @@ extension TTEmojiManager {
             }
         }
         
-        //统一设置字体属性
+        //统一设置字体属性 必须设置的，要不然后导致界面布局错乱  颜色也需要设置
         attrString.addAttributes([NSFontAttributeName: font], range: NSRange.init(location: 0, length: attrString.length))
         
         return attrString
