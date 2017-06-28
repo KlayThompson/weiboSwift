@@ -29,6 +29,16 @@ class TTLabel: UILabel {
         prepareTextSystem()
     }
     
+    //接管
+    override func drawText(in rect: CGRect) {
+        
+        let range = NSRange(location: 0, length: textStorage.length)
+        
+        layoutManger.drawGlyphs(forGlyphRange: range, at: CGPoint())
+        
+        
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         //制定文本的区域
