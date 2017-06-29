@@ -20,6 +20,9 @@ class ComposeTextViewController: UIViewController {
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
     
+    /// 顶部标题
+    @IBOutlet var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,8 +49,8 @@ private extension ComposeTextViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", target: self, action: #selector(dismissViewController))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
-        sendButton.isEnabled = false
+        navigationItem.titleView = titleLabel
     }
 }
