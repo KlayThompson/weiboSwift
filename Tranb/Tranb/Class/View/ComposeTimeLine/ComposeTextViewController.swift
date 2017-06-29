@@ -32,7 +32,7 @@ class ComposeTextViewController: UIViewController {
         setupUI()
         
         //监听键盘通知
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: Notification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 
     func dismissViewController() {
@@ -42,12 +42,12 @@ class ComposeTextViewController: UIViewController {
     @IBAction func sendButtonPress(_ sender: Any) {
     }
     
-    func keyboardChange() {
+    func keyboardChange(notify: Notification) {
         
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 }
 
