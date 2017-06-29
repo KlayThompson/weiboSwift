@@ -2,7 +2,7 @@
 //  ComposeTextViewController.swift
 //  Tranb
 //
-//  Created by Kim on 2017/6/20.
+//  Created by Kim on 2017/6/29.
 //  Copyright © 2017年 KlayThompson. All rights reserved.
 //
 
@@ -10,26 +10,44 @@ import UIKit
 
 class ComposeTextViewController: UIViewController {
 
+    
+    /// 底部工具栏
+    @IBOutlet weak var toolBar: UIToolbar!
+    
+    /// 输入框
+    @IBOutlet weak var textView: UITextView!
+    
+    /// 发布按钮
+    @IBOutlet var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cz_random()
+
         // Do any additional setup after loading the view.
+        
+        
+        setupUI()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dismissViewController() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func sendButtonPress(_ sender: Any) {
     }
-    */
+}
 
+private extension ComposeTextViewController {
+
+    func setupUI() {
+        
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", target: self, action: #selector(dismissViewController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        sendButton.isEnabled = false
+    }
 }

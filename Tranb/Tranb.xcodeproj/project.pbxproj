@@ -32,6 +32,8 @@
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
 		3B4A9E4B1F03A970002708D5 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E4A1F03A970002708D5 /* TTLabel.swift */; };
 		3B4A9E6D1F04D22D002708D5 /* HomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E6C1F04D22D002708D5 /* HomeWebViewController.swift */; };
+		3B4A9E761F04E0D3002708D5 /* ComposeTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E741F04E0D3002708D5 /* ComposeTextViewController.swift */; };
+		3B4A9E771F04E0D3002708D5 /* ComposeTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4A9E751F04E0D3002708D5 /* ComposeTextViewController.xib */; };
 		3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */; };
 		3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */; };
 		3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */; };
@@ -66,7 +68,6 @@
 		3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10F81EE0122F003F4966 /* UIViewController+CZAddition.m */; };
 		3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */; };
 		3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110C1EE13447003F4966 /* NewViewController.swift */; };
-		3BB6FBE11EF9198E00836A26 /* ComposeTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6FBE01EF9198E00836A26 /* ComposeTextViewController.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -128,6 +129,8 @@
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		3B4A9E4A1F03A970002708D5 /* TTLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
 		3B4A9E6C1F04D22D002708D5 /* HomeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWebViewController.swift; sourceTree = "<group>"; };
+		3B4A9E741F04E0D3002708D5 /* ComposeTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextViewController.swift; sourceTree = "<group>"; };
+		3B4A9E751F04E0D3002708D5 /* ComposeTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTextViewController.xib; sourceTree = "<group>"; };
 		3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTEmoticon.bundle; sourceTree = "<group>"; };
 		3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmojiManager.swift; sourceTree = "<group>"; };
@@ -176,7 +179,6 @@
 		3B9B11091EE012E5003F4966 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
 		3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		3B9B110C1EE13447003F4966 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
-		3BB6FBE01EF9198E00836A26 /* ComposeTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextViewController.swift; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -320,7 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				3B8A16041EF775A200A1A107 /* ComposeTypeView */,
-				3BB6FBE01EF9198E00836A26 /* ComposeTextViewController.swift */,
+				3B4A9E741F04E0D3002708D5 /* ComposeTextViewController.swift */,
+				3B4A9E751F04E0D3002708D5 /* ComposeTextViewController.xib */,
 			);
 			path = ComposeTimeLine;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4A9E771F04E0D3002708D5 /* ComposeTextViewController.xib in Resources */,
 				3B0BABFC1EEE83C5001C566C /* TimeLineNormalCell.xib in Resources */,
 				3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */,
 				3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */,
@@ -926,7 +930,6 @@
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B4339071EEA8FF000D7FA58 /* NewFeatureView.swift in Sources */,
-				3BB6FBE11EF9198E00836A26 /* ComposeTextViewController.swift in Sources */,
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
 				48869A2E1EE99F6F00C06E89 /* NotificationDefine.swift in Sources */,
 				3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */,
@@ -940,6 +943,7 @@
 				3B0BAC061EEFDF70001C566C /* TimeLinePictureUnit.swift in Sources */,
 				3B0BABFA1EEE83B1001C566C /* TimeLineCell.swift in Sources */,
 				3B0BAC081EF0D307001C566C /* SizeDefine.swift in Sources */,
+				3B4A9E761F04E0D3002708D5 /* ComposeTextViewController.swift in Sources */,
 				3B0BAC001EEFB62E001C566C /* UIImage+Extension.swift in Sources */,
 				3B4339041EEA856900D7FA58 /* HomeTitleButton.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
