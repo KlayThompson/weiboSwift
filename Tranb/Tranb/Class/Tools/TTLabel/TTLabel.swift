@@ -149,7 +149,7 @@ public protocol TTLabelDelegate: NSObjectProtocol {
 
 public class TTLabel: UILabel {
     
-    public var linkTextColor = UIColor.blue
+    public var linkTextColor = UIColor.cz_color(withHex: 0x6495ed)
     public var selectedBackgroudColor = UIColor.lightGray
     public weak var delegate: TTLabelDelegate?
     

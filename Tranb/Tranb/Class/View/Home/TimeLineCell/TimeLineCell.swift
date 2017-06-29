@@ -8,8 +8,15 @@
 
 import UIKit
 
+//定义代理，点击了链接执行
+@objc protocol TimeLineCellDelegate: NSObjectProtocol {
+
+    @objc optional func timeLineDidSelectUrlString(cell: TimeLineCell, urlString: String)
+}
+
 class TimeLineCell: UITableViewCell {
 
+    weak var delegate: TimeLineCellDelegate?
     
     /// 用户头像
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -30,7 +37,7 @@ class TimeLineCell: UITableViewCell {
     @IBOutlet weak var avatarIdentifyImageView: UIImageView!
     
     /// 微博正文
-    @IBOutlet weak var timeLineTextLabel: UILabel!
+    @IBOutlet weak var timeLineTextLabel: TTLabel!
     
     /// 底部工具栏
     @IBOutlet weak var toolBar: TimeLineToolBarView!
@@ -39,7 +46,7 @@ class TimeLineCell: UITableViewCell {
     @IBOutlet weak var pictureView: TimeLinePictureView!
     
     /// 转发微博文字，因为原创cell不存在，故此处用？可选的
-    @IBOutlet weak var retweetLabel: UILabel?
+    @IBOutlet weak var retweetLabel: TTLabel?
     
     
     var viewModel: SingleTimeLineViewModel? {
@@ -76,6 +83,9 @@ class TimeLineCell: UITableViewCell {
         //栅格化
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
+        //设置TTLabel代理
+        timeLineTextLabel.delegate = self
+        retweetLabel?.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -83,5 +93,17 @@ class TimeLineCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+}
 
+extension TimeLineCell: TTLabelDelegate {
+
+    public func labelDidSelectedLinkText(label: TTLabel, text: String) {
+        
+        if !text.hasPrefix("http") {
+            return
+        }
+        
+        //执行代理
+        delegate?.timeLineDidSelectUrlString?(cell: self, urlString: text)
+    }
 }

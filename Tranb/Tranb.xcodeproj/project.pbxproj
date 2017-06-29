@@ -31,6 +31,7 @@
 		3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4339081EEA900100D7FA58 /* WelcomeView.swift */; };
 		3B43390B1EEA992E00D7FA58 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */; };
 		3B4A9E4B1F03A970002708D5 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E4A1F03A970002708D5 /* TTLabel.swift */; };
+		3B4A9E6D1F04D22D002708D5 /* HomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E6C1F04D22D002708D5 /* HomeWebViewController.swift */; };
 		3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */; };
 		3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */; };
 		3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */; };
@@ -126,6 +127,7 @@
 		3B4339081EEA900100D7FA58 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		3B43390A1EEA992E00D7FA58 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		3B4A9E4A1F03A970002708D5 /* TTLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
+		3B4A9E6C1F04D22D002708D5 /* HomeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWebViewController.swift; sourceTree = "<group>"; };
 		3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTEmoticon.bundle; sourceTree = "<group>"; };
 		3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmojiManager.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			children = (
 				3B9B10D11EE00D6B003F4966 /* HomeViewController.swift */,
 				3B9B110C1EE13447003F4966 /* NewViewController.swift */,
+				3B4A9E6C1F04D22D002708D5 /* HomeWebViewController.swift */,
 				3B0BABF81EEE8397001C566C /* TimeLineCell */,
 				3B4339021EEA852400D7FA58 /* HomeCommonView */,
 			);
@@ -912,6 +915,7 @@
 				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
 				3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */,
 				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
+				3B4A9E6D1F04D22D002708D5 /* HomeWebViewController.swift in Sources */,
 				48869A311EE9A13200C06E89 /* UserInfoModel.swift in Sources */,
 				3B8A160A1EF79CE700A1A107 /* CompsoeTypeButton.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,

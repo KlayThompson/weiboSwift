@@ -68,9 +68,12 @@ extension HomeViewController {
         //判断有没有转发微博，来使用不同cell
         let id = (singleTimeLineViewModel.timeLineModel.retweeted_status != nil) ? reTweetCellID : cellID
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! TimeLineCell
-       cell.viewModel = singleTimeLineViewModel
+        cell.viewModel = singleTimeLineViewModel
+        
+        //设置cell代理
+        cell.delegate = self
+        
         return cell
     }
     
@@ -81,6 +84,15 @@ extension HomeViewController {
     }
 }
 
+extension HomeViewController: TimeLineCellDelegate {
+
+    func timeLineDidSelectUrlString(cell: TimeLineCell, urlString: String) {
+        
+        let homeWeb = HomeWebViewController()
+        homeWeb.urlString = urlString
+        navigationController?.pushViewController(homeWeb, animated: true)
+    }
+}
 
 // MARK: - 设置界面
 extension HomeViewController {
