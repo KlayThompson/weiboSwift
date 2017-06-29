@@ -31,6 +31,8 @@ class ComposeTextViewController: UIViewController {
         
         setupUI()
         
+        //监听键盘通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: Notification.Name.UITextViewTextDidChange, object: nil)
     }
 
     func dismissViewController() {
@@ -39,13 +41,23 @@ class ComposeTextViewController: UIViewController {
     
     @IBAction func sendButtonPress(_ sender: Any) {
     }
+    
+    func keyboardChange() {
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextViewTextDidChange, object: nil)
+    }
 }
 
+// MARK: - 设置界面
 private extension ComposeTextViewController {
-
+    
     func setupUI() {
         
         setupNavigationBar()
+        setupToolbar()
     }
     
     func setupNavigationBar() {
@@ -53,4 +65,40 @@ private extension ComposeTextViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         navigationItem.titleView = titleLabel
     }
+    
+    func setupToolbar() {
+        
+        let itemImages = [["imageName": "compose_toolbar_picture"],
+                          ["imageName": "compose_mentionbutton_background"],
+                          ["imageName": "compose_trendbutton_background"],
+                          ["imageName": "compose_emoticonbutton_background", "actionName": "emoticonKeyboard"],
+                          ["imageName": "compose_add_background"]]
+
+        var items = [UIBarButtonItem]()
+        
+        
+        for dic in itemImages {
+            
+            guard let imageName = dic["imageName"] else {
+                continue
+            }
+            
+            //创建button
+            let button = UIButton()
+            button.setBackgroundImage(UIImage(named: imageName), for: .normal)
+            button.setBackgroundImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
+            button.sizeToFit()
+            
+            items.append(UIBarButtonItem(customView: button))
+            
+            //追加弹簧
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+        }
+        //多了一个，移除最后一个
+        if items.count > 0 {
+            items.removeLast()
+        }
+        toolBar.items = items
+    }
 }
+
