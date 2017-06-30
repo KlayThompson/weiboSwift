@@ -35,6 +35,9 @@
 		3B4A9E761F04E0D3002708D5 /* ComposeTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E741F04E0D3002708D5 /* ComposeTextViewController.swift */; };
 		3B4A9E771F04E0D3002708D5 /* ComposeTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4A9E751F04E0D3002708D5 /* ComposeTextViewController.xib */; };
 		3B4A9E7A1F05ED16002708D5 /* TTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E791F05ED16002708D5 /* TTTextView.swift */; };
+		3B4A9E7C1F064BED002708D5 /* TTEmotionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E7B1F064BED002708D5 /* TTEmotionInputView.swift */; };
+		3B4A9E7E1F064BF9002708D5 /* TTEmotionInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4A9E7D1F064BF9002708D5 /* TTEmotionInputView.xib */; };
+		3B4A9E801F064E38002708D5 /* TTEmotionToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A9E7F1F064E38002708D5 /* TTEmotionToolbarView.swift */; };
 		3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */; };
 		3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */; };
 		3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */; };
@@ -133,6 +136,9 @@
 		3B4A9E741F04E0D3002708D5 /* ComposeTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextViewController.swift; sourceTree = "<group>"; };
 		3B4A9E751F04E0D3002708D5 /* ComposeTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTextViewController.xib; sourceTree = "<group>"; };
 		3B4A9E791F05ED16002708D5 /* TTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTextView.swift; sourceTree = "<group>"; };
+		3B4A9E7B1F064BED002708D5 /* TTEmotionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionInputView.swift; sourceTree = "<group>"; };
+		3B4A9E7D1F064BF9002708D5 /* TTEmotionInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTEmotionInputView.xib; sourceTree = "<group>"; };
+		3B4A9E7F1F064E38002708D5 /* TTEmotionToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionToolbarView.swift; sourceTree = "<group>"; };
 		3B5C25A21EFBB11E00D0A1C5 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3B66B1481F00F52A0063C743 /* TTEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TTEmoticon.bundle; sourceTree = "<group>"; };
 		3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmojiManager.swift; sourceTree = "<group>"; };
@@ -324,6 +330,9 @@
 				3B66B14A1F00F54A0063C743 /* TTEmojiManager.swift */,
 				3B66B14C1F0105040063C743 /* TTEmotionModel.swift */,
 				3B66B14E1F0106F60063C743 /* TTEmotionPackage.swift */,
+				3B4A9E7B1F064BED002708D5 /* TTEmotionInputView.swift */,
+				3B4A9E7D1F064BF9002708D5 /* TTEmotionInputView.xib */,
+				3B4A9E7F1F064E38002708D5 /* TTEmotionToolbarView.swift */,
 			);
 			path = Emoji;
 			sourceTree = "<group>";
@@ -743,6 +752,7 @@
 				3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */,
 				3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */,
 				3B0BABF71EEE37AA001C566C /* NewFeatureView.xib in Resources */,
+				3B4A9E7E1F064BF9002708D5 /* TTEmotionInputView.xib in Resources */,
 				3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */,
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
 				3B8A16001EF7647800A1A107 /* TTMTRefreshView.xib in Resources */,
@@ -915,6 +925,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B9B10FD1EE0122F003F4966 /* NSString+CZHash.m in Sources */,
+				3B4A9E801F064E38002708D5 /* TTEmotionToolbarView.swift in Sources */,
 				48181E7D1EEEE0B000139EBE /* UserInfoUnit.swift in Sources */,
 				3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */,
 				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
@@ -939,6 +950,7 @@
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */,
+				3B4A9E7C1F064BED002708D5 /* TTEmotionInputView.swift in Sources */,
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
 				3B4339071EEA8FF000D7FA58 /* NewFeatureView.swift in Sources */,

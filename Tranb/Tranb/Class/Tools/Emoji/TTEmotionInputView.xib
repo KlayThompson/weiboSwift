@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="T3K-iV-QXV" customClass="TTEmotionInputView" customModule="Tranb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="271"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-qT-Twu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="231"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COJ-AS-ceB">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi8-Y2-3IZ" customClass="TTEmotionToolbarView" customModule="Tranb" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="231" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BWO-N8-gGB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qi8-Y2-3IZ" secondAttribute="bottom" id="7eL-Ne-hsP"/>
+                <constraint firstItem="Efs-qT-Twu" firstAttribute="leading" secondItem="T3K-iV-QXV" secondAttribute="leading" id="8g1-jB-MZu"/>
+                <constraint firstAttribute="trailing" secondItem="Efs-qT-Twu" secondAttribute="trailing" id="DZj-L2-zVY"/>
+                <constraint firstItem="Efs-qT-Twu" firstAttribute="top" secondItem="T3K-iV-QXV" secondAttribute="top" id="Mjj-kr-DhM"/>
+                <constraint firstItem="qi8-Y2-3IZ" firstAttribute="top" secondItem="Efs-qT-Twu" secondAttribute="bottom" id="auS-AN-CO8"/>
+                <constraint firstAttribute="trailing" secondItem="qi8-Y2-3IZ" secondAttribute="trailing" id="dcJ-Tl-CPn"/>
+                <constraint firstItem="qi8-Y2-3IZ" firstAttribute="leading" secondItem="T3K-iV-QXV" secondAttribute="leading" id="nA1-GW-PfM"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="Efs-qT-Twu" id="Skv-Gf-el6"/>
+                <outlet property="toolbar" destination="qi8-Y2-3IZ" id="gfO-dm-hXb"/>
+            </connections>
+            <point key="canvasLocation" x="-66.5" y="-114.5"/>
+        </view>
+    </objects>
+</document>

@@ -92,6 +92,19 @@ class ComposeTextViewController: UIViewController {
         }
     }
     
+    func emoticonKeyboard() {
+        
+        //创建一个视图
+        
+        let inputView = TTEmotionInputView.inputView()
+        
+        //有就设置无
+        textView.inputView = textView.inputView == nil ? inputView : nil
+        
+        //刷新输入视图
+        textView.reloadInputViews()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
@@ -147,6 +160,11 @@ private extension ComposeTextViewController {
             
             //追加弹簧
             items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+            
+            //添加方法
+            if let actionName = dic["actionName"] {
+                button.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
         }
         //多了一个，移除最后一个
         if items.count > 0 {
