@@ -61,6 +61,41 @@ extension NetWorkManager {
     }
 }
 
+// MARK: - 发布微博
+extension NetWorkManager {
+
+    /// 发布微博对外调用网络接口
+    ///
+    /// - Parameters:
+    ///   - status: 发布微博文字内容
+    ///   - image: 发布微博所带的图片
+    ///   - completion: 完成回调
+    func postStatueToSina(status: String,image: UIImage?, completion: @escaping (_ josn: AnyObject, _ isSuccess: Bool)->()) {
+        //根据是否有图片，选择不同的url
+        let urlString: String
+        if image == nil {
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        } else {
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }
+        //设置参数
+        let params = ["status" : status]
+        
+        //请求
+        var data: Data?
+        var name: String?
+        
+        if  image != nil {
+            data = UIImagePNGRepresentation(image!)
+            name = "pic"
+        }
+        
+        requestNetWorkWithToken(requestMethod: .POST, url: urlString, params: params as [String : AnyObject], name: name, data: data) { (json, isSuccess) in
+            completion(json ?? "" as AnyObject, isSuccess)
+        }
+    }
+}
+
 // MARK: - 获取用户信息
 extension NetWorkManager {
     

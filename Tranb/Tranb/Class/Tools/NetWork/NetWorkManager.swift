@@ -43,7 +43,7 @@ class NetWorkManager: AFHTTPSessionManager {
     }
     
     /// 包含token的网络请求直接调用此方法
-    func requestNetWorkWithToken(requestMethod: RequestMethod = .GET, url: String, params: [String: AnyObject]?, completion: @escaping (_ resultJson: AnyObject?, _ isSuccess: Bool) -> ()) {
+    func requestNetWorkWithToken(requestMethod: RequestMethod = .GET, url: String, params: [String: AnyObject]?, name: String? = nil, data: Data? = nil, completion: @escaping (_ resultJson: AnyObject?, _ isSuccess: Bool) -> ()) {
         
         //先判断token是否存在，不存在直接返回
         if userInfo.access_token == nil {
@@ -62,7 +62,11 @@ class NetWorkManager: AFHTTPSessionManager {
         params?["access_token"] = userInfo.access_token as AnyObject
         
         //调用封装的AF方法
-        requestNetWork(url: url, params: params, completion: completion)
+        if let name = name, let data = data {//上传数据
+            uploadDataToServer(urlString: url, params: params, name: name, data: data, completion: completion)
+        } else {//正常请求数据
+            requestNetWork(requestMethod: requestMethod, url: url, params: params, completion: completion)
+        }
     }
     
     
@@ -80,7 +84,7 @@ class NetWorkManager: AFHTTPSessionManager {
         let success = { (dataTask: URLSessionDataTask, json: Any?) -> () in
             completion(json as AnyObject, true)
         }
-        
+        print("")
         let failure = { (dataTask: URLSessionDataTask?, error: Error) -> () in
             completion(nil, false)
             
@@ -112,6 +116,41 @@ class NetWorkManager: AFHTTPSessionManager {
             post(url, parameters: params, progress:nil, success: success, failure: failure)
         }
         
+    }
+    
+    /// 上传数据到服务端
+    ///
+    /// - Parameters:
+    ///   - urlString: url
+    ///   - params: 参数
+    ///   - name: 服务器名称
+    ///   - data: 数据
+    ///   - completion: 完成回调
+    func uploadDataToServer(urlString: String, params: [String : AnyObject]?, name: String, data: Data, completion: @escaping (_ resultJson: AnyObject?, _ isSuccess: Bool) -> ()) {
+        
+        
+        post(urlString, parameters: params, constructingBodyWith: { (formData) in
+            /**
+                data: 要上传的二进制数据
+                name: 服务器接受数据的字段名
+                fileName: 保存在服务器的文件名，大多数服务漆可以乱写，
+                mimeType: 告诉服务器文件类型，不想告诉可以上传application/octet-stream
+             */
+            formData.appendPart(withFileData: data, name: name, fileName: "caicaikan", mimeType: "application/octet-stream")
+            
+        }, progress: nil, success: { (_, json) in
+            
+            completion(json as AnyObject, true)
+        }) { (dataTask, error) in
+            
+            completion(nil, false)
+            //如果token失效，403，则提示用户重新登录
+            if (dataTask?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("Token失效。提示用户重新登录")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_SHOULD_LOGIN), object: "BAD TOKEN")
+            }
+            print("网络请求错误-----\(error)")
+        }
     }
     
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class ComposeTextViewController: UIViewController {
 
     
@@ -53,6 +53,26 @@ class ComposeTextViewController: UIViewController {
     }
     
     @IBAction func sendButtonPress(_ sender: Any) {
+        
+        guard let text = textView.text else {
+            return
+        }
+        
+        let image = UIImage(named: "new_feature_1")
+        
+
+        NetWorkManager.shareManager.postStatueToSina(status: text, image: image) { (result, isSuccess) in
+            
+            let message = isSuccess ? "发布成功" : "网络不行啊"
+            SVProgressHUD.showInfo(withStatus: message)
+            //关闭视图
+            if isSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                    self.dismissViewController()
+                })
+            }
+        }
+        
     }
     
     func keyboardChange(notify: Notification) {
