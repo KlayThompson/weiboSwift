@@ -15,7 +15,7 @@ class ComposeTextViewController: UIViewController {
     @IBOutlet weak var toolBar: UIToolbar!
     
     /// 输入框
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: TTTextView!
     
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
@@ -23,18 +23,31 @@ class ComposeTextViewController: UIViewController {
     /// 顶部标题
     @IBOutlet var titleLabel: UILabel!
     
+    /// toolbar到底部约束
+    @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
+    
+    //MARK: - 生命周期哦
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        
         setupUI()
-        
         //监听键盘通知
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        textView.resignFirstResponder()
+    }
+    
+    //MARK: - 方法
     func dismissViewController() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
@@ -44,10 +57,30 @@ class ComposeTextViewController: UIViewController {
     
     func keyboardChange(notify: Notification) {
         
+        guard let rect = (notify.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue ,
+            let duration = (notify.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue else {
+            return
+        }
+        
+        //计算偏移的位置
+        let offSet = view.bounds.height - rect.origin.y
+        //设置约束
+        self.toolbarBottomCons.constant = offSet
+        //更新
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+}
+
+extension ComposeTextViewController: UITextViewDelegate {
+
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.hasText
     }
 }
 
@@ -64,6 +97,7 @@ private extension ComposeTextViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         navigationItem.titleView = titleLabel
+        sendButton.isEnabled = false
     }
     
     func setupToolbar() {

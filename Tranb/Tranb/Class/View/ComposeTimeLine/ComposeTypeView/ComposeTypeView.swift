@@ -98,9 +98,9 @@ class ComposeTypeView: UIView {
                     //donghua wancheng
                     UIView.animate(withDuration: 0.3, animations: {
                         self.alpha = 0
-                    }, completion: { (_) in
                         //动画完成执行回调
                         self.completionBlock?(button.className)
+                    }, completion: { (_) in
                     })
                 }
             }
