@@ -18,7 +18,29 @@ class TTEmotionModel: NSObject {
     /// 表情图片名称，用于本地图文混排
     var png: String?
     /// emoji 的十六进制编码
-    var code: String?
+    var code: String? {
+        didSet {
+            //转换成string
+            guard let code = code else {
+                return
+            }
+            
+            let scanner = Scanner(string: code)
+            var result: UInt32 = 0
+            
+            scanner.scanHexInt32(&result)
+            
+            guard let unicode = UnicodeScalar(result) else {
+                return
+            }
+            
+            emoji = String(Character(unicode))
+        }
+    }
+    
+    /// emoji字符串
+    var emoji: String?
+    
     
     /// 表情模型所在目录
     var directory: String?

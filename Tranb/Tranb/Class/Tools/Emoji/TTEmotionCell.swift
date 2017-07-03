@@ -27,6 +27,9 @@ class TTEmotionCell: UICollectionViewCell {
                 let button = contentView.subviews[index] as! UIButton
                 button.setImage(model.image, for: .normal)
                 button.isHidden = false
+                
+                //设置emoji字符串
+                button.setTitle(model.emoji, for: .normal)
             }
         }
     }
@@ -74,6 +77,8 @@ private extension TTEmotionCell {
             
             let button = UIButton()
             button.frame = CGRect(x: x, y: y, width: width, height: height)
+            
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             
             contentView.addSubview(button)
         }
