@@ -72,6 +72,9 @@
 		3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B10F81EE0122F003F4966 /* UIViewController+CZAddition.m */; };
 		3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */; };
 		3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9B110C1EE13447003F4966 /* NewViewController.swift */; };
+		3BA3388C1F09E66900972E3B /* TTEmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3388A1F09E66900972E3B /* TTEmotionCell.swift */; };
+		3BA3388D1F09E66900972E3B /* TTEmotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */; };
+		3BA3388F1F09F7E400972E3B /* TTEmotionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -187,6 +190,9 @@
 		3B9B11091EE012E5003F4966 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
 		3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		3B9B110C1EE13447003F4966 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		3BA3388A1F09E66900972E3B /* TTEmotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionCell.swift; sourceTree = "<group>"; };
+		3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTEmotionCell.xib; sourceTree = "<group>"; };
+		3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionFlowLayout.swift; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -333,6 +339,9 @@
 				3B4A9E7B1F064BED002708D5 /* TTEmotionInputView.swift */,
 				3B4A9E7D1F064BF9002708D5 /* TTEmotionInputView.xib */,
 				3B4A9E7F1F064E38002708D5 /* TTEmotionToolbarView.swift */,
+				3BA3388A1F09E66900972E3B /* TTEmotionCell.swift */,
+				3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */,
+				3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */,
 			);
 			path = Emoji;
 			sourceTree = "<group>";
@@ -752,6 +761,7 @@
 				3B8A16081EF7957700A1A107 /* ComposeTypeView.xib in Resources */,
 				3B8A160C1EF79D0C00A1A107 /* CompsoeTypeButton.xib in Resources */,
 				3B0BABF71EEE37AA001C566C /* NewFeatureView.xib in Resources */,
+				3BA3388D1F09E66900972E3B /* TTEmotionCell.xib in Resources */,
 				3B4A9E7E1F064BF9002708D5 /* TTEmotionInputView.xib in Resources */,
 				3B66B1491F00F52A0063C743 /* TTEmoticon.bundle in Resources */,
 				3B4338EA1EE6460900D7FA58 /* main.json in Resources */,
@@ -950,6 +960,7 @@
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */,
+				3BA3388F1F09F7E400972E3B /* TTEmotionFlowLayout.swift in Sources */,
 				3B4A9E7C1F064BED002708D5 /* TTEmotionInputView.swift in Sources */,
 				3B9B11031EE0122F003F4966 /* UIView+CZAddition.m in Sources */,
 				3B9B11041EE0122F003F4966 /* UIViewController+CZAddition.m in Sources */,
@@ -975,6 +986,7 @@
 				3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */,
 				3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */,
 				3B4338FF1EE9260500D7FA58 /* UserLoginViewController.swift in Sources */,
+				3BA3388C1F09E66900972E3B /* TTEmotionCell.swift in Sources */,
 				3B9B10FC1EE0122F003F4966 /* NSString+CZBase64.m in Sources */,
 				3B9B10FB1EE0122F003F4966 /* NSObject+CZRuntime.m in Sources */,
 				48181E7F1EEEE5C700139EBE /* SingleTimeLineViewModel.swift in Sources */,

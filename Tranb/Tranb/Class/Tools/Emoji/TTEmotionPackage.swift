@@ -47,6 +47,29 @@ class TTEmotionPackage: NSObject {
     /// 使用懒加载可以避免后续的解包
     lazy var emoticons = [TTEmotionModel]()
     
+    /// 表情面板分页数
+    var numberOfPages: Int {
+        return (emoticons.count - 1) / 20 + 1
+    }
+    
+    ///根据页数来截取分割emoticons数组，如总数38个则：第一页：0-19  第二页：20-37
+    func emotionWithMax20(page: Int) -> [TTEmotionModel] {
+        
+        let maxCount = 20
+        let location = page * maxCount
+        var length = maxCount
+        
+        //判断不能数组越界
+        if location + length > emoticons.count {
+            length = emoticons.count - location
+        }
+        
+        let range = NSRange(location: location, length: length)
+        
+        return (emoticons as NSArray).subarray(with: range) as! [TTEmotionModel]
+        
+    }
+    
     override var description: String {
         return yy_modelDescription()
     }
