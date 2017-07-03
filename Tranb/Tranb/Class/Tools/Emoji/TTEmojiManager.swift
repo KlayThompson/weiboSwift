@@ -16,6 +16,13 @@ class TTEmojiManager {
     /// 表情包数据
     lazy var packages = [TTEmotionPackage]()
     
+    //表情包bundle
+    lazy var bundle: Bundle = {
+        let path = Bundle.main.path(forResource: "TTEmoticon.bundle", ofType: nil)
+        //获取bundle
+        return Bundle(path: path!)!
+    }()
+    
     private init() {
         loadLocalEmojiData()
     }
@@ -83,9 +90,7 @@ private extension TTEmojiManager {
     func loadLocalEmojiData() {
         
         //从plist文件中读取数据
-        guard let path = Bundle.main.path(forResource: "TTEmoticon.bundle", ofType: nil),
-            //获取bundle
-            let bundle = Bundle(path: path),
+        guard
             //根据这个bundle来获取所需要的plist
             let emojipPlistPath = bundle.path(forResource: "emoticons.plist", ofType: nil),
             //转换成数组
@@ -93,7 +98,7 @@ private extension TTEmojiManager {
             //字典转模型
             let modelArray = NSArray.yy_modelArray(with: TTEmotionPackage.self, json: emotionsArray) as? [TTEmotionPackage] else {
                 
-            return
+                return
         }
         //使用+=不需要为package重新分配空间，直接追加数据
         packages += modelArray
