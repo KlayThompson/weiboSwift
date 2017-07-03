@@ -8,10 +8,21 @@
 
 import UIKit
 
+//定义代理传递模型到上一个界面
+protocol TTEmotionCellDelegate: NSObjectProtocol {
+
+    /// 选中了表情按钮
+    ///
+    /// - Parameter emoticon: emoticon为空为删除按钮，不为空就为表情按钮
+    func cellDidSelectedEmoticon(cell: TTEmotionCell, emoticon: TTEmotionModel?)
+}
+
 /// 表情cell   用来显示一整页的表情，一共20加上一个删除按钮
 class TTEmotionCell: UICollectionViewCell {
 
     @IBOutlet weak var label: UILabel!
+    
+    weak var delegate: TTEmotionCellDelegate?
     
     var emoticons: [TTEmotionModel]? {
         
@@ -20,6 +31,8 @@ class TTEmotionCell: UICollectionViewCell {
             for v in contentView.subviews {
                 v.isHidden = true
             }
+            //显示删除按钮
+            contentView.subviews.last?.isHidden = false
             
             //取出按钮上设置图片
             for (index,model) in (emoticons ?? []).enumerated() {
@@ -47,6 +60,20 @@ class TTEmotionCell: UICollectionViewCell {
         setupUI()
     }
     
+    //MARK: - 按钮方法
+    func emoticonButtonPress(button: UIButton) {
+        //取出tag
+        let tag = button.tag
+        
+        //取出emotion
+        var emoticon: TTEmotionModel?
+        if tag < emoticons?.count ?? 0 {
+            emoticon = emoticons?[tag]
+        }
+        
+        //如果为空就是删除，其他为表情
+        delegate?.cellDidSelectedEmoticon(cell: self, emoticon: emoticon)
+    }
 }
 
 // MARK: - 设置布局
@@ -80,7 +107,16 @@ private extension TTEmotionCell {
             
             button.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             
+            //添加监听方法
+            button.tag = index
+            button.addTarget(self, action: #selector(emoticonButtonPress), for: .touchUpInside)
+            
             contentView.addSubview(button)
         }
+        
+        ///设置删除按钮
+        let removeButton = contentView.subviews.last as! UIButton
+        
+        removeButton.setImage(UIImage(named: "compose_emotion_delete", in: TTEmojiManager.shared.bundle, compatibleWith: nil), for: .normal)
     }
 }

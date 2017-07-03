@@ -96,7 +96,9 @@ class ComposeTextViewController: UIViewController {
         
         //创建一个视图
         
-        let inputView = TTEmotionInputView.inputView()
+        let inputView = TTEmotionInputView.inputView { (emoticon) in
+            print(emoticon)
+        }
         
         //有就设置无
         textView.inputView = textView.inputView == nil ? inputView : nil

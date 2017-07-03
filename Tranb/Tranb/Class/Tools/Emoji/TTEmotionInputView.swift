@@ -18,11 +18,18 @@ class TTEmotionInputView: UIView {
     //基本的collectionView
     @IBOutlet weak var collectionView: UICollectionView!
     
-    class func inputView() -> TTEmotionInputView {
+    //选择表情回调
+    var selectEmoticonCallBack: ((_ emoticon: TTEmotionModel?)->())?
+    
+    class func inputView(selectEmoticon: @escaping (_ emoticon: TTEmotionModel?)->()) -> TTEmotionInputView {
         
         let nib = UINib(nibName: "TTEmotionInputView", bundle: nil)
         
-        return nib.instantiate(withOwner: nil, options: nil)[0] as! TTEmotionInputView
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! TTEmotionInputView
+        
+        v.selectEmoticonCallBack = selectEmoticon
+        
+        return v
     }
     
     override func awakeFromNib() {
@@ -48,7 +55,22 @@ extension TTEmotionInputView: UICollectionViewDataSource,UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! TTEmotionCell
+        
         cell.emoticons = TTEmojiManager.shared.packages[indexPath.section].emotionWithMax20(page: indexPath.row)
+        
+        //遵循协议
+        cell.delegate = self
+        
         return cell
+    }
+}
+
+// MARK: - TTEmotionCellDelegate
+extension TTEmotionInputView: TTEmotionCellDelegate {
+    /// 选中了表情按钮
+    ///
+    /// - Parameter emoticon: emoticon为空为删除按钮，不为空就为表情按钮
+    func cellDidSelectedEmoticon(cell: TTEmotionCell, emoticon: TTEmotionModel?) {
+        selectEmoticonCallBack?(emoticon)
     }
 }
