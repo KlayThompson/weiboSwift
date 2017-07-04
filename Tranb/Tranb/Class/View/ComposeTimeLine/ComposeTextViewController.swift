@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+
 class ComposeTextViewController: UIViewController {
 
     
@@ -52,11 +53,11 @@ class ComposeTextViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    /// 发布按钮点击
     @IBAction func sendButtonPress(_ sender: Any) {
         
-        guard let text = textView.text else {
-            return
-        }
+        //遍历筛选字符串
+        let text = textView.analyseTextViewText(attriString: textView.attributedText)
         
         let image = UIImage(named: "new_feature_1")
         
@@ -75,6 +76,7 @@ class ComposeTextViewController: UIViewController {
         
     }
     
+    /// 键盘变化通知，更新toolbar约束
     func keyboardChange(notify: Notification) {
         
         guard let rect = (notify.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue ,
@@ -92,16 +94,15 @@ class ComposeTextViewController: UIViewController {
         }
     }
     
+    /// 表情按钮点击方法：调用出表情面板
     func emoticonKeyboard() {
-        
-        //创建一个视图
-        
-        let inputView = TTEmotionInputView.inputView { (emoticon) in
-            print(emoticon)
+        /// 设置输入视图
+        let inputViewT = TTEmotionInputView.inputView { [weak self] (emoticon) in
+            
+            self?.textView.insertEmoticonT(emoticon: emoticon)
         }
-        
         //有就设置无
-        textView.inputView = textView.inputView == nil ? inputView : nil
+        textView.inputView = textView.inputView == nil ? inputViewT : nil
         
         //刷新输入视图
         textView.reloadInputViews()

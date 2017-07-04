@@ -67,13 +67,17 @@ class TTEmotionModel: NSObject {
         }
         
         //创建文本附件
-        let att = NSTextAttachment()
+        let att = TTEmoticonAttachment()
+        att.chs = chs
         att.image = image
         let height = font.lineHeight
         att.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         
+        let attriString = NSMutableAttributedString(attributedString: NSAttributedString(attachment: att))
         
-        return NSAttributedString(attachment: att)
+        attriString.addAttributes([NSFontAttributeName : font], range: NSRange(location: 0, length: 1))
+        
+        return attriString
     }
     
     override var description: String {

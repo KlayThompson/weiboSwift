@@ -10,10 +10,15 @@ import UIKit
 
 class NewViewController: BaseViewController {
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         naviItem.rightBarButtonItem = UIBarButtonItem(title: "Next", target: self, action: #selector(NewViewController.nextView))
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

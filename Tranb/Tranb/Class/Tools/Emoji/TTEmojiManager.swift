@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// 表情管理单利
 class TTEmojiManager {
