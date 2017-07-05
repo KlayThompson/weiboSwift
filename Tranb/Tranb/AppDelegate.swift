@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //加载app信息
         loadAppInfoFromServer()
-        
+        _ = TTSQLiteManager.shared
         //设置一些额外信息
         setupAdditions(application)  
         let ss = TTEmojiManager.shared

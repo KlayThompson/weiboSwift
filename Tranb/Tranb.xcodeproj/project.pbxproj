@@ -76,6 +76,8 @@
 		3BA3388D1F09E66900972E3B /* TTEmotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */; };
 		3BA3388F1F09F7E400972E3B /* TTEmotionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */; };
 		3BA338931F0B773E00972E3B /* TTEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338921F0B773E00972E3B /* TTEmoticonAttachment.swift */; };
+		3BA338F61F0CB44200972E3B /* TTSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338F51F0CB44200972E3B /* TTSQLiteManager.swift */; };
+		3BA338F81F0CC48000972E3B /* Status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3BA338F71F0CC48000972E3B /* Status.sql */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -195,6 +197,8 @@
 		3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTEmotionCell.xib; sourceTree = "<group>"; };
 		3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmotionFlowLayout.swift; sourceTree = "<group>"; };
 		3BA338921F0B773E00972E3B /* TTEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmoticonAttachment.swift; sourceTree = "<group>"; };
+		3BA338F51F0CB44200972E3B /* TTSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSQLiteManager.swift; sourceTree = "<group>"; };
+		3BA338F71F0CC48000972E3B /* Status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Status.sql; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -407,6 +411,7 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3BA338F41F0CB43300972E3B /* TTSQLite */,
 				3B4A9E781F05ECFA002708D5 /* TTTextView */,
 				3B4A9E491F03A95E002708D5 /* TTLabel */,
 				3B66B1471F00F5010063C743 /* Emoji */,
@@ -522,6 +527,15 @@
 				3B9B10F81EE0122F003F4966 /* UIViewController+CZAddition.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		3BA338F41F0CB43300972E3B /* TTSQLite */ = {
+			isa = PBXGroup;
+			children = (
+				3BA338F51F0CB44200972E3B /* TTSQLiteManager.swift */,
+				3BA338F71F0CC48000972E3B /* Status.sql */,
+			);
+			path = TTSQLite;
 			sourceTree = "<group>";
 		};
 		488699E91EDFE4B600C06E89 = {
@@ -775,6 +789,7 @@
 				3B0BAC0A1EF11645001C566C /* TimeLineRetweetCell.xib in Resources */,
 				3B8A15FE1EF75DF200A1A107 /* TTImageRefreshView.xib in Resources */,
 				4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */,
+				3BA338F81F0CC48000972E3B /* Status.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +958,7 @@
 				3B97A7171EF27F930019221B /* TTRefreshControl.swift in Sources */,
 				3B9B10D21EE00D6B003F4966 /* HomeViewController.swift in Sources */,
 				3B9B10CE1EE00D48003F4966 /* MainNavigationController.swift in Sources */,
+				3BA338F61F0CB44200972E3B /* TTSQLiteManager.swift in Sources */,
 				4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
 				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
