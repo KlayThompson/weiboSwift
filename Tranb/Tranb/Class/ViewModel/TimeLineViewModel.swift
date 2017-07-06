@@ -45,9 +45,9 @@ class TimeLineViewModel {
         //获取最后一个微博的maxID
         let max_id = isPullUp ? (dataList.last?.timeLineModel.id ?? 0) : 0
         
-        
-        NetWorkManager.shareManager.requestTimeLineListData(since_id: since_id, max_id: max_id) { (json, isSuccess) in
-            
+        TimeLineListDAL.loadTimelineData(since_id: since_id, max_id: max_id) { (json, isSuccess) in
+//        }
+//        NetWorkManager.shareManager.requestTimeLineListData(since_id: since_id, max_id: max_id) { (json, isSuccess) in            
             
             if !isSuccess {
                 completion(isSuccess)

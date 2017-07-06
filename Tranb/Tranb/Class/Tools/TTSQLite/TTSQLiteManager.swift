@@ -18,6 +18,9 @@ import FMDB
  
  开发*/
 
+/// 最大数据缓存时间
+private let maxDBCAtchTime: TimeInterval = -5 * 24 * 60 * 60
+
 /// FMDB数据库管理类
 class TTSQLiteManager {
 
@@ -43,11 +46,84 @@ class TTSQLiteManager {
         
 // MARK: - 打开数据库
         creatTable()
+        
+        //监听程序进入后台
+        NotificationCenter.default.addObserver(self, selector: #selector(clearDBCatch), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    /// 清理数据缓存
+    /// 注意细节：
+    /// - SQLite 的数据不断的增加数据，数据库文件的大小，会不断的增加
+    /// - 但是：如果删除了数据，数据库的大小，不会变小！
+    /// - 如果要变小
+    /// 1> 将数据库文件复制一个新的副本，status.db.old
+    /// 2> 新建一个空的数据库文件
+    /// 3> 自己编写 SQL，从 old 中将所有的数据读出，写入新的数据库！
+    @objc func clearDBCatch() {
+        let dateString = Date.tt_dateString(delta: maxDBCAtchTime)
+        //准备SQL
+        let sql = "DELETE FROM T_Status WHERE createTime < ?;"
+        
+        //执行SQL
+        queue.inDatabase { (database) in
+            if database?.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                //删除成功
+            }
+        }
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
 // MARK: - 微博数据操作
 extension TTSQLiteManager {
+    
+    /// 从数据库加载微博数据数组
+    ///
+    /// - Parameters:
+    ///   - userId: 用户id
+    ///   - since_id: 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
+    ///   - max_id: 若指定此参数，则返回ID小于或等于max_id的微博，默认为0
+    /// - Returns: 微博的字典数组，将数据库中的status二进制数据序列化成为数组字典
+    func loadStatus(userId: String, since_id: Int64 = 0,max_id: Int64 = 0) -> [[String : AnyObject]] {
+        
+        //1.准备SQL
+        var sql = "SELECT statusId, userId, status FROM T_Status \n"
+        sql += "WHERE userId = \(userId) \n"
+        
+        // 上拉／下拉，都是针对同一个 id 进行判断
+        if since_id > 0 {
+            sql += "AND statusId > \(since_id) \n"
+        } else if max_id > 0 {
+            sql += "AND statusId < \(max_id) \n"
+        }
+        
+        sql += "ORDER BY statusId DESC LIMIT 20;"
+        
+        // 拼接 SQL 结束后，一定一定一定要测试！
+        print(sql)
+        
+        
+        //2.执行SQL
+        let array = execRecordSet(sql: sql)
+        
+        //结果数组
+        var result = [[String : AnyObject]]()
+        
+        //遍历数组，取出data。进行反序列化
+        for dic in array {
+            guard let data = dic["status"] as? Data,
+                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : AnyObject] else {
+                continue
+            }
+            result.append(json ?? [:])
+        }
+        
+        return result
+    }
 
     /// 新增或者修改微博数据，微博数据再刷新的时候可能会出现重叠
     ///

@@ -78,6 +78,8 @@
 		3BA338931F0B773E00972E3B /* TTEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338921F0B773E00972E3B /* TTEmoticonAttachment.swift */; };
 		3BA338F61F0CB44200972E3B /* TTSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338F51F0CB44200972E3B /* TTSQLiteManager.swift */; };
 		3BA338F81F0CC48000972E3B /* Status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3BA338F71F0CC48000972E3B /* Status.sql */; };
+		3BA338FA1F0DDD4F00972E3B /* TimeLineListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */; };
+		3BA338FC1F0E221800972E3B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338FB1F0E221800972E3B /* Date+Extension.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -199,6 +201,8 @@
 		3BA338921F0B773E00972E3B /* TTEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmoticonAttachment.swift; sourceTree = "<group>"; };
 		3BA338F51F0CB44200972E3B /* TTSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSQLiteManager.swift; sourceTree = "<group>"; };
 		3BA338F71F0CC48000972E3B /* Status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Status.sql; sourceTree = "<group>"; };
+		3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineListDAL.swift; sourceTree = "<group>"; };
+		3BA338FB1F0E221800972E3B /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -480,6 +484,7 @@
 			children = (
 				3B4338F61EE7C9BF00D7FA58 /* TimeLineViewModel.swift */,
 				48181E7E1EEEE5C700139EBE /* SingleTimeLineViewModel.swift */,
+				3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				3B9B110A1EE10150003F4966 /* UIBarButtonItem+Extensions.swift */,
 				3B0BABFD1EEF8BCE001C566C /* UIImageView+WebImage.swift */,
 				3B0BABFF1EEFB62E001C566C /* UIImage+Extension.swift */,
+				3BA338FB1F0E221800972E3B /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -976,6 +982,7 @@
 				3B8A160A1EF79CE700A1A107 /* CompsoeTypeButton.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B1F241C1EF37D1E0031DB0A /* TTRefreshView.swift in Sources */,
+				3BA338FA1F0DDD4F00972E3B /* TimeLineListDAL.swift in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */,
@@ -1002,6 +1009,7 @@
 				3B0BAC001EEFB62E001C566C /* UIImage+Extension.swift in Sources */,
 				3B4339041EEA856900D7FA58 /* HomeTitleButton.swift in Sources */,
 				3B9B10D41EE00D78003F4966 /* MessageViewController.swift in Sources */,
+				3BA338FC1F0E221800972E3B /* Date+Extension.swift in Sources */,
 				3B0BAC021EEFCA36001C566C /* TimeLineToolBarView.swift in Sources */,
 				3B8A16021EF7649A00A1A107 /* TTMTRefreshView.swift in Sources */,
 				3B66B14B1F00F54A0063C743 /* TTEmojiManager.swift in Sources */,
