@@ -80,6 +80,7 @@
 		3BA338F81F0CC48000972E3B /* Status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3BA338F71F0CC48000972E3B /* Status.sql */; };
 		3BA338FA1F0DDD4F00972E3B /* TimeLineListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */; };
 		3BA338FC1F0E221800972E3B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338FB1F0E221800972E3B /* Date+Extension.swift */; };
+		3BA338FE1F0E32AE00972E3B /* TTEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338FD1F0E32AE00972E3B /* TTEmoticonTipView.swift */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -203,6 +204,7 @@
 		3BA338F71F0CC48000972E3B /* Status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Status.sql; sourceTree = "<group>"; };
 		3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineListDAL.swift; sourceTree = "<group>"; };
 		3BA338FB1F0E221800972E3B /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		3BA338FD1F0E32AE00972E3B /* TTEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmoticonTipView.swift; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				3BA3388B1F09E66900972E3B /* TTEmotionCell.xib */,
 				3BA3388E1F09F7E400972E3B /* TTEmotionFlowLayout.swift */,
 				3BA338921F0B773E00972E3B /* TTEmoticonAttachment.swift */,
+				3BA338FD1F0E32AE00972E3B /* TTEmoticonTipView.swift */,
 			);
 			path = Emoji;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 				3B9B10FE1EE0122F003F4966 /* NSString+CZPath.m in Sources */,
 				48869A2E1EE99F6F00C06E89 /* NotificationDefine.swift in Sources */,
 				3B5C25A31EFBB11E00D0A1C5 /* String+Extensions.swift in Sources */,
+				3BA338FE1F0E32AE00972E3B /* TTEmoticonTipView.swift in Sources */,
 				48869A291EE99F6100C06E89 /* VisitorView.swift in Sources */,
 				3B4339091EEA900100D7FA58 /* WelcomeView.swift in Sources */,
 				3BA338931F0B773E00972E3B /* TTEmoticonAttachment.swift in Sources */,

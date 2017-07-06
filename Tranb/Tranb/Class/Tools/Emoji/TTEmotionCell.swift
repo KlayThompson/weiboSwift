@@ -22,6 +22,8 @@ class TTEmotionCell: UICollectionViewCell {
 
     @IBOutlet weak var label: UILabel!
     
+    lazy var tipView = TTEmoticonTipView()
+    
     weak var delegate: TTEmotionCellDelegate?
     
     var emoticons: [TTEmotionModel]? {
@@ -74,6 +76,46 @@ class TTEmotionCell: UICollectionViewCell {
         //如果为空就是删除，其他为表情
         delegate?.cellDidSelectedEmoticon(cell: self, emoticon: emoticon)
     }
+    
+    /// 长按手势
+    func longPressed(ges: UIGestureRecognizer) {
+        
+        //获取点击位置
+        let location = ges.location(in: self)
+        
+        //获取按钮触摸的位置
+        let button = findLongPressButton(location: location)
+        
+        print(button ?? 0)
+    }
+
+    /// 获取点击的表情按钮
+    ///
+    /// - Parameter location: 点击的位置
+    /// - Returns: 表情按钮
+    func findLongPressButton(location: CGPoint) -> UIButton? {
+       
+        for button in contentView.subviews as! [UIButton] {
+            //判断是表情按钮
+            if !button.isHidden && button.frame.contains(location) && button != contentView.subviews.last {
+                return button
+            }
+        }
+        
+        return nil
+    }
+    
+    //窗口
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        
+        guard let newWindow = newWindow else {
+            return
+        }
+        
+        newWindow.addSubview(tipView)
+        tipView.isHidden = true
+    }
 }
 
 // MARK: - 设置布局
@@ -118,5 +160,10 @@ private extension TTEmotionCell {
         let removeButton = contentView.subviews.last as! UIButton
         
         removeButton.setImage(UIImage(named: "compose_emotion_delete", in: TTEmojiManager.shared.bundle, compatibleWith: nil), for: .normal)
+        
+        //长按手势
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
+        longPress.minimumPressDuration = 0.1
+        addGestureRecognizer(longPress)
     }
 }
