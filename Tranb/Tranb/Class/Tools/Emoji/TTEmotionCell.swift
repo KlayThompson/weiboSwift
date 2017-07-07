@@ -87,6 +87,7 @@ class TTEmotionCell: UICollectionViewCell {
         let button = findLongPressButton(location: location)
         
         guard let button1 = button else {
+            tipView.isHidden = true
             return
         }
         //获取手势状态
@@ -103,6 +104,11 @@ class TTEmotionCell: UICollectionViewCell {
             if button1.tag < emoticons?.count ?? 0 {
                 tipView.emoticon = emoticons?[button1.tag]
             }
+        case .ended:
+            tipView.isHidden = true
+            emoticonButtonPress(button: button1)
+        case .cancelled, .failed:
+            tipView.isHidden = true
         default:
             break
         }
