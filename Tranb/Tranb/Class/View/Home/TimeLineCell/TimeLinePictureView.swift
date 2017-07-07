@@ -75,6 +75,40 @@ class TimeLinePictureView: UIView {
         setupUI()
     }
     
+    func tapImageView(tap: UITapGestureRecognizer) {
+        guard let imageView = tap.view as? UIImageView,
+            let picUrls = viewModel?.picUrls else {
+            return
+        }
+        /// @param selectedIndex    选中照片索引
+        /// @param urls             浏览照片 URL 字符串数组
+        /// @param parentImageViews 父视图的图像视图数组，用户展现和解除转场动画参照
+        
+        var selectedIndex = imageView.tag
+        
+        //对四张图片特殊处理
+        if selectedIndex > 1 && picUrls.count == 4 {
+            selectedIndex -= 1
+        }
+        
+        let urls = (picUrls as NSArray).value(forKey: "thumbnail_pic") as! [String]
+        
+        var imageViewList = [UIImageView]()
+        
+        //遍历所有视图
+        for view in subviews as![UIImageView] {
+            //判断显示的才加入
+            if !view.isHidden {
+                imageViewList.append(view)
+            }
+        }
+        
+// MARK: - 发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification),
+                                        object: nil,
+                                        userInfo: [WBStatusCellBrowserPhotoSelectedIndexKey : selectedIndex, WBStatusCellBrowserPhotoURLsKey : urls, WBStatusCellBrowserPhotoImageViewsKey : imageViewList])
+    }
+    
 }
 
 // MARK: - 设置界面
@@ -108,6 +142,15 @@ extension TimeLinePictureView {
             let yOffset = row * (InMargin + PicWidth)
             
             imageView.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
+            
+            imageView.isUserInteractionEnabled = true
+            
+            //添加点击手势
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            
+            imageView.addGestureRecognizer(tap)
+            
+            imageView.tag = index
             
             addSubview(imageView)
         }

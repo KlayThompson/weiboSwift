@@ -8,3 +8,4 @@
 
 
 #import "CZAdditions.h"
+#import "HMPhotoBrowserController.h"

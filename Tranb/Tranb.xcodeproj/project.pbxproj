@@ -81,6 +81,11 @@
 		3BA338FA1F0DDD4F00972E3B /* TimeLineListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */; };
 		3BA338FC1F0E221800972E3B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338FB1F0E221800972E3B /* Date+Extension.swift */; };
 		3BA338FE1F0E32AE00972E3B /* TTEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA338FD1F0E32AE00972E3B /* TTEmoticonTipView.swift */; };
+		3BA3390E1F0F619000972E3B /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA339051F0F619000972E3B /* HMPhotoBrowserAnimator.m */; };
+		3BA3390F1F0F619000972E3B /* HMPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA339071F0F619000972E3B /* HMPhotoBrowserController.m */; };
+		3BA339101F0F619000972E3B /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA339091F0F619000972E3B /* HMPhotoBrowserPhotos.m */; };
+		3BA339111F0F619000972E3B /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3390B1F0F619000972E3B /* HMPhotoProgressView.m */; };
+		3BA339121F0F619000972E3B /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA3390D1F0F619000972E3B /* HMPhotoViewerController.m */; };
 		3DC302726EF54A38B150A9AB /* Pods_TranbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81C95C148F9F9F2BDF7F548 /* Pods_TranbTests.framework */; };
 		4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */; };
 		4805B1CE1EF2EBCF002DE0E2 /* TestnewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */; };
@@ -205,6 +210,16 @@
 		3BA338F91F0DDD4F00972E3B /* TimeLineListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineListDAL.swift; sourceTree = "<group>"; };
 		3BA338FB1F0E221800972E3B /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3BA338FD1F0E32AE00972E3B /* TTEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEmoticonTipView.swift; sourceTree = "<group>"; };
+		3BA339041F0F619000972E3B /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
+		3BA339051F0F619000972E3B /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
+		3BA339061F0F619000972E3B /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
+		3BA339071F0F619000972E3B /* HMPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserController.m; sourceTree = "<group>"; };
+		3BA339081F0F619000972E3B /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
+		3BA339091F0F619000972E3B /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
+		3BA3390A1F0F619000972E3B /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
+		3BA3390B1F0F619000972E3B /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
+		3BA3390C1F0F619000972E3B /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
+		3BA3390D1F0F619000972E3B /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
 		447996C7FF0EE8EDC73EBF65 /* Pods-TranbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranbTests/Pods-TranbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4805B1CB1EF2EBCF002DE0E2 /* TestnewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestnewViewController.swift; sourceTree = "<group>"; };
 		4805B1CC1EF2EBCF002DE0E2 /* TestnewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestnewViewController.xib; sourceTree = "<group>"; };
@@ -418,6 +433,7 @@
 		3B9B10C31EE00C44003F4966 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3BA339031F0F619000972E3B /* PhotoBrowser */,
 				3BA338F41F0CB43300972E3B /* TTSQLite */,
 				3B4A9E781F05ECFA002708D5 /* TTTextView */,
 				3B4A9E491F03A95E002708D5 /* TTLabel */,
@@ -544,6 +560,23 @@
 				3BA338F71F0CC48000972E3B /* Status.sql */,
 			);
 			path = TTSQLite;
+			sourceTree = "<group>";
+		};
+		3BA339031F0F619000972E3B /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3BA339041F0F619000972E3B /* HMPhotoBrowserAnimator.h */,
+				3BA339051F0F619000972E3B /* HMPhotoBrowserAnimator.m */,
+				3BA339061F0F619000972E3B /* HMPhotoBrowserController.h */,
+				3BA339071F0F619000972E3B /* HMPhotoBrowserController.m */,
+				3BA339081F0F619000972E3B /* HMPhotoBrowserPhotos.h */,
+				3BA339091F0F619000972E3B /* HMPhotoBrowserPhotos.m */,
+				3BA3390A1F0F619000972E3B /* HMPhotoProgressView.h */,
+				3BA3390B1F0F619000972E3B /* HMPhotoProgressView.m */,
+				3BA3390C1F0F619000972E3B /* HMPhotoViewerController.h */,
+				3BA3390D1F0F619000972E3B /* HMPhotoViewerController.m */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		488699E91EDFE4B600C06E89 = {
@@ -970,22 +1003,26 @@
 				3BA338F61F0CB44200972E3B /* TTSQLiteManager.swift in Sources */,
 				4805B1CD1EF2EBCF002DE0E2 /* TestnewViewController.swift in Sources */,
 				3B9B11021EE0122F003F4966 /* UIScreen+CZAddition.m in Sources */,
+				3BA339121F0F619000972E3B /* HMPhotoViewerController.m in Sources */,
 				3B4338ED1EE6947200D7FA58 /* NetWorkManager.swift in Sources */,
 				3B66B14F1F0106F60063C743 /* TTEmotionPackage.swift in Sources */,
 				3B4A9E7A1F05ED16002708D5 /* TTTextView.swift in Sources */,
 				3B9B10FF1EE0122F003F4966 /* UIButton+CZAddition.m in Sources */,
 				3B4A9E4B1F03A970002708D5 /* TTLabel.swift in Sources */,
 				3B9B11001EE0122F003F4966 /* UIColor+CZAddition.m in Sources */,
+				3BA339111F0F619000972E3B /* HMPhotoProgressView.m in Sources */,
 				3B0BAC041EEFDBE8001C566C /* TimeLinePictureView.swift in Sources */,
 				3B9B10D01EE00D53003F4966 /* BaseViewController.swift in Sources */,
 				3B4338F51EE7B10200D7FA58 /* TimeLineModel.swift in Sources */,
 				3B9B110B1EE10150003F4966 /* UIBarButtonItem+Extensions.swift in Sources */,
 				3B4A9E6D1F04D22D002708D5 /* HomeWebViewController.swift in Sources */,
+				3BA339101F0F619000972E3B /* HMPhotoBrowserPhotos.m in Sources */,
 				48869A311EE9A13200C06E89 /* UserInfoModel.swift in Sources */,
 				3B8A160A1EF79CE700A1A107 /* CompsoeTypeButton.swift in Sources */,
 				3B9B110D1EE13447003F4966 /* NewViewController.swift in Sources */,
 				3B1F241C1EF37D1E0031DB0A /* TTRefreshView.swift in Sources */,
 				3BA338FA1F0DDD4F00972E3B /* TimeLineListDAL.swift in Sources */,
+				3BA3390E1F0F619000972E3B /* HMPhotoBrowserAnimator.m in Sources */,
 				3B9B10D61EE00D86003F4966 /* DiscoveryViewController.swift in Sources */,
 				3B9B10CC1EE00CF5003F4966 /* MainTabBarController.swift in Sources */,
 				4805B1D01EF2EE97002DE0E2 /* TTCacheManager.swift in Sources */,
@@ -1026,6 +1063,7 @@
 				3B9B10F91EE0122F003F4966 /* NSArray+Log.m in Sources */,
 				3B9B10FA1EE0122F003F4966 /* NSAttributedString+CZAdditon.m in Sources */,
 				3B9B11011EE0122F003F4966 /* UILabel+CZAddition.m in Sources */,
+				3BA3390F1F0F619000972E3B /* HMPhotoBrowserController.m in Sources */,
 				3B9B10D81EE00D8F003F4966 /* ProfileViewController.swift in Sources */,
 				488699F61EDFE4B600C06E89 /* AppDelegate.swift in Sources */,
 				3B8A16061EF775BA00A1A107 /* ComposeTypeView.swift in Sources */,

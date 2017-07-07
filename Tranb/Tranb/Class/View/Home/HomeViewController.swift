@@ -20,6 +20,8 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         setupNavigationTitle()
+        //接受点击图片的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(imageViewTaped), name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification), object: nil)
     }
     
     override func loadData() {
@@ -50,6 +52,23 @@ class HomeViewController: BaseViewController {
     func navigationTitlePress(button: UIButton) {
         
         button.isSelected = !button.isSelected
+    }
+    
+    /// 通知方法
+    func imageViewTaped(notify: Notification) {
+        
+        //提取参数
+        guard let selectedIndex = notify.userInfo?[WBStatusCellBrowserPhotoSelectedIndexKey] as? Int,
+            let urls = notify.userInfo?[WBStatusCellBrowserPhotoURLsKey] as? [String],
+            let imageViewList = notify.userInfo?[WBStatusCellBrowserPhotoImageViewsKey] as? [UIImageView]
+            else {
+            return
+        }
+        
+        //搞起来
+        let vc = HMPhotoBrowserController.photoBrowser(withSelectedIndex: selectedIndex, urls: urls, parentImageViews: imageViewList)
+        
+        present(vc, animated: true, completion: nil)
     }
 
 }
