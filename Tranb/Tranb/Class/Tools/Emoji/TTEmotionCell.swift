@@ -86,7 +86,26 @@ class TTEmotionCell: UICollectionViewCell {
         //获取按钮触摸的位置
         let button = findLongPressButton(location: location)
         
-        print(button ?? 0)
+        guard let button1 = button else {
+            return
+        }
+        //获取手势状态
+        switch ges.state {
+        case .changed, .began:
+            //显示tipView
+            tipView.isHidden = false
+            //设置位置
+            //坐标系转换,将按钮参照cell的坐标系转为window的坐标系
+            let center = self.convert(button1.center, to: window)
+            tipView.center = center
+            
+            //判断按钮tag和数据源数量
+            if button1.tag < emoticons?.count ?? 0 {
+                tipView.emoticon = emoticons?[button1.tag]
+            }
+        default:
+            break
+        }
     }
 
     /// 获取点击的表情按钮
