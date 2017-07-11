@@ -112,7 +112,7 @@ class TimeLineViewModel {
         //GCD调度组
         let group = DispatchGroup()
         var lengh = 0
-        
+   	     
         
         //循环遍历数组，取出单张图片的URL
         for viewModel in dataArray {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class VisitorView: UIView {
 
@@ -99,9 +100,43 @@ extension VisitorView {
         }
         
         //添加约束
+        //SnapKit
+        iconImageView.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self)
+        }
+        
+        hosueIcon.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self)
+        }
+        
+        tipLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(iconImageView)
+            make.top.equalTo(iconImageView.snp.bottom).offset(20)
+            make.width.equalTo(300)
+        }
+ 
+        loginButton.snp.makeConstraints { (make) in
+            make.left.equalTo(tipLabel)
+            make.top.equalTo(tipLabel.snp.bottom).offset(20)
+            make.width.equalTo(110)
+        }
+        
+        signInButton.snp.makeConstraints { (make) in
+            make.right.equalTo(tipLabel).offset(-10)
+            make.top.equalTo(tipLabel.snp.bottom).offset(20)
+            make.width.equalTo(loginButton)
+        }
+        
+        iconMaskView.snp.makeConstraints { (make) in
+            make.left.top.right.equalTo(self)
+            make.bottom.equalTo(loginButton).offset(-20)
+        }
+        iconMaskView.isUserInteractionEnabled = true
+        /**原生布局
         //icon
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
+
         
         //iconMaskView 使用VFL设置约束
         //views 定义VFL 中的控件和实际名称映射关系["iconMaskView":iconMaskView]
@@ -123,11 +158,12 @@ extension VisitorView {
         addConstraint(NSLayoutConstraint(item: loginButton, attribute: .left, relatedBy: .equal, toItem: tipLabel, attribute: .left, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: loginButton, attribute: .top, relatedBy: .equal, toItem: tipLabel, attribute: .bottom, multiplier: 1.0, constant: 20))
        addConstraint(NSLayoutConstraint(item: loginButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 110))
+
        
         //注册按钮
         addConstraint(NSLayoutConstraint(item: signInButton, attribute: .right, relatedBy: .equal, toItem: tipLabel, attribute: .right, multiplier: 1.0, constant: -10))
         addConstraint(NSLayoutConstraint(item: signInButton, attribute: .top, relatedBy: .equal, toItem: tipLabel, attribute: .bottom, multiplier: 1.0, constant: 20))
         addConstraint(NSLayoutConstraint(item: signInButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 110))
-        
+        */
     }
 }

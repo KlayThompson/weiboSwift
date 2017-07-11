@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,6 +62,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1A189EC135AD73CE13D594F930ABF8CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C1C85E9B3F8DE712EEC4FD9886C4819</key>
 		<dict>
 			<key>primary</key>
@@ -67,22 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E2830260470B23F34A1A96675688209</key>
+		<key>5A576F2BEC79AACCDB610F6269C8E9F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B3B171B64496BBB1E32CF6711EEB938</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE57A41D0F421BA14C05515CA8647933</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1DAA8B1FA93CDA2170DDA53ED6D32A7</key>
+		<key>6B9E9D23FACC210B1AEB478BB8AA8ACA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE2628B671EFCEBB3DAD41EDAA90600E</key>
+		<key>D250545493E33A202FC484EAB4C146E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED7DFCCAB6CB89D75B395BBD6AA2638F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F57535100FBAF2FF2E6D619C7EF23D4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
