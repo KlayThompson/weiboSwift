@@ -3,7 +3,7 @@
 //  Tranb
 //
 //  Created by Kim on 2017/6/30.
-//  Copyright © 2017年 KlayThompson. All rights reserved.
+//  Copyright © 2017年 KlayThompson. All rights  		.
 //
 
 import UIKit

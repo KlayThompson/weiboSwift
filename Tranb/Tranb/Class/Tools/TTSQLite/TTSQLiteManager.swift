@@ -66,7 +66,7 @@ class TTSQLiteManager {
         
         //执行SQL
         queue.inDatabase { (database) in
-            if database?.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+            if database.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
                 //删除成功
             }
         }
@@ -152,9 +152,9 @@ extension TTSQLiteManager {
                 }
                 
                 //执行sql
-                if database?.executeUpdate(sql, withArgumentsIn: [statusId, userid, status]) == false {
+                if database.executeUpdate(sql, withArgumentsIn: [statusId, userid, status]) == false {
                     //执行失败需要回滚
-                    rollback?.pointee = true
+                    rollback.pointee = true
                     break
                 }
                 
@@ -179,14 +179,14 @@ extension TTSQLiteManager {
         //结果数组
         var result = [[String : AnyObject]]()
         queue.inDatabase { (database) in
-            guard let rs = database?.executeQuery(sql, withArgumentsIn: []) else {
+            guard let rs = database.executeQuery(sql, withArgumentsIn: []) else {
                 return
             }
             
             //逐行遍历结果集合
             while rs.next() {
                 //1.列数
-                let colCount = rs.columnCount()
+                let colCount = rs.columnCount
                 
                 //2.遍历所有列
                 for col in 0..<colCount {
@@ -222,7 +222,7 @@ extension TTSQLiteManager {
         //只有在创表的时候使用执行多条语句，可以一次创建多个表数据
         //在执行增删改查的时候不要使用该语句，可能会导致会被注入
         queue.inDatabase { (database) in
-            if database?.executeStatements(sql) == true {
+            if database.executeStatements(sql) == true {
                 print("创表失败")
             } else {
                 print("创表成功")

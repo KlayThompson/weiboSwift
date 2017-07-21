@@ -9,3 +9,4 @@
 
 #import "CZAdditions.h"
 #import "HMPhotoBrowserController.h"
+#import "WXApi.h"

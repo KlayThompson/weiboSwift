@@ -33,7 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppInfoFromServer()
         _ = TTSQLiteManager.shared
         //设置一些额外信息
-        setupAdditions(application)  
+        setupAdditions(application)
+        
+        //微信登录
+        wechatLogin()
+        
         let ss = TTEmojiManager.shared
         _ = ss.packages.last?.emoticons.first?.image
         return true
@@ -64,6 +68,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - 微信登录
+extension AppDelegate: WXApiDelegate {
+
+    func wechatLogin() {
+        
+        WXApi.registerApp(WXAppKey)
+        
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        
+        WXApi.handleOpen(url, delegate: self)
+        
+        return true
+    }
+}
+
+// MARK: - 应用配置信息
 extension AppDelegate {
 
     func setupAdditions(_ application: UIApplication) {

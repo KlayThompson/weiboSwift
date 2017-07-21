@@ -104,29 +104,29 @@ extension VisitorView {
         iconImageView.snp.makeConstraints { (make) in
             make.centerX.centerY.equalTo(self)
         }
-        
+        //小房子
         hosueIcon.snp.makeConstraints { (make) in
             make.centerX.centerY.equalTo(self)
         }
-        
+        //提示文字
         tipLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(iconImageView)
             make.top.equalTo(iconImageView.snp.bottom).offset(20)
             make.width.equalTo(300)
         }
- 
+        //登录按钮
         loginButton.snp.makeConstraints { (make) in
             make.left.equalTo(tipLabel)
             make.top.equalTo(tipLabel.snp.bottom).offset(20)
             make.width.equalTo(110)
         }
-        
+        //注册按钮
         signInButton.snp.makeConstraints { (make) in
             make.right.equalTo(tipLabel).offset(-10)
             make.top.equalTo(tipLabel.snp.bottom).offset(20)
             make.width.equalTo(loginButton)
         }
-        
+        //遮罩视图
         iconMaskView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(self)
             make.bottom.equalTo(loginButton).offset(-20)
