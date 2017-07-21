@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -57,12 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1A189EC135AD73CE13D594F930ABF8CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C1C85E9B3F8DE712EEC4FD9886C4819</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>251BAD17812F7EBF6532EACF66F941C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A576F2BEC79AACCDB610F6269C8E9F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B9E9D23FACC210B1AEB478BB8AA8ACA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,6 +108,21 @@
 			<true/>
 		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D250545493E33A202FC484EAB4C146E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED7DFCCAB6CB89D75B395BBD6AA2638F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F57535100FBAF2FF2E6D619C7EF23D4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

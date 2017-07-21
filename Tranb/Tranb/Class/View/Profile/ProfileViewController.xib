@@ -47,13 +47,13 @@
                             </constraints>
                             <state key="normal" title="注册"/>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG10.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-hY-h4Y">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG8.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-hY-h4Y">
                             <rect key="frame" x="0.0" y="564" width="375" height="250"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="250" id="zv6-fP-9hs"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG9.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="99g-mw-ZjX">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG8.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="99g-mw-ZjX">
                             <rect key="frame" x="0.0" y="314" width="375" height="250"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="250" id="sJ2-Bu-Zry"/>
@@ -96,8 +96,6 @@
         </view>
     </objects>
     <resources>
-        <image name="WechatIMG10.jpeg" width="1280" height="960"/>
         <image name="WechatIMG8.jpeg" width="1280" height="960"/>
-        <image name="WechatIMG9.jpeg" width="1280" height="960"/>
     </resources>
 </document>
