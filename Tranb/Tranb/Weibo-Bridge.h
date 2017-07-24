@@ -10,3 +10,4 @@
 #import "CZAdditions.h"
 #import "HMPhotoBrowserController.h"
 #import "WXApi.h"
+#import "WeiboSDK.h"

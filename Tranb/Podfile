@@ -6,6 +6,7 @@ target 'Tranb' do
 
 	pod "AFNetworking"
     pod "WechatOpenSDK"
+    pod "WeiboSDK"
 pod "SDWebImage"
 pod "YYModel"
 pod "FMDB"

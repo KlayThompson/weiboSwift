@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAdditions(application)
         
         //微信登录
-        wechatLogin()
+        registerThirdApp()
         
         let ss = TTEmojiManager.shared
         _ = ss.packages.last?.emoticons.first?.image
@@ -68,20 +68,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// MARK: - 微信登录
-extension AppDelegate: WXApiDelegate {
+// MARK: - 第三方APP注册
+extension AppDelegate: WXApiDelegate,WeiboSDKDelegate {
 
-    func wechatLogin() {
+    func registerThirdApp() {
+        //微信
+        registerWechat()
+        //微博
+        registerWeibo()
+    }
+    
+    /// 注册微博APP
+    func registerWeibo() {
+        
+        WeiboSDK.enableDebugMode(true)
+        
+        WeiboSDK.registerApp(WeiboAppKey)
+    }
+    
+    /// 注册微信APPkey
+    func registerWechat() {
         
         WXApi.registerApp(WXAppKey)
-        
+    
     }
     
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
         
         WXApi.handleOpen(url, delegate: self)
         
+        WeiboSDK.handleOpen(url, delegate: self)
         return true
+    }
+//  MARK: - WeiboSDKDelegate
+    func didReceiveWeiboRequest(_ request: WBBaseRequest!) {
+        
+    }
+    
+    func didReceiveWeiboResponse(_ response: WBBaseResponse!) {
+        
+        if response.isKind(of: WBSendMessageToWeiboResponse.self) {
+            print("111111111111")
+        } else if response.isKind(of: WBAuthorizeResponse.self) {
+            
+            let res = response as! WBAuthorizeResponse
+            guard let uid = res.userID,
+                let acc = res.accessToken else {
+                    return
+            }
+            print(uid,acc)
+            
+        } else if response.isKind(of: WBSDKAppRecommendResponse.self) {
+            print("33333333333")
+        }
     }
 }
 

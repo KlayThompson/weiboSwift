@@ -46,6 +46,9 @@
                                 <constraint firstAttribute="height" constant="44" id="Nws-03-MsM"/>
                             </constraints>
                             <state key="normal" title="注册"/>
+                            <connections>
+                                <action selector="weiboLogin:" destination="-1" eventType="touchUpInside" id="BwZ-Kn-E1z"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG8.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-hY-h4Y">
                             <rect key="frame" x="0.0" y="564" width="375" height="250"/>
