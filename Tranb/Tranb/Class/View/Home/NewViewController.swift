@@ -20,6 +20,7 @@ class NewViewController: BaseViewController {
         
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

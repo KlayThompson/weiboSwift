@@ -41,7 +41,8 @@ class HomeViewController: BaseViewController {
     }
     
     func test() {
-        
+        let vc = NewViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

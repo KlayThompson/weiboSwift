@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
+
 class HomeWebViewController: BaseViewController {
 
     var urlString: String? {
@@ -28,10 +30,29 @@ class HomeWebViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
+        webView.navigationDelegate = self
     }
 }
 
+// MARK: - WKNavigationDelegate
+extension HomeWebViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+        SVProgressHUD.show()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
+    }
+ 
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        SVProgressHUD.dismiss()
+    }
+}
+
+// MARK: - 设置界面
 extension HomeWebViewController {
 
     override func setupTableView() {

@@ -26,7 +26,7 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var effectView: UIVisualEffectView!
     
     //纪录用于回调的闭包
-    var completionBlock: ((_ className: String?)->())?
+    var completionBlock1: ((_ className: String?)->())?
     
     
     /// 按钮数据数组
@@ -56,7 +56,7 @@ class ComposeTypeView: UIView {
     func show(completion: @escaping (_ className: String?)->()) {
         
         //记录闭包
-        completionBlock = completion
+        completionBlock1 = completion
         //添加视图  添加到跟视图上面
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -99,7 +99,7 @@ class ComposeTypeView: UIView {
                     UIView.animate(withDuration: 0.3, animations: {
                         self.alpha = 0
                         //动画完成执行回调
-                        self.completionBlock?(button.className)
+                        self.completionBlock1?(button.className)
                     }, completion: { (_) in
                     })
                 }
