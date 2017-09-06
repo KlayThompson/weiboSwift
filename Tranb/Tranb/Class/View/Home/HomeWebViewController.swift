@@ -33,6 +33,12 @@ class HomeWebViewController: BaseViewController {
         
         webView.navigationDelegate = self
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //为了防止界面尚未加载出来就返回到上一级，菊花还在转
+        SVProgressHUD.dismiss()
+    }
 }
 
 // MARK: - WKNavigationDelegate
